@@ -1,0 +1,9 @@
+mixin input(attrs)
+  if attrs
+    label(for= attrs.inputID)
+      span.label-left= attrs.labelTitle
+      if attrs.labelTitle2
+        span.label-right= attrs.labelTitle2
+    input(type= attrs.inputType, name= attrs.inputName, id= attrs.inputID, class= attrs.inputClass, placeholder= attrs.inputPlaceholder, value= attrs.inputValue)
+  else
+    input(type= attrs.inputType, name= attrs.inputName, id= attrs.inputID, class= attrs.inputClass, placeholder= attrs.inputPlaceholder, value= attrs.inputValue)

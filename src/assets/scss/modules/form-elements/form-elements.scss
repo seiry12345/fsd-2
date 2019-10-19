@@ -1,0 +1,18 @@
+.block-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.block__item {
+  flex: 0 1 27.6%;
+}
+
+.block__item-middle {
+  flex: 0 1 260px;
+}
+
+.block__item-left-margin {
+  margin-bottom: 35px;
+}

@@ -1,0 +1,179 @@
+@import 'utils/libs';
+@import 'utils/reset';
+@import 'utils/fonts';
+@import 'utils/libs';
+@import 'utils/vars';
+@import 'utils/mixins';
+
+html {
+  line-height: $mainLineHeight;
+  font-size: $mainFontSize;
+  color: $mainColor;
+  height: 100%;
+  @media screen and (max-width: $desktopWidth) {
+    font-size: 16px;
+  }
+  @media screen and (max-width: $tableWidth) {
+    font-size: 15px;
+  }
+  @media screen and (max-width: $phoneWidth) {
+    font-size: 14px;
+  }
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $mainFont;
+  font-size: $mainFontSize;
+  font-weight: $mainFontWeight;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+.h1 {
+  font-family: $titleFont;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: -0.4px;
+}
+
+h2,
+.h2 {
+  font-family: $titleFont;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 24px;
+  letter-spacing: -0.1px;
+}
+
+h3,
+.h3 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+}
+
+.wrapper {
+  max-width: 1180px;
+  padding: 0 10px;
+  margin: 0 auto;
+  &.wrapper-ui-kit {
+    max-width: 1460px;
+  }
+}
+
+.mobile-href {
+  pointer-events: none;
+}
+
+@media screen and (max-width: 992px) {
+  .mobile-href {
+    pointer-events: default;
+  }
+}
+
+header {
+  padding: 15px 0;
+  .wrapper {
+    display: flex;
+    align-items: center;
+  }
+}
+
+section,
+.section {
+  position: relative;
+  padding: 40px 0;
+  @media screen and (max-width: $desktopWidth) {
+    padding: 36px 0;
+  }
+  @media screen and (max-width: $desktopWidth) {
+    padding: 28px 0;
+  }
+  @media screen and (max-width: $desktopWidth) {
+    padding: 20px 0;
+  }
+}
+
+.first {
+  height: calc(100vh - 70px);
+  background: url('../img/bg-1.jpg') no-repeat center top;
+  background-size: cover;
+  .first-text {
+    position: absolute;
+    bottom: 15px;
+    right: 7%;
+    line-height: 24px;
+  }
+}
+
+@media (max-width: 992px) {
+  h1,
+  .h1 {
+    font-size: 22px;
+    line-height: 28px;
+  }
+  h2,
+  .h2 {
+    font-size: 17px;
+    line-height: 22px;
+  }
+}
+
+@media (max-width: 600px) {
+  h1,
+  .h1 {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  h2,
+  .h2 {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+@media (max-width: 420px) {
+  h1,
+  .h1 {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  h2,
+  .h2 {
+    font-size: 15px;
+    line-height: 19px;
+  }
+}
+
+// scafolding
+@import './modules/button';
+@import './modules/input';
+@import './modules/checkbox';
+
+// ui-kit
+@import './modules/ui-kit-logo.scss';
+
+// colors and types
+@import './modules/colors-and-type/colors-and-type.scss';
+@import './modules/colors-and-type/colors-item.scss';
+@import './modules/colors-and-type/type-item.scss';
+
+// form elements
+@import './modules/form-elements/form-elements.scss';
+
+// index
+@import './modules/header-logo.scss';
+@import './modules/navbar.scss';
+@import './modules/user.scss';

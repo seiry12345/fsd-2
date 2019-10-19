@@ -1,0 +1,4 @@
+mixin checkbox(attrs)
+  input(type= "checkbox", name= attrs.name, id= attrs.id, class= "checkbox " + attrs.class, value= attrs.value)
+  span(class= "checkbox-mark")
+  label(for= attrs.id, class= "checkbox-label "+ attrs.labelClass)= attrs.labelTitle

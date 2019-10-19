@@ -1,0 +1,30 @@
+.ui-kit-logo {
+  padding-left: 30px;
+  padding-top: 30px;
+  padding-bottom: 65px;
+  svg {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+@media (max-width: 600px) {
+  .ui-kit-logo {
+    padding-bottom: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ui-kit-logo {
+    padding: 25px 0;
+  }
+}
+
+@media (max-width: 420px) {
+  .ui-kit-logo {
+    text-align: center;
+    svg {
+      display: inline-block;
+    }
+  }
+}

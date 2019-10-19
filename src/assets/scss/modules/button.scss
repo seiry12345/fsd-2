@@ -1,0 +1,28 @@
+.btn {
+  display: inline-block;
+  padding: 7px 20px;
+  background: linear-gradient(180deg, $primary-color 0%, #8ba4f9 100%);
+  color: #fff;
+  font-family: $mainColor;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  border: 1px solid $primary-color;
+  border-radius: 22px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  &:hover {
+    background: transparent;
+    color: $primary-color;
+  }
+  &.btn--transparent {
+    background: transparent;
+    color: $primary-color;
+    &:hover {
+      background: linear-gradient(180deg, $primary-color 0%, #8ba4f9 100%);
+      color: #fff;
+    }
+  }
+}

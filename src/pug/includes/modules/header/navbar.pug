@@ -1,0 +1,15 @@
+- var menus = [{text: 'О нас', link: '/about'}, {text: 'Услуги', link: "/services" , submenu: [{text: 'Бронь', link: '/reservation'}, {text: 'Поиск номера', link: '/room-search'}] }, {text: 'Вакансии', link: 'vacancies'}, {text: "Новости", link: "/news"}, {text: 'Соглашения', link: "/agreements", submenu: [{text: 'Условия', link: '/conditions'}, {text: 'Документы', link: '/docs'}] },];
+
+nav.navbar.header-navbar()
+  ul.navbar-menu
+    each list in menus
+      li.navbar-menu__list
+        if list.submenu
+          if list
+            a.navbar__item(href=list.link)= list.text
+          ul.navbar__submenu
+            each sublist in list.submenu
+              li.navbar__sublist
+                  a.navbar__subitem(href=sublist.link)= sublist.text
+        else
+            a.navbar__item(href=list.link)= list.text

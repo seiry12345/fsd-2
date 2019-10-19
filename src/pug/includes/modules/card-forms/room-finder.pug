@@ -1,0 +1,12 @@
+mixin room-finder(title, selector= "")
+  h2.form-card__title= title
+  form(method="post",class=`form-card ${selector}`)
+    p(class="card-form__item card-form__item-date")
+    label(for="arrive") Прибытие
+      +card-input('date','arrive','arrive','arrive')
+    p(class="card-form__item card-form__item-date")
+    label(for="arrive") Выезд
+      +card-input('date','out','out','out')
+    p(class="card-form__item card-form__item-guests")
+    label(for="arrive") Гости
+    select(multiple name="guests" )

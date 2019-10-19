@@ -1,0 +1,4 @@
+mixin type-item(title, text, textSelector= '')
+  .type-item
+    div(class="type-item__left " + textSelector)= title
+    div(class=`type-item__right ${textSelector}`)= text
