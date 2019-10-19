@@ -1,24 +1,15 @@
-@import 'utils/libs';
-@import 'utils/reset';
-@import 'utils/fonts';
-@import 'utils/libs';
-@import 'utils/vars';
-@import 'utils/mixins';
+@import './utils/libs';
+@import './utils/reset';
+@import './utils/fonts';
+@import './utils/libs';
+@import './utils/vars';
+@import './utils/mixins';
 
 html {
   line-height: $mainLineHeight;
   font-size: $mainFontSize;
   color: $mainColor;
   height: 100%;
-  @media screen and (max-width: $desktopWidth) {
-    font-size: 16px;
-  }
-  @media screen and (max-width: $tableWidth) {
-    font-size: 15px;
-  }
-  @media screen and (max-width: $phoneWidth) {
-    font-size: 14px;
-  }
 }
 
 body,
@@ -158,22 +149,22 @@ section,
 }
 
 // scafolding
-@import './modules/button';
-@import './modules/input';
-@import './modules/checkbox';
+// @import './modules/button';
+// @import './modules/input';
+// @import './modules/checkbox';
 
-// ui-kit
-@import './modules/ui-kit-logo.scss';
+// // ui-kit
+// @import './modules/ui-kit-logo.scss';
 
-// colors and types
-@import './modules/colors-and-type/colors-and-type.scss';
-@import './modules/colors-and-type/colors-item.scss';
-@import './modules/colors-and-type/type-item.scss';
+// // colors and types
+// @import './modules/colors-and-type/colors-and-type.scss';
+// @import './modules/colors-and-type/colors-item.scss';
+// @import './modules/colors-and-type/type-item.scss';
 
-// form elements
-@import './modules/form-elements/form-elements.scss';
+// // form elements
+// @import './modules/form-elements/form-elements.scss';
 
-// index
-@import './modules/header-logo.scss';
-@import './modules/navbar.scss';
-@import './modules/user.scss';
+// // index
+// @import './modules/header-logo.scss';
+// @import './modules/navbar.scss';
+// @import './modules/user.scss';
