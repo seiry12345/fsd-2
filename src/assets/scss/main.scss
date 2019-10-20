@@ -6,6 +6,7 @@
 @import './utils/mixins';
 
 html {
+  box-sizing: border-box;
   height: 100%;
   color: $mainColor;
   font-size: $mainFontSize;
@@ -14,6 +15,9 @@ html {
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  @media screen and (max-width: $smDesktopWidth) {
+    font-size: 12px;
+  }
 }
 
 body,
@@ -28,7 +32,7 @@ h1,
   font-style: normal;
   font-weight: 700;
   font-size: rem(24);
-  line-height: 30px;
+  line-height: rem(30);
   letter-spacing: -0.4px;
 }
 
@@ -38,7 +42,7 @@ h2,
   font-style: normal;
   font-weight: 700;
   font-size: rem(19);
-  line-height: 24px;
+  line-height: rem(24);
   letter-spacing: -0.1px;
 }
 
@@ -47,7 +51,7 @@ h3,
   font-style: normal;
   font-weight: bold;
   font-size: rem(12);
-  line-height: 15px;
+  line-height: rem(15);
   text-transform: uppercase;
 }
 
@@ -70,14 +74,6 @@ h3,
   }
 }
 
-header {
-  padding: 15px 0;
-  .wrapper {
-    display: flex;
-    align-items: center;
-  }
-}
-
 section,
 .section {
   position: relative;
@@ -85,22 +81,22 @@ section,
 }
 
 // elements
-// @import './modules/button';
-// @import './modules/input';
-// @import './modules/checkbox';
+@import '../../Сomponents/Button/button';
+@import '../../Сomponents/Input/input';
+@import '../../Сomponents/Checkbox/checkbox';
 
-// // ui-kit
-// @import './modules/ui-kit-logo.scss';
+// ui-kit
+@import '../../Сomponents/Ui-logo/ui-logo';
 
-// // colors and types
-// @import './modules/colors-and-type/colors-and-type.scss';
-// @import './modules/colors-and-type/colors-item.scss';
-// @import './modules/colors-and-type/type-item.scss';
+// colors and types
+@import './pages/colors-and-type.scss';
+@import '../../Сomponents/colors-item/colors-item.scss';
+@import '../../Сomponents/Type-item/type-item';
 
-// // form elements
+// form elements
 // @import './modules/form-elements/form-elements.scss';
 
-// // index
+// index
 // @import './modules/header-logo.scss';
 // @import './modules/navbar.scss';
 // @import './modules/user.scss';

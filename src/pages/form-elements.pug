@@ -1,0 +1,65 @@
+extends ../layouts/ui-kit.pug
+//- include ../utils/input.pug
+//- include ../utils/dropdown.pug
+//- include ../utils/checkbox.pug
+
+- const inputEmailAttrs = {"inputType": "email", "inputName": "email", "inputID": "email", "inputClass": false, "inputPlaceholder": "Email", "inputValue": false, "labelTitle": "Text Field", "labelTitleRight": "Default"};
+
+- const inputEmailAttrs2 = {"inputType": "email", "inputName": "email", "inputID": "email", "inputClass": "--hovered", "inputPlaceholder": "This is pretty awesome", "inputValue": false, "labelTitle": "Text Field", "labelTitleRight": "Hover / Focus"};
+
+-const dropdownGuests = {"class": "", "id": "dropdown-guests", "placeholder": "Сколько гостей?", "labelTitle": "Dropdown", "labelTitleRight": "Default"};
+
+-const dropdownGuestsItems = [{"text": "Спальни"}, {"text": "Кровати"}, {"text": "Ванные комнаты"}];
+
+-const dropdownDate = {'type': 'date',"class": "", "id": "dropdown-date", "placeholder": "ММ.ДД.ГГГГ", "labelTitle": "date Dropdown"};
+
+-const dropdownDate2 = {'type': 'date',"class": "", "id": "dropdown-date2", "placeholder": "ММ.ДД.ГГГГ", "labelTitle": "date Dropdown"};
+
+-const dropdownRangeDate = {'type': 'date',"class": "", "id": "dropdown-range-date", "placeholder": "current date", "labelTitle": "filter date dropdown"};
+
+- const inputSubscribe = {"inputType": "email", "inputName": "email", "inputID": "subscribe", "inputClass": 'subscribe', "inputPlaceholder": "Email", "inputValue": false, "labelTitle": "subscription text field"};
+
+- const checkbox1 = {"name": "checkbox1", "id": "checkbox1", "class": '', "labelClass": "", "value": false, "labelTitle": "Можно курить"};
+
+- const checkbox2 = {"name": "checkbox2", "id": "checkbox2", "class": '', "labelClass": "", "value": false, "labelTitle": "Можно с питомцами"};
+
+- const checkbox3 = {"name": "checkbox3", "id": "checkbox3", "class": '', "labelClass": "", "value": false, "labelTitle": "Можно пригласить гостей(до 10 человек)"};
+
+//-     main
+//-       .wrapper
+//-         .block-wrap
+//-           .block__item.block__item-left
+//-             .form__item.form__item-email
+//-               +input(inputEmailAttrs)
+//-             .form__item.form__item-email
+//-               +input(inputEmailAttrs2)
+//-             .form__item.form__item-dropdown
+//-               +dropdown(dropdownGuests, dropdownGuestsItems)
+//-             .form__item-wrap.block__item-left-margin
+//-               .form__item.form__item-date
+//-                 +dropdown(dropdownDate, false, true)
+//-               .form__item.form__item-date
+//-                 +dropdown(dropdownDate2, false, true)
+//-             .form__item.form__item-date.form__item-width266.block__item-left-margin
+//-               +dropdown(dropdownRangeDate, false, true)
+//-             .form__item.form-item__subscribe.form__item-width266
+//-               +input(inputSubscribe)
+
+//-           .block__item.block__item-middle
+//-             h3 checkbox buttons
+//-             .form__item.form__item-checkbox
+//-               +checkbox(checkbox1)
+//-             .form__item
+
+//-           .block__item.block__item-right
+//-             .form__item.form__item-email
+//-               +input(inputEmailAttrs)
+//-             .form__item.form__item-email
+//-               +input(inputEmailAttrs2)
+
+//-         .block-wrap
+//-           .block__item.block__item-left
+
+//-           .block__item.block__item-middle
+
+//-           .block__item.block__item-right
