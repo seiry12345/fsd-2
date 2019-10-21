@@ -1,4 +1,6 @@
 .label {
+  z-index: 1;
+  position: relative;
   overflow: hidden;
   display: block;
   font-style: normal;
@@ -44,4 +46,12 @@
   padding: 11px 15px;
   color: $mainColor75;
   cursor: pointer;
+}
+
+.input--width266 {
+  max-width: 266px;
+}
+
+.subscribe {
+  background: transparent url('') no-repeat center / contain;
 }

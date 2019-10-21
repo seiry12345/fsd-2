@@ -125,3 +125,12 @@
     color: $mainColor;
   }
 }
+
+.form-item__wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  & > div {
+    max-width: 47%;
+  }
+}
