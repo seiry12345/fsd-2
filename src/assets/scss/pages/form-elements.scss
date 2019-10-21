@@ -5,14 +5,18 @@
   justify-content: space-between;
 }
 
-.block__item {
+.block-item {
   flex: 0 1 27.6%;
 }
 
-.block__item-middle {
+.block-item--middle {
   flex: 0 1 260px;
 }
 
-.block__item-left-margin {
-  margin-bottom: 35px;
+.block-item--bmargin {
+  margin-bottom: 20px;
+}
+
+.form-item {
+  margin-bottom: 20px;
 }

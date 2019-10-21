@@ -83,6 +83,7 @@ section,
 // elements
 @import '../../Сomponents/Button/button';
 @import '../../Сomponents/Input/input';
+@import '../../Сomponents/Dropdown/Dropdown';
 @import '../../Сomponents/Checkbox/checkbox';
 
 // ui-kit
@@ -94,7 +95,7 @@ section,
 @import '../../Сomponents/Type-item/type-item';
 
 // form elements
-// @import './modules/form-elements/form-elements.scss';
+@import './pages/form-elements.scss';
 
 // index
 // @import './modules/header-logo.scss';

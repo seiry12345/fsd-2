@@ -1,9 +1,9 @@
 mixin input(attrs)
   if attrs
-    label(for= attrs.inputID)
+    label(for= attrs.inputID, class= 'label')
       span.label-left= attrs.labelTitle
       if attrs.labelTitle2
-        span.label-right= attrs.labelTitle2
-    input(type= attrs.inputType, name= attrs.inputName, id= attrs.inputID, class= attrs.inputClass, placeholder= attrs.inputPlaceholder, value= attrs.inputValue)
+        span.label-right= attrs.labelTitleRight
+    input(type= attrs.inputType, name= attrs.inputName, id= attrs.inputID, class= 'input ' + attrs.inputClass, placeholder= attrs.inputPlaceholder, value= attrs.inputValue)
   else
     input(type= attrs.inputType, name= attrs.inputName, id= attrs.inputID, class= attrs.inputClass, placeholder= attrs.inputPlaceholder, value= attrs.inputValue)
