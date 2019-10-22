@@ -33,7 +33,11 @@ block content
 
   - const likeBtn = {"name": "like-btn", "id": "like-btn", "class": '', "labelClass": "", "value": false, "labelTitle": "2"};
 
-  - const likeBtn = {"name": "rate-btn", "id": "rate-btn", "class": '', "labelClass": "", "value": false, "labelTitle": ""};
+  - const rateBtn = {"name": "rate-btn", "id": "rate-btn", "class": '', "labelClass": "", "value": '1'};
+  - const rateBtn2 = {"name": "rate-btn", "id": "rate-btn2", "class": '', "labelClass": "", "value": '2'};
+  - const rateBtn3 = {"name": "rate-btn", "id": "rate-btn3", "class": '', "labelClass": "", "value": '3'};
+  - const rateBtn4 = {"name": "rate-btn", "id": "rate-btn4", "class": '', "labelClass": "", "value": '4'};
+  - const rateBtn5 = {"name": "rate-btn", "id": "rate-btn5", "class": '', "labelClass": "", "value": '5'};
 
   - const radioMale = {"name": "gender", "id": "radio1", "class": '', "labelClass": "", "value": 'male', "labelTitle": "Мужчина"};
 
@@ -94,9 +98,12 @@ block content
 
         .block-item__wrap
           h3 rate button
-          .block-item__toggle
-            +rateBtn(rateBtn)
-
-
+          .block-item__rate
+            .form__item.form__item-rating
+              +rateBtn(rateBtn5)
+              +rateBtn(rateBtn4)
+              +rateBtn(rateBtn3)
+              +rateBtn(rateBtn2)
+              +rateBtn(rateBtn)
 
       .block-item

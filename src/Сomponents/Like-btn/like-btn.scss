@@ -18,8 +18,9 @@
     border-radius: 10px;
     transition: all 0.3s ease;
     cursor: pointer;
-    &:before {
-      content: 'favorite';
+    &:before,
+    &:after {
+      opacity: 0;
       z-index: -1;
       position: absolute;
       left: 6px;
@@ -28,11 +29,25 @@
       font-size: inherit;
       color: inherit;
       transform: translateY(-50%);
+      transition: opacity 0.3s ease;
+    }
+    &:before {
+      opacity: 1;
+      content: 'favorite_border';
+    }
+    &:after {
+      content: 'favorite';
     }
     &:hover,
     &:active,
     &:focus {
       color: $purple;
+      &:before {
+        opacity: 0;
+      }
+      &:after {
+        opacity: 1;
+      }
     }
   }
   input {
