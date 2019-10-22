@@ -3,6 +3,8 @@ extends ../layouts/ui-kit.pug
 include ../Сomponents/Input/Input.pug
 include ../Сomponents/Dropdown/Dropdown.pug
 include ../Сomponents/Checkbox/Checkbox.pug
+include ../Сomponents/Radio/Radio.pug
+include ../Сomponents/Toggle/Toggle.pug
 
 
 block content
@@ -23,7 +25,9 @@ block content
 
   - const inputSubscribe = {"inputType": "email", "inputName": "email", "inputID": "subscribe", "inputClass": '', "inputPlaceholder": "Email", "inputValue": false, "labelTitle": "subscription text field", "inputWrap": "subscribe input-wrap--width266"};
 
-  - const checkbox1 = {"name": "checkbox1", "id": "checkbox1", "class": '', "labelClass": "", "value": false, "labelTitle": "Можно курить"};
+  - const checkbox = {"name": "checkbox1", "id": "checkbox1", "class": '', "labelClass": "", "value": false, "labelTitle": "Можно курить"};
+
+  - const toggle = {"name": "toggle", "id": "toggle1", "class": 'toggle', "labelClass": "", "value": false, "labelTitle": "Получать спецпредложения"};
 
   - const radioMale = {"name": "gender", "id": "radio1", "class": '', "labelClass": "", "value": 'male', "labelTitle": "Мужчина"};
 
@@ -68,9 +72,14 @@ block content
 
         .block-item__wrap
           h3 radio buttons
-            .block-item__radio
-              +radio(radioMale)
-              +radio(radioFemale)
+          .block-item__radio
+            +radio(radioMale)
+            +radio(radioFemale)
+
+        .block-item__wrap
+          h3 toggle
+          .block-item__toggle
+            +toggle(toggle)
 
 
 
