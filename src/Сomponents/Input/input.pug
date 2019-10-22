@@ -4,6 +4,8 @@ mixin input(attrs)
       span.label-left= attrs.labelTitle
       if attrs.labelTitleRight
       span.label-right= attrs.labelTitleRight
-    input(type= attrs.inputType, name= attrs.inputName, id= attrs.inputID, class= 'input ' + attrs.inputClass, placeholder= attrs.inputPlaceholder, value= attrs.inputValue)
+    span(class= "input-wrap " + attrs.inputWrap)
+      input(type= attrs.inputType, name= attrs.inputName, id= attrs.inputID, class= 'input ' + attrs.inputClass, placeholder= attrs.inputPlaceholder, value= attrs.inputValue)
   else
-    input(type= attrs.inputType, name= attrs.inputName, id= attrs.inputID, class= attrs.inputClass, placeholder= attrs.inputPlaceholder, value= attrs.inputValue)
+    span(class= "input-wrap " + attrs.inputWrap)
+      input(type= attrs.inputType, name= attrs.inputName, id= attrs.inputID, class= 'input ' + attrs.inputClass, placeholder= attrs.inputPlaceholder, value= attrs.inputValue)

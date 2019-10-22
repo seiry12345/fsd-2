@@ -2,6 +2,7 @@ extends ../layouts/ui-kit.pug
 
 include ../Сomponents/Input/Input.pug
 include ../Сomponents/Dropdown/Dropdown.pug
+include ../Сomponents/Checkbox/Checkbox.pug
 
 
 block content
@@ -20,19 +21,19 @@ block content
 
   -const dropdownRangeDate = {'type': 'date',"class": "input--width266", "id": "dropdown-range-date", "placeholder": "current date", "labelTitle": "filter date dropdown"};
 
-  - const inputSubscribe = {"inputType": "email", "inputName": "email", "inputID": "subscribe", "inputClass": 'input--width266 subscribe', "inputPlaceholder": "Email", "inputValue": false, "labelTitle": "subscription text field"};
+  - const inputSubscribe = {"inputType": "email", "inputName": "email", "inputID": "subscribe", "inputClass": '', "inputPlaceholder": "Email", "inputValue": false, "labelTitle": "subscription text field", "inputWrap": "subscribe input-wrap--width266"};
 
   - const checkbox1 = {"name": "checkbox1", "id": "checkbox1", "class": '', "labelClass": "", "value": false, "labelTitle": "Можно курить"};
 
-  - const checkbox2 = {"name": "checkbox2", "id": "checkbox2", "class": '', "labelClass": "", "value": false, "labelTitle": "Можно с питомцами"};
+  - const radioMale = {"name": "gender", "id": "radio1", "class": '', "labelClass": "", "value": 'male', "labelTitle": "Мужчина"};
 
-  - const checkbox3 = {"name": "checkbox3", "id": "checkbox3", "class": '', "labelClass": "", "value": false, "labelTitle": "Можно пригласить гостей(до 10 человек)"};
+  - const radioFemale = {"name": "gender", "id": "radio2", "class": '', "labelClass": "", "value": 'female', "labelTitle": "Женщина"};
 
 
 
   .wrapper
     .block-wrap
-      .block-item.block-item--left
+      .block-item
         .form-item.form-item__email
           +input(inputEmailAttrs)
 
@@ -52,27 +53,26 @@ block content
           .form-item.form-item__date
             +dropdown(dropdownDate, false, true)
 
-        .form-item.form-item__date
+        .form-item.form-item__range-date
           +dropdown(dropdownRangeDate, false, true)
 
         .form-item.form-item__subscribe.form-item--width266
           +input(inputSubscribe)
 
-        .block-item.block-item--middle
-          //- h3 checkbox buttons
-          //- .form__item.form__item-checkbox
-          //-   +checkbox(checkbox1)
-          //- .form__item
 
-        .block-item.block-item--right
-          //- .form__item.form__item-email
-          //-   +input(inputEmailAttrs)
-          //- .form__item.form__item-email
-          //-   +input(inputEmailAttrs2)
 
-      //- .block-wrap
-      //-   .block__item.block__item-left
+      .block-item
+        .block-item__wrap
+          h3 checkbox buttons
+          +checkbox(checkbox)
 
-      //-   .block__item.block__item-middle
+        .block-item__wrap
+          h3 radio buttons
+            .block-item__radio
+              +radio(radioMale)
+              +radio(radioFemale)
 
-      //-   .block__item.block__item-right
+
+
+
+      .block-item

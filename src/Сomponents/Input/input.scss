@@ -48,10 +48,34 @@
   cursor: pointer;
 }
 
-.input--width266 {
+.input-wrap--width266 {
   max-width: 266px;
 }
 
+.input-wrap {
+  z-index: 1;
+  position: relative;
+  display: block;
+}
+
 .subscribe {
-  background: transparent url('') no-repeat center / contain;
+  &:before {
+    content: 'arrow_forward';
+    z-index: 1;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    @extend .material-icons;
+    font-size: rem(26);
+    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+    @extend .icon-gradient;
+  }
+  .input {
+    padding-right: 44px;
+  }
 }

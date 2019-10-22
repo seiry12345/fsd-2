@@ -1,0 +1,5 @@
+mixin checkbox(attrs)
+  .form__item.form__item-radio
+    input(type= "radio", name= attrs.name, id= attrs.id, class= "radio " + attrs.class, value= attrs.value)
+    span(class= "radio-mark")
+    label(for= attrs.id, class= "radio-label "+ attrs.labelClass)= attrs.labelTitle
