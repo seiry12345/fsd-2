@@ -19,6 +19,7 @@
     & + .toggle-mark {
       border-color: $purple;
       &:before {
+        background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
         transform: translate3d(16px, 0, 0);
       }
     }
@@ -55,7 +56,7 @@
     top: 3px;
     width: 12px;
     height: 12px;
-    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+    background: $mainColor25;
     border-radius: 50%;
     transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
   }

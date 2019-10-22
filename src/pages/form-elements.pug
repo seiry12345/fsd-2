@@ -5,6 +5,8 @@ include ../Сomponents/Dropdown/Dropdown.pug
 include ../Сomponents/Checkbox/Checkbox.pug
 include ../Сomponents/Radio/Radio.pug
 include ../Сomponents/Toggle/Toggle.pug
+include ../Сomponents/Like-btn/Like-btn.pug
+include ../Сomponents/Rate-btn/Rate-btn.pug
 
 
 block content
@@ -28,6 +30,10 @@ block content
   - const checkbox = {"name": "checkbox1", "id": "checkbox1", "class": '', "labelClass": "", "value": false, "labelTitle": "Можно курить"};
 
   - const toggle = {"name": "toggle", "id": "toggle1", "class": 'toggle', "labelClass": "", "value": false, "labelTitle": "Получать спецпредложения"};
+
+  - const likeBtn = {"name": "like-btn", "id": "like-btn", "class": '', "labelClass": "", "value": false, "labelTitle": "2"};
+
+  - const likeBtn = {"name": "rate-btn", "id": "rate-btn", "class": '', "labelClass": "", "value": false, "labelTitle": ""};
 
   - const radioMale = {"name": "gender", "id": "radio1", "class": '', "labelClass": "", "value": 'male', "labelTitle": "Мужчина"};
 
@@ -81,6 +87,15 @@ block content
           .block-item__toggle
             +toggle(toggle)
 
+        .block-item__wrap
+          h3 toggle
+          .block-item__toggle
+            +likeBtn(likeBtn)
+
+        .block-item__wrap
+          h3 rate button
+          .block-item__toggle
+            +rateBtn(rateBtn)
 
 
 
