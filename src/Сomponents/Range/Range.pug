@@ -1,0 +1,9 @@
+mixin range(attrs)
+  label(for= attrs.inputID, class= 'label')
+    span.label-left= attrs.labelTitle
+    if attrs.labelTitleRight
+    span.label-right.label-wrap
+      span= attrs.minPrice + " ₽"
+      span= " - "
+      span= attrs.maxPrice + " ₽"
+  input(type= "text", name= attrs.name, class= "js-range-slider " + attrs.class)

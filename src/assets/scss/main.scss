@@ -2,8 +2,6 @@
 @import './utils/reset';
 @import './utils/fonts';
 @import './utils/libs';
-@import './utils/vars';
-@import './utils/mixins';
 
 html {
   box-sizing: border-box;
@@ -70,7 +68,7 @@ h3,
 
 @media screen and (max-width: $smDesktopWidth) {
   .mobile-href {
-    pointer-events: default;
+    pointer-events: auto;
   }
 }
 
@@ -87,21 +85,12 @@ section,
 @import '../../Сomponents/Checkbox/checkbox';
 @import '../../Сomponents/Radio/radio';
 @import '../../Сomponents/Toggle/toggle';
-@import '../../Сomponents/Like-btn/Like-btn';
+@import '../../Сomponents/Like-btn/like-btn';
 @import '../../Сomponents/Rate-btn/rate-btn';
+@import '../../Сomponents/Range/range';
 
 // ui-kit
 @import '../../Сomponents/Ui-logo/ui-logo';
 
-// colors and types
-@import './pages/colors-and-type.scss';
-@import '../../Сomponents/colors-item/colors-item.scss';
-@import '../../Сomponents/Type-item/type-item';
-
 // form elements
-@import './pages/form-elements.scss';
-
-// index
-// @import './modules/header-logo.scss';
-// @import './modules/navbar.scss';
-// @import './modules/user.scss';
+//@import './pages/form-elements.scss';
