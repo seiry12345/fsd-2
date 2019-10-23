@@ -7,7 +7,7 @@ include ../Сomponents/Radio/Radio.pug
 include ../Сomponents/Toggle/Toggle.pug
 include ../Сomponents/Like-btn/Like-btn.pug
 include ../Сomponents/Rate-btn/Rate-btn.pug
-
+include ../Сomponents/Range/Range.pug
 
 block content
   - const inputEmailAttrs = {"inputType": "email", "inputName": "email", "inputID": "email", "inputClass": "", "inputPlaceholder": "Email", "inputValue": false, "labelTitle": "Text Field", "labelTitleRight": "Default"};
@@ -29,7 +29,10 @@ block content
 
   - const checkbox = {"name": "checkbox1", "id": "checkbox1", "class": '', "labelClass": "", "value": false, "labelTitle": "Можно курить"};
 
+  - const radioMale = {"name": "gender", "id": "radio1", "class": '', "labelClass": "", "value": 'male', "labelTitle": "Мужчина"};
+  - const radioFemale = {"name": "gender", "id": "radio2", "class": '', "labelClass": "", "value": 'female', "labelTitle": "Женщина"};
   - const toggle = {"name": "toggle", "id": "toggle1", "class": 'toggle', "labelClass": "", "value": false, "labelTitle": "Получать спецпредложения"};
+
 
   - const likeBtn = {"name": "like-btn", "id": "like-btn", "class": '', "labelClass": "", "value": false, "labelTitle": "2"};
 
@@ -39,10 +42,7 @@ block content
   - const rateBtn4 = {"name": "rate-btn", "id": "rate-btn4", "class": '', "labelClass": "", "value": '4'};
   - const rateBtn5 = {"name": "rate-btn", "id": "rate-btn5", "class": '', "labelClass": "", "value": '5'};
 
-  - const radioMale = {"name": "gender", "id": "radio1", "class": '', "labelClass": "", "value": 'male', "labelTitle": "Мужчина"};
-
-  - const radioFemale = {"name": "gender", "id": "radio2", "class": '', "labelClass": "", "value": 'female', "labelTitle": "Женщина"};
-
+  - const range = {"name": "range", "class": '', "labelClass": "", "labelTitle": "Range Slider", "minPrice": "5 000", "maxPrice": "15 000"};
 
 
   .wrapper
@@ -92,7 +92,7 @@ block content
             +toggle(toggle)
 
         .block-item__wrap
-          h3 toggle
+          h3 Like btn
           .block-item__toggle
             +likeBtn(likeBtn)
 
@@ -107,3 +107,4 @@ block content
               +rateBtn(rateBtn)
 
       .block-item
+        +range(range)
