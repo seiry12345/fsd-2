@@ -1,6 +1,5 @@
-@import './utils/libs';
-@import './utils/reset';
 @import './utils/fonts';
+@import './utils/reset';
 @import './utils/libs';
 
 html {
@@ -77,20 +76,3 @@ section,
   position: relative;
   padding: 40px 0;
 }
-
-// elements
-@import '../../Сomponents/Button/button';
-@import '../../Сomponents/Input/input';
-@import '../../Сomponents/Dropdown/Dropdown';
-@import '../../Сomponents/Checkbox/checkbox';
-@import '../../Сomponents/Radio/radio';
-@import '../../Сomponents/Toggle/toggle';
-@import '../../Сomponents/Like-btn/like-btn';
-@import '../../Сomponents/Rate-btn/rate-btn';
-@import '../../Сomponents/Range/range';
-
-// ui-kit
-@import '../../Сomponents/Ui-logo/ui-logo';
-
-// form elements
-//@import './pages/form-elements.scss';

@@ -6,4 +6,4 @@ mixin range(attrs)
       span= attrs.minPrice + " ₽"
       span= " - "
       span= attrs.maxPrice + " ₽"
-  input(type= "text", name= attrs.name, class= "js-range-slider " + attrs.class)
+  input(type= "text", name= attrs.name, class= "js-range-slider " + attrs.class, data-min= attrs.minPrice, data-max= attrs.maxPrice)
