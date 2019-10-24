@@ -52,6 +52,15 @@ h3,
   text-transform: uppercase;
 }
 
+a {
+  color: $mainColor50;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  &:hover,&:active,&:focus {
+    color: $purple;
+  }
+}
+
 .wrapper {
   max-width: 1180px;
   padding: 0 10px;

@@ -19,6 +19,7 @@
 .form__item-range {
   .irs--round {
     height: auto;
+    cursor: pointer;
     .irs-min, .irs-max, .irs-from, .irs-to {
       display: none !important;
     }
@@ -40,12 +41,14 @@
       background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
     }
     .irs-handle {
-      top: -3px;
-      width: 12px;
-      height: 12px;
+      z-index: 1;
+      top: -4px;
+      width: 14px;
+      height: 14px;
       background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-      border: 0;
+      border: 2px solid #fff;
       box-shadow: none;
+      cursor: pointer;
     }
   }
 }

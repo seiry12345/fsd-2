@@ -14,6 +14,7 @@ import '../../Сomponents/Range/range.scss';
 import '../../Сomponents/Radio/radio.scss';
 import '../../Сomponents/Rate-btn/rate-btn.scss';
 import '../../Сomponents/Toggle/toggle.scss';
+import '../../Сomponents/Button/button.scss';
 
 // jquery
 import 'jquery/dist/jquery.min'

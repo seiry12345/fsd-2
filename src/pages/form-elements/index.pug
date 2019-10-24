@@ -8,104 +8,113 @@ include ../../Сomponents/Toggle/Toggle.pug
 include ../../Сomponents/Like-btn/Like-btn.pug
 include ../../Сomponents/Rate-btn/Rate-btn.pug
 include ../../Сomponents/Range/Range.pug
+include ../../Сomponents/Button/Button.pug
 
 block content
-  - const inputEmailAttrs = {"inputType": "email", "inputName": "email", "inputID": "email", "inputClass": "", "inputPlaceholder": "Email", "inputValue": false, "labelTitle": "Text Field", "labelTitleRight": "Default"};
-  //- add selectors for date picker
-  - const dropDate = {"inputType": "date", "inputName": "date", "inputID": "date1", "inputClass": "", "inputPlaceholder": "ДД.ММ.ГГГГ", "inputValue": false, "labelTitle": "date Dropdown"};
-  - const dropDate2 = {"inputType": "date", "inputName": "date", "inputID": "date2", "inputClass": "", "inputPlaceholder": "ДД.ММ.ГГГГ", "inputValue": false, "labelTitle": "date Dropdown"};
+    - const inputEmailAttrs = {"inputType": "email", "inputName": "email", "inputID": "email", "inputClass": "", "inputPlaceholder": "Email", "inputValue": false, "labelTitle": "Text Field", "labelTitleRight": "Default"};
+    //- add selectors for date picker
+    - const dropDate = {"inputType": "date", "inputName": "date", "inputID": "date1", "inputClass": "", "inputPlaceholder": "ДД.ММ.ГГГГ", "inputValue": false, "labelTitle": "date Dropdown"};
+    - const dropDate2 = {"inputType": "date", "inputName": "date", "inputID": "date2", "inputClass": "", "inputPlaceholder": "ДД.ММ.ГГГГ", "inputValue": false, "labelTitle": "date Dropdown"};
 
-  -const dropdownGuests = {"class": "", "id": "dropdown-guests", "placeholder": "Сколько гостей?", "labelTitle": "Dropdown", "labelTitleRight": "Default"};
+    -const dropdownGuests = {"class": "", "id": "dropdown-guests", "placeholder": "Сколько гостей?", "labelTitle": "Dropdown", "labelTitleRight": "Default"};
 
-  -const dropdownGuestsItems = [{"text": "Спальни"}, {"text": "Кровати"}, {"text": "Ванные комнаты"}];
+    -const dropdownGuestsItems = [{"text": "Спальни"}, {"text": "Кровати"}, {"text": "Ванные комнаты"}];
 
-  - const masked = {"inputType": "date", "inputName": "masked", "inputID": "", "inputClass": "", "inputPlaceholder": "ДД.ММ.ГГГГ", "inputValue": false, "labelTitle": "masked text field", "labelTitleRight": "Default"};
+    - const masked = {"inputType": "date", "inputName": "masked", "inputID": "", "inputClass": "", "inputPlaceholder": "ДД.ММ.ГГГГ", "inputValue": false, "labelTitle": "masked text field", "labelTitleRight": "Default"};
 
-  -const dropdownDate = {'type': 'date',"class": "", "id": "dropdown-date", "placeholder": "ММ.ДД.ГГГГ", "labelTitle": "date Dropdown"};
+    -const dropdownDate = {'type': 'date',"class": "", "id": "dropdown-date", "placeholder": "ММ.ДД.ГГГГ", "labelTitle": "date Dropdown"};
 
-  -const dropdownRangeDate = {'type': 'date',"class": "input--width266", "id": "dropdown-range-date", "placeholder": "current date", "labelTitle": "filter date dropdown"};
+    -const dropdownRangeDate = {'type': 'date',"class": "input--width266", "id": "dropdown-range-date", "placeholder": "current date", "labelTitle": "filter date dropdown"};
 
-  - const inputSubscribe = {"inputType": "email", "inputName": "email", "inputID": "subscribe", "inputClass": '', "inputPlaceholder": "Email", "inputValue": false, "labelTitle": "subscription text field", "inputWrap": "subscribe input-wrap--width266"};
+    - const inputSubscribe = {"inputType": "email", "inputName": "email", "inputID": "subscribe", "inputClass": '', "inputPlaceholder": "Email", "inputValue": false, "labelTitle": "subscription text field", "inputWrap": "subscribe input-wrap--width266"};
 
-  - const checkbox = {"name": "checkbox1", "id": "checkbox1", "class": '', "labelClass": "", "value": false, "labelTitle": "Можно курить"};
+    - const checkbox = {"name": "checkbox1", "id": "checkbox1", "class": '', "labelClass": "", "value": false, "labelTitle": "Можно курить"};
 
-  - const radioMale = {"name": "gender", "id": "radio1", "class": '', "labelClass": "", "value": 'male', "labelTitle": "Мужчина"};
-  - const radioFemale = {"name": "gender", "id": "radio2", "class": '', "labelClass": "", "value": 'female', "labelTitle": "Женщина"};
-  - const toggle = {"name": "toggle", "id": "toggle1", "class": 'toggle', "labelClass": "", "value": false, "labelTitle": "Получать спецпредложения"};
-
-
-  - const likeBtn = {"name": "like-btn", "id": "like-btn", "class": '', "labelClass": "", "value": false, "labelTitle": "2"};
-
-  - const rateBtn = {"name": "rate-btn", "id": "rate-btn", "class": '', "labelClass": "", "value": '1'};
-  - const rateBtn2 = {"name": "rate-btn", "id": "rate-btn2", "class": '', "labelClass": "", "value": '2'};
-  - const rateBtn3 = {"name": "rate-btn", "id": "rate-btn3", "class": '', "labelClass": "", "value": '3'};
-  - const rateBtn4 = {"name": "rate-btn", "id": "rate-btn4", "class": '', "labelClass": "", "value": '4'};
-  - const rateBtn5 = {"name": "rate-btn", "id": "rate-btn5", "class": '', "labelClass": "", "value": '5'};
-
-  - const range = {"name": "range", "class": '', "labelClass": "", "labelTitle": "Range Slider", "minPrice": "0", "maxPrice": "20000"};
+    - const radioMale = {"name": "gender", "id": "radio1", "class": '', "labelClass": "", "value": 'male', "labelTitle": "Мужчина"};
+    - const radioFemale = {"name": "gender", "id": "radio2", "class": '', "labelClass": "", "value": 'female', "labelTitle": "Женщина"};
+    - const toggle = {"name": "toggle", "id": "toggle1", "class": 'toggle', "labelClass": "", "value": false, "labelTitle": "Получать спецпредложения"};
 
 
-  .wrapper
-    .block-wrap
-      .block-item
-        .form-item.form-item__email
-          +input(inputEmailAttrs)
+    - const likeBtn = {"name": "like-btn", "id": "like-btn", "class": '', "labelClass": "", "value": false, "labelTitle": "2"};
 
-        .form-item.form-item__dropdown
-          +dropdown(dropdownGuests, dropdownGuestsItems, false)
+    - const rateBtn = {"name": "rate-btn", "id": "rate-btn", "class": '', "labelClass": "", "value": '1'};
+    - const rateBtn2 = {"name": "rate-btn", "id": "rate-btn2", "class": '', "labelClass": "", "value": '2'};
+    - const rateBtn3 = {"name": "rate-btn", "id": "rate-btn3", "class": '', "labelClass": "", "value": '3'};
+    - const rateBtn4 = {"name": "rate-btn", "id": "rate-btn4", "class": '', "labelClass": "", "value": '4'};
+    - const rateBtn5 = {"name": "rate-btn", "id": "rate-btn5", "class": '', "labelClass": "", "value": '5'};
 
-        .form-item
-          +input(masked)
-
-        .form-item.form-item__wrap
-          div
-            +input(dropDate)
-          div
-            +input(dropDate2)
-
-        .form-item__wrap.block-item--bmargin
-          .form-item.form-item__date
-            +dropdown(dropdownDate, false, true)
-
-        .form-item.form-item__range-date
-          +dropdown(dropdownRangeDate, false, true)
-
-        .form-item.form-item__subscribe.form-item--width266
-          +input(inputSubscribe)
+    - const range = {"name": "range", "class": '', "labelClass": "", "labelTitle": "Range Slider", "minPrice": "0", "maxPrice": "20000"};
 
 
+    .wrapper
+        .block-wrap
+            .block-item
+                .form-item.form-item__email
+                    +input(inputEmailAttrs)
 
-      .block-item
-        .block-item__wrap
-          h3 checkbox buttons
-          +checkbox(checkbox)
+                .form-item.form-item__dropdown
+                    +dropdown(dropdownGuests, dropdownGuestsItems, false)
 
-        .block-item__wrap
-          h3 radio buttons
-          .block-item__radio
-            +radio(radioMale)
-            +radio(radioFemale)
+                .form-item
+                    +input(masked)
 
-        .block-item__wrap
-          h3 toggle
-          .block-item__toggle
-            +toggle(toggle)
+                .form-item.form-item__wrap
+                    div
+                        +input(dropDate)
+                    div
+                        +input(dropDate2)
 
-        .block-item__wrap
-          h3 Like btn
-          .block-item__toggle
-            +likeBtn(likeBtn)
+                .form-item__wrap.block-item--bmargin
+                    .form-item.form-item__date
+                        +dropdown(dropdownDate, false, true)
 
-        .block-item__wrap
-          h3 rate button
-          .block-item__rate
-            .form__item.form__item-rating
-              +rateBtn(rateBtn5)
-              +rateBtn(rateBtn4)
-              +rateBtn(rateBtn3)
-              +rateBtn(rateBtn2)
-              +rateBtn(rateBtn)
+                .form-item.form-item__range-date
+                    +dropdown(dropdownRangeDate, false, true)
 
-      .block-item
-        .form__item.form__item-range
-          +range(range)
+                .form-item.form-item__subscribe.form-item--width266
+                    +input(inputSubscribe)
+
+
+
+            .block-item
+                .block-item__wrap
+                    h3 checkbox buttons
+                    +checkbox(checkbox)
+
+                .block-item__wrap
+                    h3 radio buttons
+                    .block-item__radio
+                        +radio(radioMale)
+                        +radio(radioFemale)
+
+                .block-item__wrap
+                    h3 toggle
+                    .block-item__toggle
+                        +toggle(toggle)
+
+                .block-item__wrap
+                    h3 Like btn
+                    .block-item__toggle
+                        +likeBtn(likeBtn)
+
+                .block-item__wrap
+                    h3 rate button
+                    .block-item__rate
+                        .form__item.form__item-rating
+                            +rateBtn(rateBtn5)
+                            +rateBtn(rateBtn4)
+                            +rateBtn(rateBtn3)
+                            +rateBtn(rateBtn2)
+                            +rateBtn(rateBtn)
+
+            .block-item
+                .block-item__wrap
+                    .form__item.form__item-range
+                        +range(range)
+                .block-item__wrap
+                    h3 Buttons
+                    +button('', 'Click me')
+                .block-item__wrap
+                    +button('btn btn--transparent', 'Click me')
+                .block-item__wrap
+                    a.block-item__wrap-link =Click me

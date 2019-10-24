@@ -1,28 +1,54 @@
 .btn {
+  position: relative;
   display: inline-block;
-  padding: 7px 20px;
-  background: linear-gradient(180deg, $primary-color 0%, #8ba4f9 100%);
+  padding: 15px 19px;
+  background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
   color: #fff;
-  font-family: $mainColor;
+  font-family: $mainFont;
   font-style: normal;
-  font-weight: 700;
+  font-weight: bold;
   font-size: 12px;
-  line-height: 15px;
+  line-height: 1.2;
+  text-align: center;
   text-transform: uppercase;
-  border: 1px solid $primary-color;
+  text-decoration: none;
+  border: 0;
   border-radius: 22px;
   transition: all 0.3s ease;
   cursor: pointer;
-  &:hover {
-    background: transparent;
-    color: $primary-color;
+
+  &:hover,
+  &:active,
+  &:focus {
+    opacity: 0.5;
   }
-  &.btn--transparent {
-    background: transparent;
-    color: $primary-color;
-    &:hover {
-      background: linear-gradient(180deg, $primary-color 0%, #8ba4f9 100%);
-      color: #fff;
+
+  &--transparent {
+    background: #fff;
+    padding: 13px 17px;
+    background-clip: padding-box;
+    color: $purple;
+    border: solid 2px transparent;
+    &:hover,
+    &:active,
+    &:focus {
+      opacity: 1;
+      &:before {
+        opacity: 0.5;
+      }
+    }
+    &:before {
+      content: '';
+      z-index: -1;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: -2px;
+      background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+      border-radius: inherit;
+      transition: all 0.3s ease;
     }
   }
 }
