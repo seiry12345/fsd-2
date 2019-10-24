@@ -51,4 +51,32 @@
       transition: all 0.3s ease;
     }
   }
+
+  &--w320 {
+    z-index: 1;
+    width: 320px;
+    padding: 15px 44px;
+    &:hover,
+    &:active,
+    &:focus {
+      &:before {
+        transform: translateX(5px);
+      }
+    }
+    &:before {
+      overflow: hidden;
+      content: 'arrow_forward';
+      z-index: -1;
+      position: absolute;
+      right: 0;
+      top: 0;
+      display: flex;
+      align-items: center;
+      width: 44px;
+      height: 44px;
+      @extend .material-icons;
+      color: inherit;
+      transition: all 0.3s ease;
+    }
+  }
 }
