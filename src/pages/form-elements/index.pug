@@ -42,7 +42,7 @@ block content
   - const rateBtn4 = {"name": "rate-btn", "id": "rate-btn4", "class": '', "labelClass": "", "value": '4'};
   - const rateBtn5 = {"name": "rate-btn", "id": "rate-btn5", "class": '', "labelClass": "", "value": '5'};
 
-  - const range = {"name": "range", "class": '', "labelClass": "", "labelTitle": "Range Slider", "minPrice": "5 000", "maxPrice": "15 000"};
+  - const range = {"name": "range", "class": '', "labelClass": "", "labelTitle": "Range Slider", "minPrice": "0", "maxPrice": "20000"};
 
 
   .wrapper
@@ -107,4 +107,5 @@ block content
               +rateBtn(rateBtn)
 
       .block-item
-        +range(range)
+        .form__item.form__item-range
+          +range(range)

@@ -3,7 +3,7 @@ mixin range(attrs)
     span.label-left= attrs.labelTitle
     if attrs.labelTitleRight
     span.label-right.label-wrap
-      span= attrs.minPrice + " ₽"
+      span(class= "label-right__number label-right__number-min")= attrs.minPrice
       span= " - "
-      span= attrs.maxPrice + " ₽"
+      span(class= "label-right__number label-right__number-max")= attrs.maxPrice
   input(type= "text", name= attrs.name, class= "js-range-slider " + attrs.class, data-min= attrs.minPrice, data-max= attrs.maxPrice)
