@@ -1,61 +1,92 @@
-// to do! about keypress and input
-
 window.addEventListener('DOMContentLoaded', function() {
-  const body = document.querySelector('body');
+  const body = document.querySelector('body')
+  const dropdown = document.querySelector('.dropdown')
+  const dropdownFirstText = dropdown.textContent;
+  const dropdownItem = document.querySelectorAll('.dropdown-item')
+  const clearBtn = document.querySelector('.dropdown__clear')
+  const submitBtn = document.querySelector('.dropdown__submit')
 
   // functions
   function showItems(event) {
-    const dropdown = event.target.parentNode;
+    const item = event.target.parentNode
 
     if (event.target.classList.contains('dropdown')) {
-      dropdown.classList.toggle('dropdown--active');
+      item.classList.toggle('dropdown--active')
     }
- }
+  }
 
   function hideItems() {
-    const activeItems = document.querySelectorAll('.dropdown--active');
+    const activeItems = document.querySelectorAll('.dropdown--active')
 
     activeItems.forEach(item => {
-      item.classList.remove('dropdown--active');
-    });
+      item.classList.remove('dropdown--active')
+    })
+  }
+
+  function clear() {
+    dropdown.textContent = dropdownFirstText;
+  }
+
+  function submit() {
+    let values = document.querySelectorAll('.dropdown-controls__value')
+    values = Array.from(values)
+
+    let output = values.map((value) => {
+      return output += Number(value.textContent)
+    })
+
+    console.log(output)
   }
 
   function add(target) {
-    const parent = target.parentNode;
-    let value = parent.parentNode.children[1];
-    let text = parent.parentNode.children[1].innerText;
+    const parent = target.parentNode
 
     if (parent.classList.contains('dropdown-controls__btn-plus')) {
-      text = parseInt(text);
-      text++;
-      value.innerText = text;
+      let value = parent.parentNode.children[1]
+      let text = parent.parentNode.children[1].innerText
+
+      text = parseInt(text)
+      text++
+      value.innerText = text
     }
   }
 
   function minus(target) {
-    const parent = target.parentNode;
-    let value = parent.parentNode.children[1];
-    let text = parent.parentNode.children[1].innerText;
+    const parent = target.parentNode
 
     if (parent.classList.contains('dropdown-controls__btn-minus')) {
+      let value = parent.parentNode.children[1]
+      let text = parent.parentNode.children[1].innerText
+
       if (text > 0) {
-        text = parseInt(text);
-        text--;
-        value.innerText = text;
+        text = parseInt(text)
+        text--
+        value.innerText = text
       }
     }
   }
+
   // --- --- ---
 
   // events
+  // toggle dropdown
   body.addEventListener('click', function(event) {
-    const target = event.target;
+    showItems(event)
+  })
 
-    showItems(event);
+  // dropdown controls click clack
+  dropdownItem.forEach(function(item) {
+    item.addEventListener('click', function (event) {
+      const target = event.target;
+      add(target)
+      minus(target)
+    })
+  })
 
-    add(target);
-    minus(target);
-  });
+  // clear btn
+  clearBtn.addEventListener('click', clear);
 
+  // submit btn
+  submitBtn.addEventListener('click', submit)
   // --- --- ---
-});
+})

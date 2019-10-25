@@ -19,7 +19,7 @@ block content
 
     -const dropdownGuests = {"class": "", "id": "dropdown-guests", "placeholder": "Сколько гостей?", "labelTitle": "Dropdown", "labelTitleRight": "Default"};
 
-    -const dropdownGuestsItems = [{"text": "Спальни"}, {"text": "Кровати"}, {"text": "Ванные комнаты"}];
+    -const dropdownGuestsItems = [{"text": "Взрослые"}, {"text": "Дети"}, {"text": "Младенцы"}];
 
     - const masked = {"inputType": "date", "inputName": "masked", "inputID": "", "inputClass": "", "inputPlaceholder": "ДД.ММ.ГГГГ", "inputValue": false, "labelTitle": "masked text field", "labelTitleRight": "Default"};
 
@@ -46,25 +46,23 @@ block content
             .block-item
                 .form-item.form-item__email
                     +input(inputEmailAttrs)
-
-                .form-item.form-item__dropdown
-                    +dropdown(dropdownGuests, dropdownGuestsItems, false)
+                +dropdown(dropdownGuests, dropdownGuestsItems)
 
                 .form-item
-                    +input(masked)
+                    //+input(masked)
 
                 .form-item.form-item__wrap
                     div
-                        +input(dropDate)
+                        //+input(dropDate)
                     div
-                        +input(dropDate2)
+                        //+input(dropDate2)
 
                 .form-item__wrap.block-item--bmargin
                     .form-item.form-item__date
-                        +dropdown(dropdownDate, false, true)
+                        //+dropdown(dropdownDate, false, true)
 
                 .form-item.form-item__range-date
-                    +dropdown(dropdownRangeDate, false, true)
+                    //+dropdown(dropdownRangeDate, false, true)
 
                 .form-item.form-item__subscribe.form-item--width266
                     +input(inputSubscribe)
@@ -95,7 +93,7 @@ block content
                 .block-item__wrap
                     h3 rate button
                     .block-item__rate
-                        +rateBtn(5, 2)
+                        +rateBtn(5, 4)
 
             .block-item
                 .block-item__wrap

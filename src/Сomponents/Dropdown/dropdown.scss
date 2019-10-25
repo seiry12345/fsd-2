@@ -61,8 +61,9 @@
 
 .dropdown--active {
   .dropdown {
-    border-radius: 4px 4px 0 0;
     color: $mainColor75;
+    border-radius: 4px 4px 0 0;
+    border-color: $mainColor50;
     &:before {
       transition: all 0.3s ease;
       transform: rotateX(180deg);
@@ -78,9 +79,10 @@
   display: none;
   padding: 7px;
   padding-left: 15px;
-  border: 1px solid $mainColor;
+  border: 1px solid $mainColor50;
   border-top: 0;
   border-radius: 0 0 4px 4px;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 }
 
 .dropdown-item {
@@ -126,6 +128,25 @@
   }
   h3, .h3 {
     margin: 0;
+  }
+}
+
+.dropdown__btns {
+  overflow: hidden;
+  width: 100%;
+  margin-top: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  .dropdown__clear {
+    float: left;
+    color: $mainColor50;
+    cursor: pointer;
+  }
+  .dropdown__submit {
+    float: right;
+    color: $purple;
+    cursor: pointer;
   }
 }
 

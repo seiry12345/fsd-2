@@ -1,23 +1,24 @@
-mixin dropdown(attrs, items, calendar)
-  if attrs
-    label(for= attrs.id, class= 'label-dropdown')
-      span.label-left= attrs.labelTitle
-      if attrs.labelTitleRight
-        span.label-right= attrs.labelTitleRight
-    button(type= 'button', class=`dropdown ${attrs.class}`, id= attrs.id)= attrs.placeholder
-    .dropdown-items
-      if calendar
-        input.dropdown-item.dropdown-item__calendar
-      else
-        each item in items
-          .dropdown-item
-            span.dropdown-item__text.h3= item.text
-            .dropdown-controls
-              .dropdown-controls__btn.dropdown-controls__btn-minus
-                <i class="material-icons">remove</i>
-              .dropdown-controls__value.h3 0
-              .dropdown-controls__btn.dropdown-controls__btn-plus
-                <i class="material-icons">add</i>
-  else
-    button(type= 'button', class=`dropdown ${attrs.class}`, id= attrs.id)= attrs.placeholder
-    .dropdown-items
+mixin dropdown(attrs, items)
+  .form-item.form-item__dropdown
+    if attrs
+      label(for= attrs.id, class= 'label-dropdown')
+        span.label-left= attrs.labelTitle
+        if attrs.labelTitleRight
+          span.label-right= attrs.labelTitleRight
+      button(type='button', class=`dropdown ${attrs.class}`, id= attrs.id)= attrs.placeholder
+      .dropdown-items
+          each item in items
+            .dropdown-item
+              span.dropdown-item__text.h3= item.text
+              .dropdown-controls
+                .dropdown-controls__btn.dropdown-controls__btn-minus
+                  <i class="material-icons">remove</i>
+                .dropdown-controls__value.h3 0
+                .dropdown-controls__btn.dropdown-controls__btn-plus
+                  <i class="material-icons">add</i>
+          .dropdown__btns
+            .dropdown__clear Очистить
+            .dropdown__submit Применить
+    else
+      button(type= 'button', class=`dropdown ${attrs.class}`, id= attrs.id)= attrs.placeholder
+      .dropdown-items
