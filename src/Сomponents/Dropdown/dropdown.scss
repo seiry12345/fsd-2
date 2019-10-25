@@ -139,9 +139,13 @@
   font-weight: 700;
   text-transform: uppercase;
   .dropdown__clear {
+    display: none;
     float: left;
     color: $mainColor50;
     cursor: pointer;
+    &--active {
+      display: block;
+    }
   }
   .dropdown__submit {
     float: right;
