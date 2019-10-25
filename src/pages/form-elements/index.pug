@@ -9,6 +9,7 @@ include ../../Сomponents/Like-btn/Like-btn.pug
 include ../../Сomponents/Rate-btn/Rate-btn.pug
 include ../../Сomponents/Range/Range.pug
 include ../../Сomponents/Button/Button.pug
+include ../../Сomponents/Pagination/Pagination.pug
 
 block content
     - const inputEmailAttrs = {"inputType": "email", "inputName": "email", "inputID": "email", "inputClass": "", "inputPlaceholder": "Email", "inputValue": false, "labelTitle": "Text Field", "labelTitleRight": "Default"};
@@ -44,6 +45,7 @@ block content
     - const rateBtn5 = {"name": "rate-btn", "id": "rate-btn5", "class": '', "labelClass": "", "value": '5'};
 
     - const range = {"name": "range", "class": '', "labelClass": "", "labelTitle": "Range Slider", "minPrice": "0", "maxPrice": "20000"};
+
 
 
     .wrapper
@@ -122,3 +124,4 @@ block content
                     +button('btn btn--w320', 'перейти к оплате')
                 .block-item__wrap
                     h3 Pagination
+                    +pagination(4, 1, 4, 14, arrows)
