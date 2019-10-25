@@ -9,6 +9,7 @@ import './index.scss';
 import '../../Сomponents/Input/input.scss';
 import '../../Сomponents/Checkbox/checkbox.scss';
 import '../../Сomponents/Dropdown/dropdown.scss';
+import '../../Сomponents/Dropdown/dropdown';
 import '../../Сomponents/Like-btn/like-btn.scss';
 import '../../Сomponents/Range/range.scss';
 import '../../Сomponents/Radio/radio.scss';

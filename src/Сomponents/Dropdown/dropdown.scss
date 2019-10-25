@@ -109,6 +109,11 @@
   border-radius: 50%;
   transition: all 0.3s ease;
   cursor: pointer;
+  &:hover,
+  &:active,
+  &:focus {
+    color: $mainColor;
+  }
   i {
     z-index: -1;
     position: relative;
@@ -119,10 +124,8 @@
     justify-content: center;
     font-size: inherit;
   }
-  &:hover,
-  &:active,
-  &:focus {
-    color: $mainColor;
+  h3, .h3 {
+    margin: 0;
   }
 }
 

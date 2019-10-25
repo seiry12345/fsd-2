@@ -35,14 +35,7 @@ block content
     - const radioFemale = {"name": "gender", "id": "radio2", "class": '', "labelClass": "", "value": 'female', "labelTitle": "Женщина"};
     - const toggle = {"name": "toggle", "id": "toggle1", "class": 'toggle', "labelClass": "", "value": false, "labelTitle": "Получать спецпредложения"};
 
-
     - const likeBtn = {"name": "like-btn", "id": "like-btn", "class": '', "labelClass": "", "value": false, "labelTitle": "2"};
-
-    - const rateBtn = {"name": "rate-btn", "id": "rate-btn", "class": '', "labelClass": "", "value": '1'};
-    - const rateBtn2 = {"name": "rate-btn", "id": "rate-btn2", "class": '', "labelClass": "", "value": '2'};
-    - const rateBtn3 = {"name": "rate-btn", "id": "rate-btn3", "class": '', "labelClass": "", "value": '3'};
-    - const rateBtn4 = {"name": "rate-btn", "id": "rate-btn4", "class": '', "labelClass": "", "value": '4'};
-    - const rateBtn5 = {"name": "rate-btn", "id": "rate-btn5", "class": '', "labelClass": "", "value": '5'};
 
     - const range = {"name": "range", "class": '', "labelClass": "", "labelTitle": "Range Slider", "minPrice": "0", "maxPrice": "20000"};
 
@@ -102,17 +95,11 @@ block content
                 .block-item__wrap
                     h3 rate button
                     .block-item__rate
-                        .form__item.form__item-rating
-                            +rateBtn(rateBtn5)
-                            +rateBtn(rateBtn4)
-                            +rateBtn(rateBtn3)
-                            +rateBtn(rateBtn2)
-                            +rateBtn(rateBtn)
+                        +rateBtn(5, 2)
 
             .block-item
                 .block-item__wrap
-                    .form__item.form__item-range
-                        +range(range)
+                    +range(range)
                 .block-item__wrap
                     h3 Buttons
                     +button('', 'Click me')
@@ -125,3 +112,13 @@ block content
                 .block-item__wrap
                     h3 Pagination
                     +pagination(4, 1, 4, 14, arrows)
+
+        .block-wrap
+            .block-item
+                .block-item__wrap
+
+            .block-item
+                .block-item__wrap
+
+            .block-item
+                .block-item__wrap

@@ -1,22 +1,22 @@
-.label {
-  z-index: 1;
-  position: relative;
-  overflow: hidden;
-  display: block;
-  margin-bottom: 20px;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 12px;
-  text-transform: uppercase;
-  .label-right {
-    float: right;
-    color: $mainColor50;
-    text-align: right;
-    font-weight: 400;
-  }
-}
-
 .form__item-range {
+  .label {
+    z-index: 1;
+    position: relative;
+    overflow: hidden;
+    display: block;
+    margin-bottom: 20px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    .label-right {
+      float: right;
+      color: $mainColor50;
+      text-align: right;
+      font-weight: 400;
+    }
+  }
+
   .irs--round {
     height: auto;
     cursor: pointer;

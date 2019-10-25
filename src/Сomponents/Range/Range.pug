@@ -1,9 +1,10 @@
 mixin range(attrs)
-  label(for= attrs.inputID, class= 'label')
-    span.label-left= attrs.labelTitle
-    if attrs.labelTitleRight
-    span.label-right.label-wrap
-      span(class= "label-right__number label-right__number-min")= attrs.minPrice
-      span= " - "
-      span(class= "label-right__number label-right__number-max")= attrs.maxPrice
-  input(type= "text", name= attrs.name, class= "js-range-slider " + attrs.class, data-min= attrs.minPrice, data-max= attrs.maxPrice)
+  .form__item.form__item-range
+    label(for= attrs.inputID, class= 'label')
+      span.label-left= attrs.labelTitle
+      if attrs.labelTitleRight
+      span.label-right.label-wrap
+        span(class= "label-right__number label-right__number-min")= attrs.minPrice
+        span= " - "
+        span(class= "label-right__number label-right__number-max")= attrs.maxPrice
+    input(type= "text", name= attrs.name, class= "js-range-slider " + attrs.class, data-min= attrs.minPrice, data-max= attrs.maxPrice)
