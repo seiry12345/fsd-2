@@ -10,7 +10,6 @@
   width: 24px;
   height: 24px;
   margin-right: 5px;
-  cursor: pointer;
 
   &:last-child {
     margin-right: 0;
@@ -24,6 +23,14 @@
 
     path {
       fill: transparent;
+    }
+  }
+
+  &.filled {
+    svg {
+      path {
+        fill: url(#paint0_linear);
+      }
     }
   }
 }
