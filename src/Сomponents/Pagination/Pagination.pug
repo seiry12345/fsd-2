@@ -1,0 +1,26 @@
+mixin pagination(amount, active, ellipsis, last, arrows)
+    nav.pagination
+        if (arrows === arrows)
+            a(href="#").pagination__controls.pagination__prev.icon-pagination-prev.pagination__controls--hidden
+                i.material-icons arrow_back
+        ul.pagination__list
+            //- before ellipsis
+            - for (var index = 1; index <= amount; index++)
+            if (index === active)
+                li.pagination__item.is-active
+                    a(href="#").pagination__number= index
+            else if (index === ellipsis)
+                li.pagination__item
+                    a(href="#").pagination__number.is-collapsed ...
+            else
+                li.pagination__item
+                    a(href="#").pagination__number= index
+            //- after ellipsis
+            - for (var index = amount + 1; index <= last; index++)
+            li.pagination__item
+                a(href="#").pagination__number= index
+
+        if (arrows === arrows)
+            a(href="#").pagination__controls.pagination__next.icon-pagination-next
+                i.material-icons arrow_forward
+    p(class="pagination__sub")= `${active} – ${last} из 100+ вариантов аренды`
