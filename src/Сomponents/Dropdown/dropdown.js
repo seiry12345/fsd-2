@@ -18,23 +18,53 @@ function toggleDropdown(event) {
 
 // add value
 function increment(event) {
-  const target = event.target
-  let valueContainer = target.previousElementSibling
-  let value = target.previousElementSibling.textContent
+  const target = $(event.target)
+  let value
+  let text = target.prev().text()
 
-  value = Number(value) + 1
-  valueContainer.innerText = value
+  // put value to container
+  value = Number(text) + 1
+  target.prev().text(value)
+
+  // show clear btn
+  if (target.parents('.dropdown-items').find('.dropdown__clear').length) {
+    const clearBtn = target.parents('.dropdown-items').find('.dropdown__clear')
+
+    if (value === 1 && !clearBtn.hasClass('dropdown__clear--active')) {
+      clearBtn.addClass('dropdown__clear--active')
+    }
+  }
 }
 
 // minus value
 function decrement(event) {
-  const target = event.target
-  let valueContainer = target.nextElementSibling
-  let value = target.nextElementSibling.textContent
+  const target = $(event.target)
+  let value
+  let text = target.next().text()
 
-  if (value > 0) {
-    value = Number(value) - 1
-    valueContainer.innerText = value
+
+  // put value to container
+  if (text > 0) {
+    value = Number(text) - 1
+    target.next().text(value)
+  }
+
+  // hide clear btn
+  if (target.parents('.dropdown-items').find('.dropdown__clear').length) {
+    const clearBtn = target.parents('.dropdown-items').find('.dropdown__clear')
+
+    if (value === 0) {
+      let result = 0
+      const values = target.parents('.dropdown-items').find('.dropdown-controls__value')
+
+      values.each((i, value) => {
+        result += Number($(value).text())
+      })
+
+      if (result === 0) {
+        clearBtn.removeClass('dropdown__clear--active')
+      }
+    }
   }
 }
 
@@ -58,7 +88,8 @@ function clear() {
   dropdown.textContent = dropdownFirstText
 }
 
-function submit() {
+function submit(event) {
+  const target = event.target
   let values = document.querySelectorAll('.dropdown-controls__value')
   let output = 0
   let babies = 0
@@ -90,30 +121,35 @@ function submit() {
 // --- --- ---
 
 // events
-// toggle dropdown
 $('.dropdown').click(function(event) {
   toggleDropdown(event)
 })
 
 $('.dropdown-controls__btn-plus').on('click mousedown mouseup mouseleave', function(event) {
+  event.type === 'mousedown' ? isDown = true : isDown = false
+
   if (event.type === 'click') {
     increment(event)
   }
 
-  event.type === 'mousedown' ? isDown = true : isDown = false
   mousepress(function() {
     increment(event)
   }, 200)
 })
 
 $('.dropdown-controls__btn-minus').on('click mousedown mouseup mouseleave', function(event) {
+  event.type === 'mousedown' ? isDown = true : isDown = false
+
   if (event.type === 'click') {
     decrement(event)
   }
 
-  event.type === 'mousedown' ? isDown = true : isDown = false
   mousepress(function() {
     decrement(event)
   }, 200)
+})
+
+$('.dropdown__submit').on('click', function(event) {
+  submit(event)
 })
 // --- --- ---
