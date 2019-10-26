@@ -1,77 +1,50 @@
-const body = document.querySelector('body')
-const dropdown = document.querySelector('.dropdown')
-const dropdownFirstText = dropdown.textContent
-const dropdownItem = document.querySelectorAll('.dropdown-item')
-const clearBtn = document.querySelector('.dropdown__clear')
-const submitBtn = document.querySelector('.dropdown__submit')
+let isDown = false
+let mouseTimer
 
 // functions
+// склонения
 function declOfNum(number, titles) {
   cases = [2, 0, 1, 1, 1, 2]
   return titles[(number % 100 > 4 && number % 100 < 20) ? 2 : cases[(number % 10 < 5) ? number % 10 : 5]]
 }
 
-function showItems(event) {
-  const item = event.target.parentNode
+function toggleDropdown(event) {
+  const item = $(event.target).parent()
 
-  if (event.target.classList.contains('dropdown')) {
-    item.classList.toggle('dropdown--active')
+  if ($(event.target).hasClass('dropdown')) {
+    item.toggleClass('dropdown--active')
   }
 }
 
-function hideItems() {
-  const activeItems = document.querySelectorAll('.dropdown--active')
+// add value
+function increment(event) {
+  const target = event.target
+  let valueContainer = target.previousElementSibling
+  let value = target.previousElementSibling.textContent
 
-  activeItems.forEach(item => {
-    item.classList.remove('dropdown--active')
-  })
+  value = Number(value) + 1
+  valueContainer.innerText = value
 }
 
-function add(target) {
-  const parent = target.parentNode
-  const clearBtn = target.parentNode.parentNode.parentNode.parentNode
+// minus value
+function decrement(event) {
+  const target = event.target
+  let valueContainer = target.nextElementSibling
+  let value = target.nextElementSibling.textContent
 
-  // show clear btn
-  let arr = Array.from(clearBtn.children)
-  arr.forEach((child) => {
-    if (child.classList.contains('dropdown__btns') && !child.children[0].classList.contains('dropdown__clear--active')) {
-      child.children[0].classList.add('dropdown__clear--active')
-    }
-  })
-
-  // plus to value
-  if (parent.classList.contains('dropdown-controls__btn-plus')) {
-    let value = parent.parentNode.children[1]
-    let text = parent.parentNode.children[1].innerText
-
-    text = parseInt(text)
-    text++
-    value.innerText = text
+  if (value > 0) {
+    value = Number(value) - 1
+    valueContainer.innerText = value
   }
 }
 
-function minus(target) {
-  const parent = target.parentNode
-  const clearBtn = target.parentNode.parentNode.parentNode.parentNode
-
-  if (parent.classList.contains('dropdown-controls__btn-minus')) {
-    let value = parent.parentNode.children[1]
-    let text = parent.parentNode.children[1].innerText
-    let arr = Array.from(clearBtn.children)
-
-    // hide clear btn
-    arr.forEach((child) => {
-      if (child.classList.contains('dropdown__btns') && child.children[0].classList.contains('dropdown__clear--active') ) {
-        child.children[0].classList.remove('dropdown__clear--active')
-      }
-    })
-
-    // minus value
-    if (text > 0) {
-      text = parseInt(text)
-      text--
-      value.innerText = text
-    }
+// mousepress imitation
+function mousepress(callback, delay) {
+  if (isDown) {
+    mouseTimer = setInterval(callback, delay)
+  } else {
+    clearInterval(mouseTimer)
+    return false
   }
 }
 
@@ -118,22 +91,29 @@ function submit() {
 
 // events
 // toggle dropdown
-body.addEventListener('click', function(event) {
-  showItems(event)
+$('.dropdown').click(function(event) {
+  toggleDropdown(event)
 })
 
-// dropdown controls click clack
-dropdownItem.forEach(function(item) {
-  item.addEventListener('click', function(event) {
-    const target = event.target
-    add(target)
-    minus(target)
-  })
+$('.dropdown-controls__btn-plus').on('click mousedown mouseup mouseleave', function(event) {
+  if (event.type === 'click') {
+    increment(event)
+  }
+
+  event.type === 'mousedown' ? isDown = true : isDown = false
+  mousepress(function() {
+    increment(event)
+  }, 200)
 })
 
-// clear btn
-clearBtn.addEventListener('click', clear)
+$('.dropdown-controls__btn-minus').on('click mousedown mouseup mouseleave', function(event) {
+  if (event.type === 'click') {
+    decrement(event)
+  }
 
-// submit btn
-submitBtn.addEventListener('click', submit)
+  event.type === 'mousedown' ? isDown = true : isDown = false
+  mousepress(function() {
+    decrement(event)
+  }, 200)
+})
 // --- --- ---

@@ -105,6 +105,7 @@
   z-index: 1;
   width: 30px;
   height: 30px;
+  background-color: transparent;
   color: $mainColor25;
   font-size: 14px;
   border: 1px solid;
@@ -126,23 +127,31 @@
     justify-content: center;
     font-size: inherit;
   }
-  h3, .h3 {
-    margin: 0;
-  }
+}
+
+.dropdown-controls__value {
+  min-width: 16px;
+  margin: 0;
+  text-align: center;
 }
 
 .dropdown__btns {
   overflow: hidden;
   width: 100%;
   margin-top: 20px;
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
+  .dropdown__clear,
+  .dropdown__submit {
+    background-color: transparent;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 0;
+    cursor: pointer;
+  }
   .dropdown__clear {
     display: none;
     float: left;
     color: $mainColor50;
-    cursor: pointer;
     &--active {
       display: block;
     }
@@ -150,7 +159,6 @@
   .dropdown__submit {
     float: right;
     color: $purple;
-    cursor: pointer;
   }
 }
 
