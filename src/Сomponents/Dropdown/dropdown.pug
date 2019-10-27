@@ -1,5 +1,5 @@
 mixin dropdown(attrs, items)
-  .form-item.form-item__dropdown.dropdown--active
+  .form-item.form-item__dropdown
     if attrs
       label(for= attrs.id, class= 'label-dropdown')
         span.label-left= attrs.labelTitle
@@ -18,9 +18,7 @@ mixin dropdown(attrs, items)
 
                 button(type="button", class="dropdown-controls__btn dropdown-controls__btn-plus")
                   <i class="material-icons">add</i>
-          .dropdown__btns
-            button(type="button", class="dropdown__clear") Очистить
-            button(type="submit", class="dropdown__submit") Применить
-    else
-      button(type= 'button', class=`dropdown ${attrs.class}`, id= attrs.id)= attrs.placeholder
-      .dropdown-items
+          if (attrs.dropdownBtns)
+            .dropdown__btns
+              button(type="button", class="dropdown__clear") Очистить
+              button(type="submit", class="dropdown__submit") Применить

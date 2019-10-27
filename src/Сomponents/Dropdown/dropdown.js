@@ -1,5 +1,6 @@
 let isDown = false
 let mouseTimer
+let originText
 
 // functions
 // склонения
@@ -22,6 +23,11 @@ function increment(event) {
   let value
   let text = target.prev().text()
 
+  //store origin text
+  if (originText == undefined) {
+    originText = target.parents('.form-item__dropdown').find('.dropdown').text()
+  }
+
   // put value to container
   value = Number(text) + 1
   target.prev().text(value)
@@ -34,6 +40,8 @@ function increment(event) {
       clearBtn.addClass('dropdown__clear--active')
     }
   }
+
+  // return originText
 }
 
 // minus value
@@ -78,28 +86,31 @@ function mousepress(callback, delay) {
   }
 }
 
-function clear() {
-  let values = document.querySelectorAll('.dropdown-controls__value')
+function clear(event) {
+  const target = $(event.target)
+  const dropdown = target.parents('.form-item__dropdown').find('.dropdown')
+  let values = target.parents('.form-item__dropdown').find('.dropdown-controls__value')
 
-  values.forEach((value) => {
-    value.textContent = '0'
+  values.each((i, value) => {
+    $(value).text(0)
   })
 
-  dropdown.textContent = dropdownFirstText
+  dropdown.text(originText)
 }
 
 function submit(event) {
-  const target = event.target
-  let values = document.querySelectorAll('.dropdown-controls__value')
+  const target = $(event.target)
+  let values = target.parents('.dropdown-items').find('.dropdown-controls__value')
+  let result
   let output = 0
   let babies = 0
 
   // gather our data
-  values.forEach((value) => {
-    if (value.parentNode.previousElementSibling.classList.contains('separate')) {
-      babies += Number(value.textContent)
+  values.each((i, value) => {
+    if ($(value).parent().prev().hasClass('separate')) {
+      babies += Number($(value).text())
     } else {
-      output += Number(value.textContent)
+      output += Number($(value).text())
     }
   })
 
@@ -109,12 +120,15 @@ function submit(event) {
 
     if (babies > 0) {
       const babiesText = declOfNum(babies, ['младенец', 'младенца', 'младенцев'])
-      this.parentNode.parentNode.previousElementSibling.textContent = output + ' ' + outputText + ', ' + babies + ' ' + babiesText
+
+      result =  output + ' ' + outputText + ', ' + babies + ' ' + babiesText
+      target.parents('.form-item__dropdown').find('.dropdown').text(result)
     } else {
-      this.parentNode.parentNode.previousElementSibling.textContent = output + ' ' + outputText
+      result = output + ' ' + outputText
+      target.parents('.form-item__dropdown').find('.dropdown').text(result)
     }
 
-    this.parentNode.parentNode.parentNode.classList.remove('dropdown--active')
+    target.parents('.form-item__dropdown').find('.dropdown').removeClass('dropdown--active')
   }
 }
 
@@ -149,7 +163,11 @@ $('.dropdown-controls__btn-minus').on('click mousedown mouseup mouseleave', func
   }, 200)
 })
 
-$('.dropdown__submit').on('click', function(event) {
+$('.dropdown__submit').click(function(event) {
   submit(event)
+})
+
+$('.dropdown__clear').click(function(event) {
+  clear(event)
 })
 // --- --- ---
