@@ -2,6 +2,7 @@ extends ../../layouts/ui-kit.pug
 
 include ../../Сomponents/Input/Input.pug
 include ../../Сomponents/Dropdown/Dropdown.pug
+include ../../Сomponents/Dropdown-date/Dropdown-date
 include ../../Сomponents/Checkbox/Checkbox.pug
 include ../../Сomponents/Radio/Radio.pug
 include ../../Сomponents/Toggle/Toggle.pug
@@ -13,20 +14,13 @@ include ../../Сomponents/Pagination/Pagination.pug
 
 block content
   - const inputEmailAttrs = {"inputType": "email", "inputName": "email", "inputID": "email", "inputClass": "", "inputPlaceholder": "Email", "inputValue": false, "labelTitle": "Text Field", "labelTitleRight": "Default"};
-  //- add selectors for date picker
-  - const dropDate = {"inputType": "date", "inputName": "date", "inputID": "date1", "inputClass": "", "inputPlaceholder": "ДД.ММ.ГГГГ", "inputValue": false, "labelTitle": "date Dropdown"};
-  - const dropDate2 = {"inputType": "date", "inputName": "date", "inputID": "date2", "inputClass": "", "inputPlaceholder": "ДД.ММ.ГГГГ", "inputValue": false, "labelTitle": "date Dropdown"};
 
-  -const dropdownGuests = {"class": "", "id": "dropdown-guests", "placeholder": "Сколько гостей?", "labelTitle": "Dropdown", "labelTitleRight": "Default", "dropdownBtns": "true"};
-  -const dropdownGuestsItems = [{"text": "Взрослые", "class": ""}, {"text": "Дети", "class": ""}, {"text": "Младенцы", "class": "separate"}];
+  - const masked = {"id": "date-masked", "formItemClass": "", "inputPlaceholder": "ДД.ММ.ГГГГ", "labelTitle": "masked text field", "labelTitleRight": "Default"};
 
-  -const dropdownGuests2 = {"class": "", "id": "dropdown-guests2", "placeholder": "Сколько гостей?", "labelTitle": "Dropdown", "labelTitleRight": "Default", "dropdownBtns": "true"};
+  - const dropdownRange = {"id1": "date1", "id2": "date2", "formItemClass": "", "labelTitle1": "date Dropdown", "labelTitle2": "date Dropdown"};
 
-  - const masked = {"inputType": "date", "inputName": "masked", "inputID": "", "inputClass": "", "inputPlaceholder": "ДД.ММ.ГГГГ", "inputValue": false, "labelTitle": "masked text field", "labelTitleRight": "Default"};
-
-  -const dropdownDate = {'type': 'date',"class": "", "id": "dropdown-date", "placeholder": "ММ.ДД.ГГГГ", "labelTitle": "date Dropdown"};
-
-  -const dropdownRangeDate = {'type': 'date',"class": "input--width266", "id": "dropdown-range-date", "placeholder": "current date", "labelTitle": "filter date dropdown"};
+  - const dropdownGuests = {"class": "", "id": "dropdown-guests", "placeholder": "Сколько гостей?", "labelTitle": "Dropdown", "labelTitleRight": "Default", "dropdownBtns": "true"};
+  - const dropdownGuestsItems = [{"text": "Взрослые", "class": ""}, {"text": "Дети", "class": ""}, {"text": "Младенцы", "class": "separate"}];
 
   - const inputSubscribe = {"inputType": "email", "inputName": "email", "inputID": "subscribe", "inputClass": '', "inputPlaceholder": "Email", "inputValue": false, "labelTitle": "subscription text field", "inputWrap": "subscribe input-wrap--width266"};
 
@@ -50,21 +44,9 @@ block content
 
         +dropdown(dropdownGuests, dropdownGuestsItems)
 
-        .form-item
-          //+input(masked)
+        +dropdownDate(masked)
 
-        .form-item.form-item__wrap
-          div
-            //+input(dropDate)
-          div
-            //+input(dropDate2)
-
-        .form-item__wrap.block-item--bmargin
-          .form-item.form-item__date
-            //+dropdown(dropdownDate, false, true)
-
-        .form-item.form-item__range-date
-          //+dropdown(dropdownRangeDate, false, true)
+        +dropdownDate(dropdownRange, range)
 
         .form-item.form-item__subscribe.form-item--width266
           +input(inputSubscribe)

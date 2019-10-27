@@ -1,0 +1,22 @@
+mixin dropdownDate(attrs, range)
+  div(class="form-item form-item__date " + attrs.formItemClass)
+    if attrs
+
+      if (range)
+        .dropdown-date__wrap
+          .dropdown-date__item
+            label(for= attrs.id, class= 'label-date')
+              span.label-left= attrs.labelTitle1
+            input(type="text", class="datepicker-here dropdown-date__start", id= attrs.id1)
+
+          .dropdown-date__item
+            label(for= attrs.id, class= 'label-date')
+              span.label-left= attrs.labelTitle2
+            input(type="text", class="datepicker-here dropdown-date__end", id= attrs.id2)
+      else
+        label(for= attrs.id, class= 'label-date')
+          span.label-left= attrs.labelTitle
+          if attrs.labelTitleRight
+            span.label-right= attrs.labelTitleRight
+        .dropdown-date__item
+          input(type="text", class="datepicker-here", id= attrs.id)

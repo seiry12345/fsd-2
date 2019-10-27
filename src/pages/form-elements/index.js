@@ -11,7 +11,6 @@ import '../../Сomponents/Checkbox/checkbox.scss';
 import '../../Сomponents/Dropdown/dropdown.scss';
 import '../../Сomponents/Dropdown/dropdown';
 import '../../Сomponents/Like-btn/like-btn.scss';
-import '../../Сomponents/Range/range.scss';
 import '../../Сomponents/Radio/radio.scss';
 import '../../Сomponents/Rate-btn/rate-btn.scss';
 import '../../Сomponents/Toggle/toggle.scss';
@@ -23,5 +22,11 @@ import 'jquery/dist/jquery.min'
 
 // ion range slider
 import 'ion-rangeslider/css/ion.rangeSlider.min.css'
+import '../../Сomponents/Range/range.scss';
 import 'ion-rangeslider/js/ion.rangeSlider.min'
 import '../../Сomponents/Range/range-js'
+
+// date picker
+import 'air-datepicker/dist/css/datepicker.min.css'
+import '../../Сomponents/Dropdown-date/dropdown-date.scss'
+import 'air-datepicker/dist/js/datepicker.min'

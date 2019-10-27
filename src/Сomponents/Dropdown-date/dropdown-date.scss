@@ -1,0 +1,64 @@
+.label-date {
+  overflow: hidden;
+  display: block;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+
+  .label-right {
+    float: right;
+    color: $mainColor50;
+    text-align: right;
+    font-weight: 400;
+  }
+}
+
+.dropdown-date__wrap {
+  display: flex;
+  justify-content: space-between;
+
+  .dropdown-date__item {
+    position: relative;
+    z-index: 1;
+    max-width: 150px;
+
+    &:before {
+      content: 'keyboard_arrow_down';
+      @extend .material-icons;
+      z-index: -1;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      color: inherit;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+.dropdown-date__item {
+  input {
+    display: block;
+    width: 100%;
+    padding: 13px 15px;
+    padding-right: 44px;
+    background: #ffffff;
+    color: $mainColor75;
+    text-align: left;
+    border: 1px solid $mainColor25;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $mainColor75;
+      border-color: inherit;
+    }
+  }
+}
