@@ -1,22 +1,29 @@
-mixin dropdownDate(attrs, range)
+mixin dropdownDate(attrs, range, filter)
   div(class="form-item form-item__date " + attrs.formItemClass)
-    if attrs
+    if (range)
+      .dropdown-date__wrap
+        .dropdown-date__item.dropdown-date__item-range
+          label(for= attrs.id, class= 'label-date')
+            span.label-left= attrs.labelTitle1
+          input(type="text", class="dropdown-date__input dropdown-date__start", id= attrs.id1, placeholder="ДД.ММ.ГГГГ")
 
-      if (range)
-        .dropdown-date__wrap
-          .dropdown-date__item
-            label(for= attrs.id, class= 'label-date')
-              span.label-left= attrs.labelTitle1
-            input(type="text", class="datepicker-here dropdown-date__start", id= attrs.id1, placeholder="ДД.ММ.ГГГГ")
-
-          .dropdown-date__item
-            label(for= attrs.id, class= 'label-date')
-              span.label-left= attrs.labelTitle2
-            input(type="text", class="datepicker-here dropdown-date__end", id= attrs.id2, placeholder="ДД.ММ.ГГГГ")
-      else
-        label(for= attrs.id, class= 'label-date')
-          span.label-left= attrs.labelTitle
-          if attrs.labelTitleRight
-            span.label-right= attrs.labelTitleRight
         .dropdown-date__item
-          input(type="text", class="datepicker-here", id= attrs.id, placeholder="ДД.ММ.ГГГГ")
+          label(for= attrs.id, class= 'label-date')
+            span.label-left= attrs.labelTitle2
+          input(type="text", class="dropdown-date__input dropdown-date__end", id= attrs.id2, placeholder="ДД.ММ.ГГГГ")
+
+    else if (filter)
+      label(for= attrs.id, class= 'label-date')
+        span.label-left= attrs.labelTitle
+        if attrs.labelTitleRight
+          span.label-right= attrs.labelTitleRight
+      .dropdown-date__item.dropdown-date__item-filter
+        input(type="text", class="dropdown-date__input datepicker-here", id= attrs.id, placeholder="ДД.ММ.ГГГГ")
+
+    else
+      label(for= attrs.id, class= 'label-date')
+        span.label-left= attrs.labelTitle
+        if attrs.labelTitleRight
+          span.label-right= attrs.labelTitleRight
+      .dropdown-date__item
+        input(type="text", class="dropdown-date__input datepicker-here", id= attrs.id, placeholder="ДД.ММ.ГГГГ")
