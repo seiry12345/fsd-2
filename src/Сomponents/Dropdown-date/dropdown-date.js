@@ -1,0 +1,1 @@
+$('.datepicker-here').inputmask({alias: "99.99.9999"})

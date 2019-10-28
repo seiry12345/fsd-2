@@ -26,7 +26,12 @@ import '../../Сomponents/Range/range.scss';
 import 'ion-rangeslider/js/ion.rangeSlider.min'
 import '../../Сomponents/Range/range-js'
 
+// mask date
+import 'inputmask/css/inputmask.css'
+import 'inputmask/dist/inputmask/jquery.inputmask'
+
 // date picker
 import 'air-datepicker/dist/css/datepicker.min.css'
 import '../../Сomponents/Dropdown-date/dropdown-date.scss'
 import 'air-datepicker/dist/js/datepicker.min'
+import '../../Сomponents/Dropdown-date/dropdown-date'
