@@ -18,19 +18,5 @@
   svg {
     width: 100%;
     height: 100%;
-    stroke: $purple;
-    transition: all 0.3s ease;
-
-    path {
-      fill: transparent;
-    }
-  }
-
-  &.filled {
-    svg {
-      path {
-        fill: url(#paint0_linear);
-      }
-    }
   }
 }
