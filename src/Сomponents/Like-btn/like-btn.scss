@@ -2,6 +2,7 @@
   .like-btn {
     display: none;
   }
+
   .like-btn {
     z-index: 1;
     position: relative;
@@ -18,6 +19,7 @@
     border-radius: 10px;
     transition: all 0.3s ease;
     cursor: pointer;
+
     &:before,
     &:after {
       opacity: 0;
@@ -31,25 +33,36 @@
       transform: translateY(-50%);
       transition: opacity 0.3s ease;
     }
+
     &:before {
       opacity: 1;
       content: 'favorite_border';
     }
+
     &:after {
       content: 'favorite';
     }
+
     &:hover,
     &:active,
-    &:focus {
+    &:focus,
+    &--disabled {
       color: $purple;
+
       &:before {
         opacity: 0;
       }
+
       &:after {
         opacity: 1;
       }
     }
+
+    &--disabled {
+      pointer-events: none;
+    }
   }
+
   input {
     display: none;
   }

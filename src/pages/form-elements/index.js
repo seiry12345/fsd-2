@@ -20,6 +20,9 @@ import '../../Сomponents/Pagination/pagination.scss';
 // jquery
 import 'jquery/dist/jquery.min'
 
+// like btn
+import '../../Сomponents/Like-btn/like-btn';
+
 // ion range slider
 import 'ion-rangeslider/css/ion.rangeSlider.min.css'
 import '../../Сomponents/Range/range.scss';
