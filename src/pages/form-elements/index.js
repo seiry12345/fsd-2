@@ -33,6 +33,8 @@ import '../../Сomponents/Like-btn/like-btn';
 import '../../Сomponents/Checkbox-expandable/Checkbox-expandable.scss';
 import '../../Сomponents/Checkbox-expandable/Checkbox-expandable';
 
+import '../../Сomponents/Checkbox-rich/Checkbox-rich.scss';
+
 // jquery
 import 'jquery/dist/jquery.min';
 

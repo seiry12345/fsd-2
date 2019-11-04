@@ -12,6 +12,7 @@ include ../../Сomponents/Range/Range.pug
 include ../../Сomponents/Button/Button.pug
 include ../../Сomponents/Pagination/Pagination.pug
 include ../../Сomponents/Checkbox-expandable/Checkbox-expandable.pug
+include ../../Сomponents/Checkbox-rich/Checkbox-rich.pug
 
 block content
   - const inputEmailAttrs = {"inputType": "email", "inputName": "email", "inputID": "email", "inputClass": "", "inputPlaceholder": "Email", "inputValue": false, "labelTitle": "Text Field", "labelTitleRight": "Default"};
@@ -38,8 +39,8 @@ block content
 
   - const checkboxExpItems = [{"name": "breakfast", "text": 'Завтрак'}, {"name": "writing-table", "text": 'Письменный стол'}, {"name": "table-for-eating", "text": 'Стул для кормления'}, {"name": "bad", "text": 'Кроватка'}, {"name": "tv", "text": 'Телевизор'}, {"name": "schampoo", "text": 'Шампунь'}, {"name": "tv2", "text": 'Телевизор'}, {"name": "schampoo2", "text": 'Шампунь'}];
 
-  - const checkboxRich = {"name": "checkboxRich", "id": "checkbox3", "class": '', "labelClass": "", "value": false, "labelTitle": "Широкий коридор", "description": "Ширина коридоров в номере не менее 91 см."};
-  - const checkboxRich2 = {"name": "checkboxRich2", "id": "checkbox4", "class": '', "labelClass": "", "value": false, "labelTitle": "Помощник для инвалидов", "description": "На 1 этаже вас встретит специалист  и проводит до номера."};
+  - const checkboxRich = {"name": "checkboxRich", "id": "checkboxRich", "title": "Широкий коридор", "description": "Ширина коридоров в номере не менее 91 см."};
+  - const checkboxRich2 = {"name": "checkboxRich2", "id": "checkboxRich2", "title": "Помощник для инвалидов", "description": "На 1 этаже вас встретит специалист  и проводит до номера."};
 
 
 
@@ -117,6 +118,7 @@ block content
         +checkboxExpandable('expandable checkbox list', checkboxExpItems)
 
       .block-item
-
+        +checkboxRich(checkboxRich)
+        +checkboxRich(checkboxRich2)
 
       .block-item
