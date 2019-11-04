@@ -14,7 +14,9 @@ include ../../Сomponents/Pagination/Pagination.pug
 
 block content
   - const inputEmailAttrs = {"inputType": "email", "inputName": "email", "inputID": "email", "inputClass": "", "inputPlaceholder": "Email", "inputValue": false, "labelTitle": "Text Field", "labelTitleRight": "Default"};
-  - const dropdownGuests = {"class": "", "id": "dropdown-guests", "placeholder": "Сколько гостей?", "labelTitle": "Dropdown", "labelTitleRight": "Default", "dropdownBtns": "true"};
+  - const dropdownGuests = {"class": "", "id": "dropdown-guests", "placeholder": "Сколько гостей?", "labelTitle": "Dropdown", "labelTitleRight": "Default", "dropdownBtns": true};
+  - const dropdownGuests2 = {"class": "", "id": "dropdown-guests2", "placeholder": "Сколько гостей?", "labelTitle": "Dropdown", "labelTitleRight": false, "dropdownBtns": false};
+  - const dropdownGuests3 = {"class": "", "id": "dropdown-guests2", "placeholder": "Сколько гостей?", "labelTitle": "Dropdown", "labelTitleRight": false, "dropdownBtns": true};
   - const dropdownGuestsItems = [{"text": "Взрослые", "class": ""}, {"text": "Дети", "class": ""}, {"text": "Младенцы", "class": "separate"}];
 
   - const masked = {"id": "date-masked", "formItemClass": "", "inputPlaceholder": "ДД.ММ.ГГГГ", "labelTitle": "masked text field", "labelTitleRight": "Default"};
@@ -48,8 +50,6 @@ block content
 
         .form-item.form-item__subscribe.form-item--width266
           +input(inputSubscribe)
-
-
 
       .block-item
         .block-item__wrap
@@ -95,10 +95,10 @@ block content
 
     .block-wrap
       .block-item
-        .block-item__wrap
+        +dropdown(dropdownGuests2, dropdownGuestsItems)
 
       .block-item
-        .block-item__wrap
+        +dropdown(dropdownGuests2, dropdownGuestsItems)
 
       .block-item
-        .block-item__wrap
+        +dropdown(dropdownGuests3, dropdownGuestsItems)
