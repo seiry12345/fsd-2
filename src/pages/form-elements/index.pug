@@ -11,6 +11,7 @@ include ../../Сomponents/Rate-btn/Rate-btn.pug
 include ../../Сomponents/Range/Range.pug
 include ../../Сomponents/Button/Button.pug
 include ../../Сomponents/Pagination/Pagination.pug
+include ../../Сomponents/Checkbox-expandable/Checkbox-expandable.pug
 
 block content
   - const inputEmailAttrs = {"inputType": "email", "inputName": "email", "inputID": "email", "inputClass": "", "inputPlaceholder": "Email", "inputValue": false, "labelTitle": "Text Field", "labelTitleRight": "Default"};
@@ -34,6 +35,11 @@ block content
   - const likeBtn = {"name": "like-btn", "id": "like-btn", "class": '', "labelClass": "", "value": false, "labelTitle": "2"};
 
   - const rangeSlider = {"name": "range", "class": '', "labelClass": "", "labelTitle": "Range Slider", "minPrice": "0", "maxPrice": "20000"};
+
+  - const checkboxExpItems = [{"name": "breakfast", "text": 'Завтрак'}, {"name": "writing-table", "text": 'Письменный стол'}, {"name": "table-for-eating", "text": 'Стул для кормления'}, {"name": "bad", "text": 'Кроватка'}, {"name": "tv", "text": 'Телевизор'}, {"name": "schampoo", "text": 'Шампунь'}, {"name": "tv2", "text": 'Телевизор'}, {"name": "schampoo2", "text": 'Шампунь'}];
+
+  - const checkboxRich = {"name": "checkboxRich", "id": "checkbox3", "class": '', "labelClass": "", "value": false, "labelTitle": "Широкий коридор", "description": "Ширина коридоров в номере не менее 91 см."};
+  - const checkboxRich2 = {"name": "checkboxRich2", "id": "checkbox4", "class": '', "labelClass": "", "value": false, "labelTitle": "Помощник для инвалидов", "description": "На 1 этаже вас встретит специалист  и проводит до номера."};
 
 
 
@@ -102,3 +108,15 @@ block content
 
       .block-item
         +dropdown(dropdownGuests3, dropdownGuestsItems)
+
+
+
+
+    .block-wrap
+      .block-item
+        +checkboxExpandable('expandable checkbox list', checkboxExpItems)
+
+      .block-item
+
+
+      .block-item

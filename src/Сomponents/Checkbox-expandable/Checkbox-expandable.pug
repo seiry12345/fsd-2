@@ -1,0 +1,9 @@
+mixin checkboxExpandable(title, items)
+  .form__item.form__item-checkbox-expandable
+    h3(class="checkbox__title")= title
+    .checkbox__list
+      each item in items
+        .checkbox__list-item
+          input(type= "checkbox", name= item.name, id= item.name, class= "checkbox__list-input")
+          span(class= "checkbox__list-mark")
+          label(for= item.name, class= "checkbox__list-label")= item.text

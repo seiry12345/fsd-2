@@ -7,24 +7,37 @@ import '../../Сomponents/Ui-logo/ui-logo.scss';
 // elements
 import './index.scss';
 import '../../Сomponents/Input/input.scss';
+
 import '../../Сomponents/Checkbox/checkbox.scss';
+
 import '../../Сomponents/Dropdown/dropdown.scss';
 import '../../Сomponents/Dropdown/dropdown';
+
 import '../../Сomponents/Like-btn/like-btn.scss';
+
 import '../../Сomponents/Radio/radio.scss';
+
 import '../../Сomponents/Rate-btn/rate-btn.scss';
+
 import '../../Сomponents/Toggle/toggle.scss';
+
 import '../../Сomponents/Button/button.scss';
+
 import '../../Сomponents/Pagination/pagination.scss';
-import '../../Сomponents/Dropdown-date/dropdown-date.scss'
-import '../../Сomponents/Dropdown-date/dropdown-date'
+
+import '../../Сomponents/Dropdown-date/dropdown-date.scss';
+import '../../Сomponents/Dropdown-date/dropdown-date';
+
 import '../../Сomponents/Like-btn/like-btn';
 
+import '../../Сomponents/Checkbox-expandable/Checkbox-expandable.scss';
+import '../../Сomponents/Checkbox-expandable/Checkbox-expandable';
+
 // jquery
-import 'jquery/dist/jquery.min'
+import 'jquery/dist/jquery.min';
 
 // ion range slider
-import 'ion-rangeslider/css/ion.rangeSlider.min.css'
+import 'ion-rangeslider/css/ion.rangeSlider.min.css';
 import '../../Сomponents/Range/range.scss';
-import 'ion-rangeslider/js/ion.rangeSlider.min'
-import '../../Сomponents/Range/range-js'
+import 'ion-rangeslider/js/ion.rangeSlider.min';
+import '../../Сomponents/Range/range-js';
