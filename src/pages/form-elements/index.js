@@ -35,6 +35,8 @@ import '../../Сomponents/Checkbox-expandable/Checkbox-expandable';
 
 import '../../Сomponents/Checkbox-rich/Checkbox-rich.scss';
 
+import '../../Сomponents/Bullet-list/bullet-list.scss';
+
 // jquery
 import 'jquery/dist/jquery.min';
 

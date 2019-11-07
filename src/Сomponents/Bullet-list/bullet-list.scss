@@ -1,0 +1,32 @@
+.bullet-list,
+.bullet-list li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.bullet-list {
+  li {
+    position: relative;
+    z-index: 1;
+    padding-left: 22px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 24px;
+    color: $mainColor75;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &:before {
+      content: '';
+      z-index: -1;
+      position: absolute;
+      left: 0;
+      top: 7px;
+      width: 10px;
+      height: 10px;
+      background-color: $mainColor25;
+      border-radius: 50%;
+    }
+  }
+}
