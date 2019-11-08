@@ -37,6 +37,8 @@ import '../../Сomponents/Checkbox-rich/Checkbox-rich.scss';
 
 import '../../Сomponents/Bullet-list/bullet-list.scss';
 
+import '../../Сomponents/Advantages/advantages.scss';
+
 // jquery
 import 'jquery/dist/jquery.min';
 

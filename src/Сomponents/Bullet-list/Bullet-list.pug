@@ -1,4 +1,4 @@
-mixin bulletList(items, customSelector = false)
+mixin bulletList(items, customSelector = '')
   ul(class= "bullet-list " + customSelector)
    each item in items
     li.bullet-list__item= item.text

@@ -16,6 +16,7 @@ include ../../Сomponents/Pagination/Pagination.pug
 include ../../Сomponents/Checkbox-expandable/Checkbox-expandable.pug
 include ../../Сomponents/Checkbox-rich/Checkbox-rich.pug
 include ../../Сomponents/Bullet-list/Bullet-list.pug
+include ../../Сomponents/Advantages/Advantages.pug
 
 block content
   - const inputEmailAttrs = {"inputType": "email", "inputName": "email", "inputID": "email", "inputClass": "", "inputPlaceholder": "Email", "inputValue": false, "labelTitle": "Text Field", "labelTitleRight": "Default"};
@@ -47,65 +48,67 @@ block content
 
   - const bulletItems = [{"text": "Нельзя с питомцами"}, {"text": "Без вечеринок и мероприятий"}, {"text": "Время прибытия — после 13:00, а выезд до 12:00"}];
 
+  -const advantagesItems = [{"icon": "tag_faces", "title": "Комфорт", "text": "Шумопоглощающие стены"}, {"icon": "location_city", "title": "Удобство", "text": "Окно в каждой из спален"}]
 
 
-  .wrapper
-    .block-wrap
-      .block-item
-        .form-item.form-item__email
-          +input(inputEmailAttrs)
-        +dropdown(dropdownGuests, dropdownGuestsItems)
+  main
+    .wrapper
+      .block-wrap
+        .block-item
+          .form-item.form-item__email
+            +input(inputEmailAttrs)
+          +dropdown(dropdownGuests, dropdownGuestsItems)
 
-        +dropdownDate(masked)
-        +dropdownDate(dateRange, true, false)
-        +dropdownDate(dateFiltered, false, true)
+          +dropdownDate(masked)
+          +dropdownDate(dateRange, true, false)
+          +dropdownDate(dateFiltered, false, true)
 
-        .form-item.form-item__subscribe.form-item--width266
-          +input(inputSubscribe)
+          .form-item.form-item__subscribe.form-item--width266
+            +input(inputSubscribe)
 
-      .block-item
-        .block-item__wrap
-          h3 checkbox buttons
-          +checkbox(checkbox)
+        .block-item
+          .block-item__wrap
+            h3 checkbox buttons
+            +checkbox(checkbox)
 
-        .block-item__wrap
-          h3 radio buttons
-          .block-item__radio
-            +radio(radioMale)
-            +radio(radioFemale)
+          .block-item__wrap
+            h3 radio buttons
+            .block-item__radio
+              +radio(radioMale)
+              +radio(radioFemale)
 
-        .block-item__wrap
-          h3 toggle
-          .block-item__toggle
-            +toggle(toggle)
+          .block-item__wrap
+            h3 toggle
+            .block-item__toggle
+              +toggle(toggle)
 
-        .block-item__wrap
-          h3 Like btn
-          .block-item__toggle
-            +likeBtn(likeBtn)
+          .block-item__wrap
+            h3 Like btn
+            .block-item__toggle
+              +likeBtn(likeBtn)
 
-        .block-item__wrap
-          h3 rate button
-          .block-item__rate
-            +rateBtn(5, 4)
+          .block-item__wrap
+            h3 rate button
+            .block-item__rate
+              +rateBtn(5, 4)
 
-      .block-item
-        .block-item__wrap
-          +range(rangeSlider)
-        .block-item__wrap
-          h3 Buttons
-          +button('', 'Click me')
-        .block-item__wrap
-          +button('btn btn--transparent', 'Click me')
-        .block-item__wrap
-          a(class= "block-item__link", href= "#") Click me
-        .block-item__wrap
-          +button('btn btn--w320', 'перейти к оплате')
-        .block-item__wrap
-          h3 Pagination
-          +pagination(4, 1, 4, 14, arrows)
+        .block-item
+          .block-item__wrap
+            +range(rangeSlider)
+          .block-item__wrap
+            h3 Buttons
+            +button('', 'Click me')
+          .block-item__wrap
+            +button('btn btn--transparent', 'Click me')
+          .block-item__wrap
+            a(class= "block-item__link", href= "#") Click me
+          .block-item__wrap
+            +button('btn btn--w320', 'перейти к оплате')
+          .block-item__wrap
+            h3 Pagination
+            +pagination(4, 1, 4, 14, arrows)
 
-    .block-wrap
+      .block-wrap
       .block-item
         +dropdown(dropdownGuests2, dropdownGuestsItems)
 
@@ -118,15 +121,24 @@ block content
 
 
 
-    .block-wrap
-      .block-item
-        +checkboxExpandable('expandable checkbox list', checkboxExpItems)
+      .block-wrap
+        .block-item
+          +checkboxExpandable('expandable checkbox list', checkboxExpItems)
 
-      .block-item
-        h3 rich Checkbox Buttons
-        +checkboxRich(checkboxRich)
-        +checkboxRich(checkboxRich2)
+        .block-item
+          h3 rich Checkbox Buttons
+          +checkboxRich(checkboxRich)
+          +checkboxRich(checkboxRich2)
 
-      .block-item
-        h3 bullet list
-        +bulletList(bulletItems)
+        .block-item
+          h3 bullet list
+          +bulletList(bulletItems)
+
+
+
+      .block-wrap
+        .block-item
+          +advantages(advantagesItems)
+
+        .block-item.block-item__2col
+

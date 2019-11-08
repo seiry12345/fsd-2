@@ -1,0 +1,26 @@
+.advantages__item {
+  overflow: hidden;
+  padding-bottom: 15px;
+  margin: 0 0 20px;
+  font-size: 14px;
+  line-height: 24px;
+  border-bottom: 1px solid rgba(31, 32, 65, 0.1);
+  &:last-child {
+    margin-bottom: 0;
+  }
+  .advantages__icon {
+    float: left;
+    margin-right: 10px;
+    font-size: 48px;
+    color: $purple;
+  }
+  .advantages__title {
+    font-size: inherit;
+    line-height: inherit;
+    text-transform: none;
+  }
+  .advantages__text {
+    font-size: inherit;
+    line-height: inherit;
+  }
+}

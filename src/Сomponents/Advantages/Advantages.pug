@@ -1,0 +1,7 @@
+mixin advantages(items, customSelector = '')
+  ul(class= "advantages " + customSelector)
+    each item in items
+      li.advantages__item
+        i(class="material-icons advantages__icon")= item.icon
+        h3.advantages__title= item.title
+        p.advantages__text= item.text
