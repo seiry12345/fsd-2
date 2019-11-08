@@ -1,0 +1,39 @@
+.review {
+  max-width: 710px;
+  color: $mainColor75;
+  font-size: $mainFontSize;
+}
+
+.review__header {
+  overflow: hidden;
+  margin-bottom: 12px;
+  .review__avatar {
+    float: left;
+    margin-right: 10px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+  }
+
+  .review__name,
+  .review__date {
+    font-size: inherit;
+    line-height: inherit;
+  }
+
+  .review__name {
+    text-transform: none;
+  }
+}
+
+.review__footer {
+  .review__likes {
+    padding: 0 4px;
+    float: left;
+  }
+
+  .review__text {
+    margin-left: 58px;
+  }
+}

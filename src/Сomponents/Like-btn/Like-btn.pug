@@ -1,4 +1,2 @@
-mixin likeBtn(attrs)
-  .form__item.form__item-like-btn
-    input(type= "checkbox", name= attrs.name, id= attrs.id, value= attrs.value)
-    button(type= "button", class= "like-btn "+ attrs.labelClass)= attrs.labelTitle
+mixin likeBtn(count, selector = '')
+  button(type= "button", class= "like-btn "+ selector)= count

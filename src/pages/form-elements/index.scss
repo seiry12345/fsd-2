@@ -15,13 +15,21 @@ main {
 
 .block-item {
   flex: 0 1 320px;
-  &__2col {
+  &--2col {
     flex: 1;
   }
-}
-
-.block-item__wrap {
-  margin-bottom: 40px;
+  &--bmargin {
+    margin-bottom: 20px;
+  }
+  &__radio {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 220px;
+  }
+  &__wrap {
+    margin-bottom: 40px;
+  }
 }
 
 .block-item,
@@ -32,23 +40,11 @@ main {
   }
 }
 
-.block-item--bmargin {
-  margin-bottom: 20px;
-}
-
 .form-item {
   margin-bottom: 20px;
-}
-
-.form-item__range-date {
-  margin-bottom: 40px;
-}
-
-.block-item__radio {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 221px;
+  &__range-date {
+    margin-bottom: 40px;
+  }
 }
 
 .form__item-checkbox-rich {

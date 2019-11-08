@@ -1,0 +1,14 @@
+include ../Like-btn/Like-btn.pug
+
+mixin review(attrs)
+  .review
+    .review__header
+      img(src= attrs.img, alt= attrs.name, class="review__avatar")
+
+      h3.review__name= attrs.name
+      .review__date= attrs.date
+
+    .review__footer
+      .review__likes
+        +likeBtn(12)
+      p.review__text= attrs.text

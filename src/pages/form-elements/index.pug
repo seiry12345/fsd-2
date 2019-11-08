@@ -17,9 +17,11 @@ include ../../Сomponents/Checkbox-expandable/Checkbox-expandable.pug
 include ../../Сomponents/Checkbox-rich/Checkbox-rich.pug
 include ../../Сomponents/Bullet-list/Bullet-list.pug
 include ../../Сomponents/Advantages/Advantages.pug
+include ../../Сomponents/Review/Review.pug
 
 block content
   - const inputEmailAttrs = {"inputType": "email", "inputName": "email", "inputID": "email", "inputClass": "", "inputPlaceholder": "Email", "inputValue": false, "labelTitle": "Text Field", "labelTitleRight": "Default"};
+
   - const dropdownGuests = {"class": "", "id": "dropdown-guests", "placeholder": "Сколько гостей?", "labelTitle": "Dropdown", "labelTitleRight": "Default", "dropdownBtns": true};
   - const dropdownGuests2 = {"class": "", "id": "dropdown-guests2", "placeholder": "Сколько гостей?", "labelTitle": "Dropdown", "labelTitleRight": false, "dropdownBtns": false};
   - const dropdownGuests3 = {"class": "", "id": "dropdown-guests2", "placeholder": "Сколько гостей?", "labelTitle": "Dropdown", "labelTitleRight": false, "dropdownBtns": true};
@@ -37,8 +39,6 @@ block content
   - const radioFemale = {"name": "gender", "id": "radio2", "class": '', "labelClass": "", "value": 'female', "labelTitle": "Женщина"};
   - const toggle = {"name": "toggle", "id": "toggle1", "class": 'toggle', "labelClass": "", "value": false, "labelTitle": "Получать спецпредложения"};
 
-  - const likeBtn = {"name": "like-btn", "id": "like-btn", "class": '', "labelClass": "", "value": false, "labelTitle": "2"};
-
   - const rangeSlider = {"name": "range", "class": '', "labelClass": "", "labelTitle": "Range Slider", "minPrice": "0", "maxPrice": "20000"};
 
   - const checkboxExpItems = [{"name": "breakfast", "text": 'Завтрак'}, {"name": "writing-table", "text": 'Письменный стол'}, {"name": "table-for-eating", "text": 'Стул для кормления'}, {"name": "bad", "text": 'Кроватка'}, {"name": "tv", "text": 'Телевизор'}, {"name": "schampoo", "text": 'Шампунь'}, {"name": "tv2", "text": 'Телевизор'}, {"name": "schampoo2", "text": 'Шампунь'}];
@@ -48,7 +48,9 @@ block content
 
   - const bulletItems = [{"text": "Нельзя с питомцами"}, {"text": "Без вечеринок и мероприятий"}, {"text": "Время прибытия — после 13:00, а выезд до 12:00"}];
 
-  -const advantagesItems = [{"icon": "tag_faces", "title": "Комфорт", "text": "Шумопоглощающие стены"}, {"icon": "location_city", "title": "Удобство", "text": "Окно в каждой из спален"}]
+  - const advantagesItems = [{"icon": "tag_faces", "title": "Комфорт", "text": "Шумопоглощающие стены"}, {"icon": "location_city", "title": "Удобство", "text": "Окно в каждой из спален"}]
+
+  - const review1 = {"img": "/assets/images/review1.jpg", "name": "Мурад Сарафанов", "date": "5 дней назад", "likes": "12", "text": "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."}
 
 
   main
@@ -85,7 +87,7 @@ block content
           .block-item__wrap
             h3 Like btn
             .block-item__toggle
-              +likeBtn(likeBtn)
+              +likeBtn(2)
 
           .block-item__wrap
             h3 rate button
@@ -109,28 +111,28 @@ block content
             +pagination(4, 1, 4, 14, arrows)
 
       .block-wrap
-      .block-item
-        +dropdown(dropdownGuests2, dropdownGuestsItems)
+        .block-item
+          +dropdown(dropdownGuests2, dropdownGuestsItems)
 
-      .block-item
-        +dropdown(dropdownGuests2, dropdownGuestsItems)
+        .block-item
+          +dropdown(dropdownGuests2, dropdownGuestsItems)
 
-      .block-item
-        +dropdown(dropdownGuests3, dropdownGuestsItems)
+        .block-item
+          +dropdown(dropdownGuests3, dropdownGuestsItems)
 
 
 
 
       .block-wrap
-        .block-item
+        .block-item.block-item__wrap
           +checkboxExpandable('expandable checkbox list', checkboxExpItems)
 
-        .block-item
+        .block-item.block-item__wrap
           h3 rich Checkbox Buttons
           +checkboxRich(checkboxRich)
           +checkboxRich(checkboxRich2)
 
-        .block-item
+        .block-item.block-item__wrap
           h3 bullet list
           +bulletList(bulletItems)
 
@@ -140,5 +142,6 @@ block content
         .block-item
           +advantages(advantagesItems)
 
-        .block-item.block-item__2col
+        .block-item.block-item--2col
+         +review(review1)
 

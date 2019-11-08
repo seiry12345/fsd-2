@@ -1,8 +1,4 @@
 node_modules/
-package-lock
-package
-postcss.config
-.babelrc
-.prettierrc
 .history/
 .idea/
+dist/
