@@ -39,15 +39,15 @@
 }
 
 .toggle-mark {
-  z-index: -1;
   position: absolute;
   left: 0;
-  top: 0;
+  top: 50%;
   width: 40px;
   height: 20px;
   margin-right: 10px;
   border: 1px solid $mainColor25;
   border-radius: 10px;
+  transform: translateY(-50%);
   transition: all 0.3s ease;
   &:before {
     content: '';

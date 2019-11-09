@@ -1,4 +1,4 @@
-.form__item-range {
+.form-item__range {
   .label {
     z-index: 1;
     position: relative;
@@ -20,7 +20,10 @@
   .irs--round {
     height: auto;
     cursor: pointer;
-    .irs-min, .irs-max, .irs-from, .irs-to {
+    .irs-min,
+    .irs-max,
+    .irs-from,
+    .irs-to {
       display: none !important;
     }
     .irs-single {
@@ -33,19 +36,19 @@
     }
     .irs-line {
       height: 6px;
-      background: #FFFFFF;
+      background: #ffffff;
       border: 1px solid $mainColor25;
       border-radius: 3px;
     }
     .irs-bar {
-      background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+      background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
     }
     .irs-handle {
       z-index: 1;
       top: -4px;
-      width: 14px;
-      height: 14px;
-      background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+      width: 16px;
+      height: 16px;
+      background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
       border: 2px solid #fff;
       box-shadow: none;
       cursor: pointer;

@@ -1,12 +1,11 @@
 .form-item__checkbox {
-  max-width: 226px;
   position: relative;
   display: flex;
   align-items: center;
   &:hover,
   &:active,
   &:focus {
-    .checkbox-mark {
+    .checkbox__mark {
       border-color: $purple;
     }
     label {
@@ -14,12 +13,20 @@
     }
   }
 
+  &--w226 {
+    width: 226px;
+  }
+
+  &--w266 {
+    width: 266px;
+  }
+
   .checkbox {
     display: none;
   }
 
   .checkbox:checked {
-    & + .checkbox-mark {
+    & + .checkbox__mark {
       border-color: $purple;
       &:before {
         opacity: 1;
@@ -41,7 +48,7 @@
     transition: all 0.3s ease;
   }
 
-  .checkbox-mark {
+  .checkbox__mark {
     z-index: -1;
     position: absolute;
     left: 0;
@@ -71,4 +78,19 @@
       font-weight: 700;
     }
   }
+}
+
+.checkbox-rich__title {
+  display: inline-block;
+  padding-top: 2px;
+  margin: 0 0 5px;
+  font-size: 14px;
+  color: $mainColor75;
+  text-transform: none;
+}
+
+.checkbox-rich__text {
+  color: $mainColor50;
+  font-size: 12px;
+  line-height: 14px;
 }

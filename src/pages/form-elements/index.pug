@@ -14,7 +14,6 @@ include ../../Сomponents/Range/Range.pug
 include ../../Сomponents/Button/Button.pug
 include ../../Сomponents/Pagination/Pagination.pug
 include ../../Сomponents/Checkbox-expandable/Checkbox-expandable.pug
-include ../../Сomponents/Checkbox-rich/Checkbox-rich.pug
 include ../../Сomponents/Bullet-list/Bullet-list.pug
 include ../../Сomponents/Advantages/Advantages.pug
 include ../../Сomponents/Review/Review.pug
@@ -38,23 +37,23 @@ block content
 
   - const inputSubscribe = {"inputType": "email", "inputName": "email", "inputID": "subscribe", "inputClass": '', "inputPlaceholder": "Email", "inputValue": false, "labelTitle": "subscription text field", "inputWrap": "subscribe"};
 
-  - const checkbox = {"name": "checkbox1", "id": "checkbox1", "customSelector": '', "labelClass": "", "value": false, "labelTitle": "Можно курить"};
-  - const checkbox2 = {"name": "checkbox2", "id": "checkbox2", "customSelector": '', "labelClass": "", "value": false, "labelTitle": "Можно с питомцами"};
-  - const checkbox3 = {"name": "checkbox3", "id": "checkbox3", "customSelector": '', "labelClass": "", "value": false, "labelTitle": "Можно пригласить гостей (до 10 человек)"};
+  - const checkbox = {"name": "checkbox1", "id": "checkbox1", "customSelector": 'form-item__checkbox--w226', "labelClass": "", "value": false, "labelTitle": "Можно курить"};
+  - const checkbox2 = {"name": "checkbox2", "id": "checkbox2", "customSelector": 'form-item__checkbox--w226', "labelClass": "", "value": false, "labelTitle": "Можно с питомцами"};
+  - const checkbox3 = {"name": "checkbox3", "id": "checkbox3", "customSelector": 'form-item__checkbox--w226', "labelClass": "", "value": false, "labelTitle": "Можно пригласить гостей (до 10 человек)"};
 
-  - const radioMale = {"name": "gender", "id": "radio1", "class": '', "labelClass": "", "value": 'male', "labelTitle": "Мужчина"};
+  - const checkboxRich = {"name": "checkboxRich", "id": "checkboxRich", "customSelector": "form-item__checkbox--w266", "title": "Широкий коридор", "text": "Ширина коридоров в номере не менее 91 см."};
+  - const checkboxRich2 = {"name": "checkboxRich2", "id": "checkboxRich2", "customSelector": "form-item__checkbox--w266", "title": "Помощник для инвалидов", "text": "На 1 этаже вас встретит специалист  и проводит до номера."};
 
-  - const radioFemale = {"name": "gender", "id": "radio2", "class": '', "labelClass": "", "value": 'female', "labelTitle": "Женщина"};
+  - const radioMale = {"name": "gender", "id": "radio1", "customSelector": '', "labelClass": "", "value": 'male', "labelTitle": "Мужчина"};
+  - const radioFemale = {"name": "gender", "id": "radio2", "customSelector": '', "labelClass": "", "value": 'female', "labelTitle": "Женщина"};
 
   - const toggle = {"name": "toggle", "id": "toggle1", "class": 'toggle', "labelClass": "", "value": false, "labelTitle": "Получать спецпредложения"};
 
-  - const rangeSlider = {"name": "range", "class": '', "labelClass": "", "labelTitle": "Range Slider", "minPrice": "0", "maxPrice": "20000"};
+  - const rangeSlider = {"name": "range", "customSelector": "form-item--w266", "labelTitle": "Range Slider", "minPrice": "0", "maxPrice": "15500", "from": "5000", "to": "10000"};
 
   - const checkboxExpItems = [{"name": "breakfast", "text": 'Завтрак'}, {"name": "writing-table", "text": 'Письменный стол'}, {"name": "table-for-eating", "text": 'Стул для кормления'}, {"name": "bad", "text": 'Кроватка'}, {"name": "tv", "text": 'Телевизор'}, {"name": "schampoo", "text": 'Шампунь'}, {"name": "tv2", "text": 'Телевизор'}, {"name": "schampoo2", "text": 'Шампунь'}];
 
-  - const checkboxRich = {"name": "checkboxRich", "id": "checkboxRich", "title": "Широкий коридор", "description": "Ширина коридоров в номере не менее 91 см."};
 
-  - const checkboxRich2 = {"name": "checkboxRich2", "id": "checkboxRich2", "title": "Помощник для инвалидов", "description": "На 1 этаже вас встретит специалист  и проводит до номера."};
 
   - const bulletItems = [{"text": "Нельзя с питомцами"}, {"text": "Без вечеринок и мероприятий"}, {"text": "Время прибытия — после 13:00, а выезд до 12:00"}];
 
@@ -87,7 +86,7 @@ block content
           .block-item__wrap
             h4 radio buttons
             .block-item__radio
-              +radio(radioMale)
+              +radio(radioMale, 'checked')
               +radio(radioFemale)
 
           .block-item__wrap
@@ -96,7 +95,7 @@ block content
               +toggle(toggle)
 
           .block-item__wrap
-            h4 Like btn
+            h4 Like button
             .block-item__toggle
               +likeBtn(2)
 
@@ -140,8 +139,8 @@ block content
 
         .block-item.block-item__wrap
           h4 rich Checkbox Buttons
-          +checkboxRich(checkboxRich)
-          +checkboxRich(checkboxRich2)
+          +checkbox(checkboxRich, true)
+          +checkbox(checkboxRich2, true)
 
         .block-item.block-item__wrap
           h4 bullet list

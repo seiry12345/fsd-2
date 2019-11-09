@@ -21,7 +21,6 @@ import '../../Сomponents/Dropdown-date/dropdown-date';
 import '../../Сomponents/Like-btn/like-btn';
 import '../../Сomponents/Checkbox-expandable/Checkbox-expandable.scss';
 import '../../Сomponents/Checkbox-expandable/Checkbox-expandable';
-import '../../Сomponents/Checkbox-rich/Checkbox-rich.scss';
 import '../../Сomponents/Bullet-list/bullet-list.scss';
 import '../../Сomponents/Advantages/advantages.scss';
 import '../../Сomponents/Review/review.scss';
