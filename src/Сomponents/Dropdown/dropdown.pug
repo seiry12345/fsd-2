@@ -1,11 +1,9 @@
 mixin dropdown(attrs, items)
-  .form-item.form-item__dropdown
+  div(class= "form-item " + attrs.customSelector)
     if attrs
-      label(for= attrs.id, class= 'label-dropdown')
+      label(for= attrs.id, class= "label-dropdown")
         span.label-left= attrs.labelTitle
-        if attrs.labelTitleRight
-          span.label-right= attrs.labelTitleRight
-      button(type='button', class=`dropdown ${attrs.class}`, id= attrs.id)= attrs.placeholder
+      button(type="button", class= "dropdown", id= attrs.id)= attrs.placeholder
       .dropdown-items
           each item in items
             .dropdown-item

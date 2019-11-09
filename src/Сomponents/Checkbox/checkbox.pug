@@ -1,5 +1,5 @@
 mixin checkbox(attrs)
-  .form__item.form__item-checkbox
-    input(type= "checkbox", name= attrs.name, id= attrs.id, class= "checkbox " + attrs.class, value= attrs.value)
+  .form__item.form-item__checkbox
+    input(type= "checkbox", name= attrs.name, id= attrs.id, class= "checkbox " + attrs.customSelector, value= attrs.value)
     span(class= "checkbox-mark")
     label(for= attrs.id, class= "checkbox-label "+ attrs.labelClass)= attrs.labelTitle

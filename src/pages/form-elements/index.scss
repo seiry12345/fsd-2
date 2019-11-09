@@ -1,3 +1,7 @@
+.ui-kit-logo {
+  padding-bottom: 53px;
+}
+
 main {
   padding-bottom: 130px;
 }
@@ -7,6 +11,7 @@ main {
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-between;
+  margin-bottom: 70px;
 }
 
 .block-item__link {
@@ -15,6 +20,9 @@ main {
 
 .block-item {
   flex: 0 1 320px;
+  &--w260 {
+    flex: 0 1 260px;
+  }
   &--2col {
     flex: 1;
   }
@@ -41,15 +49,18 @@ main {
 }
 
 .form-item {
-  margin-bottom: 20px;
-  &__range-date {
-    margin-bottom: 40px;
+  margin-bottom: 17px;
+  &--mb40 {
+    margin-bottom: 37px;
   }
-}
-
-.form__item-checkbox-rich {
-  margin-bottom: 10px;
-  &:last-of-type {
-    margin-bottom: 0;
+  &--w266 {
+    max-width: 266px;
+  }
+  &__checkbox,
+  &__checkbox-rich {
+    margin-bottom: 12px;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
   }
 }

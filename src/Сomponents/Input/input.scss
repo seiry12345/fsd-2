@@ -7,13 +7,6 @@
   font-weight: 700;
   font-size: 12px;
   text-transform: uppercase;
-
-  .label-right {
-    float: right;
-    color: $mainColor50;
-    text-align: right;
-    font-weight: 400;
-  }
 }
 
 .input,
@@ -52,26 +45,16 @@
   cursor: pointer;
 }
 
-.input-wrap--width266 {
-  max-width: 266px;
-}
-
 .input-wrap {
   z-index: 1;
   position: relative;
   display: block;
+  &--width266 {
+    max-width: 266px;
+  }
 }
 
 .subscribe {
-  &:hover,
-  &:active,
-  &:focus {
-    &:before {
-      transition: all 0.3s ease;
-      transform: translateX(5px);
-    }
-  }
-
   &:before {
     content: 'arrow_forward';
     z-index: 1;
@@ -87,7 +70,7 @@
     background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: rem(26);
+    font-size: 26px;
   }
 
   .input {

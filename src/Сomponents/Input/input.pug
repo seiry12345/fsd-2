@@ -1,11 +1,10 @@
 mixin input(attrs)
-  if attrs
-    label(for= attrs.inputID, class= 'input-label')
-      span.label-left= attrs.labelTitle
-      if attrs.labelTitleRight
-      span.label-right= attrs.labelTitleRight
-    span(class= "input-wrap " + attrs.inputWrap)
-      input(type= attrs.inputType, name= attrs.inputName, id= attrs.inputID, class= 'input ' + attrs.inputClass, placeholder= attrs.inputPlaceholder, value= attrs.inputValue)
-  else
-    span(class= "input-wrap " + attrs.inputWrap)
-      input(type= attrs.inputType, name= attrs.inputName, id= attrs.inputID, class= 'input ' + attrs.inputClass, placeholder= attrs.inputPlaceholder, value= attrs.inputValue)
+  div(class= "form-item " + attrs.customSelector)
+    if attrs
+      label(for= attrs.inputID, class= "input-label")
+        span.label-left= attrs.labelTitle
+      span(class= "input-wrap " + attrs.inputWrap)
+        input(type= attrs.inputType, name= attrs.inputName, id= attrs.inputID, class= "input " + attrs.inputClass, placeholder= attrs.inputPlaceholder, value= attrs.inputValue)
+    else
+      span(class= "input-wrap " + attrs.inputWrap)
+        input(type= attrs.inputType, name= attrs.inputName, id= attrs.inputID, class= "input " + attrs.inputClass, placeholder= attrs.inputPlaceholder, value= attrs.inputValue)
