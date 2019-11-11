@@ -1,4 +1,4 @@
-.form__item-radio {
+.form-item__radio {
   position: relative;
   display: flex;
   align-items: center;
@@ -8,11 +8,11 @@
     label {
       color: $mainColor75;
     }
-    .radio-mark {
+    .radio__mark {
       opacity: 1;
     }
   }
-  .radio-label {
+  label {
     padding-left: 30px;
     font-weight: 400;
     font-size: 14px;
@@ -25,7 +25,7 @@
     display: none;
   }
   .radio:checked {
-    & + .radio-mark {
+    & + .radio__mark {
       border-color: $purple;
       &:before {
         opacity: 1;
@@ -37,8 +37,8 @@
   }
 }
 
-.radio-mark {
-  z-index: -11;
+.radio__mark {
+  z-index: -1;
   position: absolute;
   left: 0;
   top: 50%;

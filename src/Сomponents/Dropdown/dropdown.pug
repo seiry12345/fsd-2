@@ -1,22 +1,21 @@
 mixin dropdown(attrs, items)
-  div(class= "form-item " + attrs.customSelector)
-    if attrs
-      label(for= attrs.id, class= "label-dropdown")
-        span.label-left= attrs.labelTitle
-      button(type="button", class= "dropdown", id= attrs.id)= attrs.placeholder
-      .dropdown-items
-          each item in items
-            .dropdown-item
-              span(class= "dropdown-item__text h3 " + item.class)= item.text
-              .dropdown-controls
-                button(type="button", class="dropdown-controls__btn dropdown-controls__btn-minus")
-                  <i class="material-icons">remove</i>
+  div(class= `form-item form-item__dropdown ${attrs.customSelector}`)
+    label(class= "label-dropdown")
+      span.label-left= attrs.labelTitle
+    button(type="button", class= "dropdown")= attrs.placeholder
+    div(class=`dropdown-items ${attrs.type}`)
+      each item in items
+        div(class=`dropdown-item ${item.customSelector}`)
+          span(class= "dropdown-item__text h3")= item.text
+          .dropdown-controls
+            button(type="button", class="dropdown-controls__btn dropdown-controls__btn-minus")
+              <i class="material-icons">remove</i>
 
-                .dropdown-controls__value.h3 0
+            .dropdown-controls__value.h3 0
 
-                button(type="button", class="dropdown-controls__btn dropdown-controls__btn-plus")
-                  <i class="material-icons">add</i>
-          if (attrs.dropdownBtns)
-            .dropdown__btns
-              button(type="button", class="dropdown__clear") Очистить
-              button(type="submit", class="dropdown__submit") Применить
+            button(type="button", class="dropdown-controls__btn dropdown-controls__btn-plus")
+              <i class="material-icons">add</i>
+      if (attrs.dropdownBtns)
+        .dropdown__btns
+          button(type="button", class="dropdown__clear") Очистить
+          button(type="submit", class="dropdown__submit") Применить

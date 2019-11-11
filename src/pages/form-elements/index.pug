@@ -21,21 +21,22 @@ include ../../Сomponents/Review/Review.pug
 block content
   - const inputEmailAttrs = {"inputType": "email", "inputName": "email", "inputID": "email", "customSelector": "", "inputPlaceholder": "Email", "inputValue": false, "labelTitle": "Text Field"};
 
+  - const inputSubscribe = {"inputType": "email", "inputName": "email", "inputID": "subscribe", "customSelector": 'form-item--w266', "inputPlaceholder": "Email", "inputValue": false, "labelTitle": "subscription text field", "inputWrap": "subscribe"};
+
   - const masked = {"id": "date-masked", "customSelector": "form-item--mb40", "inputPlaceholder": "ДД.ММ.ГГГГ", "labelTitle": "masked text field"};
 
-  - const dropdownGuests = {"customSelector": "form-item__dropdown", "id": "dropdown-guests", "placeholder": "Сколько гостей?", "labelTitle": "Dropdown", "dropdownBtns": true};
+  - const dropdownGuests = {"customSelector": "", "type": "guests", "placeholder": "Сколько гостей?", "labelTitle": "Dropdown", "dropdownBtns": true};
+  - const dropdownGuests2 = {"customSelector": "", "type": "guests", "placeholder": "Сколько гостей?", "labelTitle": "Dropdown", "dropdownBtns": true};
+  - const dropdownGuestsItems = [{"text": "Взрослые", "customSelector": ""}, {"text": "Дети", "customSelector": ""}, {"text": "Младенцы", "customSelector": "separate"}];
 
-  - const dropdownGuests2 = {"customSelector": "form-item__dropdown", "id": "dropdown-guests2", "placeholder": "Сколько гостей?", "labelTitle": "Dropdown", "dropdownBtns": false};
+  - const dropdownFurniture = {"customSelector": "form-item--w266", "placeholder": "Выберите удобства", "labelTitle": "Dropdown", "dropdownBtns": false};
+  - const dropdownFurnitureItems = [{"text": "Спальни", "class": ""}, {"text": "Кровати", "class": ""}, {"text": "Ванные комнаты", "class": ""}];
 
-  - const dropdownGuests3 = {"customSelector": "form-item__dropdown", "id": "dropdown-guests2", "placeholder": "Сколько гостей?", "labelTitle": "Dropdown", "dropdownBtns": true};
 
-  - const dropdownGuestsItems = [{"text": "Взрослые", "class": ""}, {"text": "Дети", "class": ""}, {"text": "Младенцы", "class": "separate"}];
 
   - const dateRange = {"id1": "date1", "id2": "date2", "customSelector": "form-item__date--before form-item--mb40", "labelTitle1": "date Dropdown", "labelTitle2": "date Dropdown"};
 
   - const dateFiltered = {"id": "date-filtered", "customSelector": "form-item__date--before form-item--w266 form-item--mb40", "inputPlaceholder": "ДД.ММ.ГГГГ", "labelTitle": "filter date dropdown"};
-
-  - const inputSubscribe = {"inputType": "email", "inputName": "email", "inputID": "subscribe", "inputClass": '', "inputPlaceholder": "Email", "inputValue": false, "labelTitle": "subscription text field", "inputWrap": "subscribe"};
 
   - const checkbox = {"name": "checkbox1", "id": "checkbox1", "customSelector": 'form-item__checkbox--w226', "labelClass": "", "value": false, "labelTitle": "Можно курить"};
   - const checkbox2 = {"name": "checkbox2", "id": "checkbox2", "customSelector": 'form-item__checkbox--w226', "labelClass": "", "value": false, "labelTitle": "Можно с питомцами"};
@@ -77,72 +78,72 @@ block content
             +input(inputSubscribe)
 
         .block-item.block-item--w260
-          .block-item__wrap
+          .block-item--mb40
             h4 checkbox buttons
             +checkbox(checkbox)
             +checkbox(checkbox2)
             +checkbox(checkbox3)
 
-          .block-item__wrap
+          .block-item--mb40
             h4 radio buttons
             .block-item__radio
               +radio(radioMale, 'checked')
               +radio(radioFemale)
 
-          .block-item__wrap
+          .block-item--mb40
             h4 toggle
             .block-item__toggle
               +toggle(toggle)
 
-          .block-item__wrap
+          .block-item--mb40
             h4 Like button
             .block-item__toggle
               +likeBtn(2)
 
-          .block-item__wrap
+          .block-item--mb40
             h4 rate button
             .block-item__rate
               +rateBtn(5, 4)
 
         .block-item
-          .block-item__wrap
+          .block-item--mb40
             +range(rangeSlider)
-          .block-item__wrap
+          .block-item--mb30
             h4 Buttons
             +button('', 'Click me')
-          .block-item__wrap
+          .block-item--mb30
             +button('btn btn--transparent', 'Click me')
-          .block-item__wrap
+          .block-item--mb30
             a(class= "block-item__link", href= "#") Click me
-          .block-item__wrap
-            +button('btn btn--w320', 'перейти к оплате')
-          .block-item__wrap
+          .block-item--mb40
+            +button('btn btn--arrow btn--w320', 'перейти к оплате')
+          .block-item--mb40
             h4 Pagination
             +pagination(4, 1, 4, 14, arrows)
 
       .block-wrap
         .block-item
-          +dropdown(dropdownGuests2, dropdownGuestsItems)
+          +dropdown(dropdownFurniture, dropdownFurnitureItems)
+
+        .block-item
+          +dropdown(dropdownGuests, dropdownGuestsItems)
 
         .block-item
           +dropdown(dropdownGuests2, dropdownGuestsItems)
-
-        .block-item
-          +dropdown(dropdownGuests3, dropdownGuestsItems)
 
 
 
 
       .block-wrap
-        .block-item.block-item__wrap
+        .block-item.block-item--mb40
           +checkboxExpandable('expandable checkbox list', checkboxExpItems)
 
-        .block-item.block-item__wrap
+        .block-item.block-item--mb40
           h4 rich Checkbox Buttons
           +checkbox(checkboxRich, true)
           +checkbox(checkboxRich2, true)
 
-        .block-item.block-item__wrap
+        .block-item.block-item--mb40
           h4 bullet list
           +bulletList(bulletItems)
 

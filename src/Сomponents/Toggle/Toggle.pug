@@ -1,5 +1,5 @@
 mixin toggle(attrs)
-  .form__item.form__item-toggle
+  .form-item.form-item__toggle
     input(type= "checkbox", name= attrs.name, id= attrs.id, class= "toggle " + attrs.class, value= attrs.value)
-    span(class= "toggle-mark")
-    label(for= attrs.id, class= "toggle-label "+ attrs.labelClass)= attrs.labelTitle
+    span(class= "toggle__mark")
+    label(for= attrs.id, class= "toggle__label "+ attrs.labelClass)= attrs.labelTitle

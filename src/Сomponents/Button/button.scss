@@ -2,7 +2,7 @@
   position: relative;
   display: inline-block;
   padding: 15px 19px;
-  background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  background-image: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
   color: #fff;
   font-family: $mainFont;
   font-style: normal;
@@ -46,15 +46,14 @@
       bottom: 0;
       left: 0;
       margin: -2px;
-      background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+      background-image: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
       border-radius: inherit;
       transition: all 0.3s ease;
     }
   }
 
-  &--w320 {
+  &--arrow {
     z-index: 1;
-    width: 320px;
     padding: 15px 44px;
     &:hover,
     &:active,
@@ -72,11 +71,16 @@
       top: 0;
       display: flex;
       align-items: center;
-      width: 44px;
+      width: 34px;
       height: 44px;
       @extend .material-icons;
       color: inherit;
       transition: all 0.3s ease;
     }
+  }
+
+  &--w320 {
+    width: 100%;
+    max-width: 320px;
   }
 }

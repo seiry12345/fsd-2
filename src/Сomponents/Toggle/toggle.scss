@@ -1,11 +1,12 @@
-.form__item-toggle {
+.form-item__toggle {
+  z-index: 1;
   position: relative;
   display: flex;
   align-items: center;
   &:hover,
   &:active,
   &:focus {
-    .toggle-mark {
+    .toggle__mark {
       border-color: $purple;
     }
     label {
@@ -16,7 +17,7 @@
     display: none;
   }
   .toggle:checked {
-    & + .toggle-mark {
+    & + .toggle__mark {
       border-color: $purple;
       &:before {
         background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
@@ -38,7 +39,8 @@
   }
 }
 
-.toggle-mark {
+.toggle__mark {
+  z-index: -1;
   position: absolute;
   left: 0;
   top: 50%;

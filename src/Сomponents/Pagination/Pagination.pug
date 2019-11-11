@@ -23,4 +23,4 @@ mixin pagination(amount, active, ellipsis, last, arrows)
         if (arrows === arrows)
             a(href="#").pagination__controls.pagination__next.icon-pagination-next
                 i.material-icons arrow_forward
-    p(class="pagination__sub")= `${active} – ${last} из 100+ вариантов аренды`
+    p(class="pagination__sub")= `${active} – ${last + 1} из 100+ вариантов аренды`
