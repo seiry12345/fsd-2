@@ -1,6 +1,6 @@
-mixin checkboxExpandable(title, items)
-  .form__item.form__item-checkbox-expandable
-    h3(class="checkbox__title")= title
+mixin checkboxExpandable(title, customSelector, items)
+  div(class=`form-item form-item__checkbox-expandable ${customSelector}`)
+    h4(class="checkbox__title")= title
     .checkbox__list
       each item in items
         .checkbox__list-item

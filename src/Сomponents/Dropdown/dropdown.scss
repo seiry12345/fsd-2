@@ -80,7 +80,7 @@
 
 .dropdown-items {
   display: none;
-  padding: 7px;
+  padding: 5px 4px 6px 15px;
   padding-left: 15px;
   border: 1px solid $mainColor50;
   border-top: 0;
@@ -93,6 +93,9 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 7px;
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .dropdown-controls {
@@ -141,7 +144,7 @@
 .dropdown__btns {
   overflow: hidden;
   width: 100%;
-  margin-top: 20px;
+  margin: 20px 0 8px;
   .dropdown__clear,
   .dropdown__submit {
     padding: 0;

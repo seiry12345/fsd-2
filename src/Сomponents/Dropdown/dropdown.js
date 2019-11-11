@@ -131,18 +131,18 @@ function dataUpdate(event) {
       let name = item.find('.dropdown-item__text').text()
 
       if (value > 0 && !item.hasClass('separate')) {
-        name = declOfNum(value, ['гость', 'гостя', 'гостей'])
         guestVal += value
       }
 
       // if dropdown item has class separate
       if (value > 0 && item.hasClass('separate')) {
-        name = declOfNum(name, ['младенец', 'младенца', 'младенцев'])
-        separateOutput.push(`, ${value} ${name}`)
+        name = declOfNum(value, ['младенец', 'младенца', 'младенцев'])
+        separateOutput.push(` ${value} ${name}`)
       }
     })
 
-    output.push(`${guestVal} ${name} `)
+    let guestName = declOfNum(guestVal, ['гость', 'гостя', 'гостей'])
+    output.push(`${guestVal} ${guestName}`)
   } else {
     // data for furniture
     dropItems.each((i, item) => {
@@ -157,13 +157,11 @@ function dataUpdate(event) {
   }
 
   // construct data to result and print it in text field
-  if (separateOutput.lenght) {
+  if (separateOutput.length) {
     result = output.concat(separateOutput)
   } else {
     result = output.join(', ')
   }
-
-  console.log(result)
   textField.text(result)
 }
 
@@ -172,49 +170,8 @@ function dataUpdate(event) {
 // submit
 function submit(event) {
   const target = $(event.target)
-  let values = target
-    .parents('.dropdown-items')
-    .find('.dropdown-controls__value')
-  let result
-  let output = 0
-  let babies = 0
-
-  // gather our data
-  values.each((i, value) => {
-    if (
-      $(value)
-        .parent()
-        .prev()
-        .hasClass('separate')
-    ) {
-      babies += Number($(value).text())
-    } else {
-      output += Number($(value).text())
-      // TODO
-    }
-  })
-
-  // print data to text field
-  if (output > 0) {
-    const outputText = declOfNum(output, ['гость', 'гостя', 'гостей'])
-    const babiesText = declOfNum(babies, ['младенец', 'младенца', 'младенцев'])
-
-    if (babies > 0) {
-      result = `${output} ${outputText}, ${babies} ${babiesText}`
-      target
-        .parents('.form-item__dropdown')
-        .find('.dropdown')
-        .text(result)
-    } else {
-      result = `${output} ${outputText}`
-      target
-        .parents('.form-item__dropdown')
-        .find('.dropdown')
-        .text(result)
-    }
-
-    target.parents('.form-item__dropdown').removeClass('dropdown--active')
-  }
+  console.log('sending data...')
+  target.parents('.form-item__dropdown').removeClass('dropdown--active')
 }
 
 // --- --- ---
@@ -263,11 +220,11 @@ $('.dropdown-controls__btn-minus').on(
 // submit
 $('.dropdown__submit').click(function(event) {
   event.preventDefault()
-  submit()
+  submit(event)
 })
 // --- --- ---
 
-// clear btns
+// clear dropdown items
 $('.dropdown__clear').click(function(event) {
   clear(event)
 })

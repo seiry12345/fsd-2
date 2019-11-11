@@ -1,12 +1,13 @@
 .review {
-  max-width: 710px;
+  max-width: 724px;
+  padding-left: 12px;
   color: $mainColor75;
   font-size: $mainFontSize;
 }
 
 .review__header {
   overflow: hidden;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   .review__avatar {
     float: left;
     margin-right: 10px;

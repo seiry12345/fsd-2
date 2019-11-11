@@ -1,8 +1,7 @@
-.form__item-checkbox-expandable {
-  max-width: 266px;
+.form-item__checkbox-expandable {
   &--active {
     .checkbox__title:before {
-      transform: translateY(-50%) rotateX(180deg);
+      transform: translate(-6px, -50%) rotateX(180deg);
     }
     .checkbox__list {
       display: block;
@@ -25,7 +24,7 @@
 
 .checkbox__title {
   position: relative;
-  margin-bottom: 18px;
+  margin-bottom: 12px;
   cursor: pointer;
   &:before {
     content: 'keyboard_arrow_down';
@@ -35,7 +34,7 @@
     color: $mainColor50;
     font-size: 24px;
     @extend .material-icons;
-    transform: translateY(-50%);
+    transform: translate(-6px, -50%);
     transition: all 0.3s ease;
   }
 }
@@ -61,7 +60,7 @@
   display: flex;
   align-items: center;
   padding-left: 30px;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
   &:last-child {
     margin-bottom: 0;
   }

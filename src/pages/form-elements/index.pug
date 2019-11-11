@@ -29,8 +29,8 @@ block content
   - const dropdownGuests2 = {"customSelector": "", "type": "guests", "placeholder": "Сколько гостей?", "labelTitle": "Dropdown", "dropdownBtns": true};
   - const dropdownGuestsItems = [{"text": "Взрослые", "customSelector": ""}, {"text": "Дети", "customSelector": ""}, {"text": "Младенцы", "customSelector": "separate"}];
 
-  - const dropdownFurniture = {"customSelector": "form-item--w266", "placeholder": "Выберите удобства", "labelTitle": "Dropdown", "dropdownBtns": false};
-  - const dropdownFurnitureItems = [{"text": "Спальни", "class": ""}, {"text": "Кровати", "class": ""}, {"text": "Ванные комнаты", "class": ""}];
+  - const dropdownFurniture = {"customSelector": "form-item--w266", "type": "", "placeholder": "Выберите удобства", "labelTitle": "Dropdown", "dropdownBtns": false};
+  - const dropdownFurnitureItems = [{"text": "Спальни", "customSelector": ""}, {"text": "Кровати", "customSelector": ""}, {"text": "Ванные комнаты", "customSelector": ""}];
 
 
 
@@ -42,8 +42,8 @@ block content
   - const checkbox2 = {"name": "checkbox2", "id": "checkbox2", "customSelector": 'form-item__checkbox--w226', "labelClass": "", "value": false, "labelTitle": "Можно с питомцами"};
   - const checkbox3 = {"name": "checkbox3", "id": "checkbox3", "customSelector": 'form-item__checkbox--w226', "labelClass": "", "value": false, "labelTitle": "Можно пригласить гостей (до 10 человек)"};
 
-  - const checkboxRich = {"name": "checkboxRich", "id": "checkboxRich", "customSelector": "form-item__checkbox--w266", "title": "Широкий коридор", "text": "Ширина коридоров в номере не менее 91 см."};
-  - const checkboxRich2 = {"name": "checkboxRich2", "id": "checkboxRich2", "customSelector": "form-item__checkbox--w266", "title": "Помощник для инвалидов", "text": "На 1 этаже вас встретит специалист  и проводит до номера."};
+  - const checkboxRich = {"name": "checkboxRich", "id": "checkboxRich", "customSelector": "form-item__checkbox--w266", "labelClass": "", "title": "Широкий коридор", "text": "Ширина коридоров в номере не менее 91 см."};
+  - const checkboxRich2 = {"name": "checkboxRich2", "id": "checkboxRich2", "customSelector": "form-item__checkbox--w266",  "labelClass": "", "title": "Помощник для инвалидов", "text": "На 1 этаже вас встретит специалист  и проводит до номера."};
 
   - const radioMale = {"name": "gender", "id": "radio1", "customSelector": '', "labelClass": "", "value": 'male', "labelTitle": "Мужчина"};
   - const radioFemale = {"name": "gender", "id": "radio2", "customSelector": '', "labelClass": "", "value": 'female', "labelTitle": "Женщина"};
@@ -77,7 +77,7 @@ block content
           .form-item.form-item__subscribe.form-item--width266
             +input(inputSubscribe)
 
-        .block-item.block-item--w260
+        .block-item.block-item__center.block-item--w260
           .block-item--mb40
             h4 checkbox buttons
             +checkbox(checkbox)
@@ -125,7 +125,7 @@ block content
         .block-item
           +dropdown(dropdownFurniture, dropdownFurnitureItems)
 
-        .block-item
+        .block-item.block-item__center
           +dropdown(dropdownGuests, dropdownGuestsItems)
 
         .block-item
@@ -136,9 +136,9 @@ block content
 
       .block-wrap
         .block-item.block-item--mb40
-          +checkboxExpandable('expandable checkbox list', checkboxExpItems)
+          +checkboxExpandable('expandable checkbox list', 'form-item--w266', checkboxExpItems)
 
-        .block-item.block-item--mb40
+        .block-item.block-item__center.block-item--mb40
           h4 rich Checkbox Buttons
           +checkbox(checkboxRich, true)
           +checkbox(checkboxRich2, true)
@@ -150,7 +150,7 @@ block content
 
 
       .block-wrap
-        .block-item
+        .block-item.block-item--w280
           +advantages(advantagesItems)
 
         .block-item.block-item--2col
