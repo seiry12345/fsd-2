@@ -16,7 +16,8 @@ module.exports = {
   },
 
   entry: {
-    formElements: `${PATHS.src}/pages/form-elements/index`
+    // formElements: `${PATHS.src}/pages/form-elements/index`
+    cards: `${PATHS.src}/pages/cards/index`
   },
 
   output: {
@@ -136,7 +137,7 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      template: `${PATHS.src}/pages/form-elements/index.pug`,
+      template: `${PATHS.src}/pages/cards/index.pug`,
       filename: 'index.html'
     }),
 

@@ -1,13 +1,13 @@
 mixin checkbox(attrs, rich = false)
   if (rich)
-    div(class="form-item form-item__checkbox form-item__checkbox-rich " + attrs.customSelector)
+    div(class=`form-item form-item__checkbox form-item__checkbox-rich ${attrs.customSelector}`)
       input(type= "checkbox", name= attrs.name, id= attrs.id, class= "checkbox")
       span(class= "checkbox__mark")
-      label(for= attrs.id, class= "checkbox__label "+ attrs.labelClass)
+      label(for= attrs.id, class= `checkbox__label ${attrs.labelClass}`)
         h3(class="checkbox-rich__title")= attrs.title
         p(class= "checkbox-rich__text")= attrs.text
   else
-    div(class="form-item form-item__checkbox " + attrs.customSelector)
+    div(class=`form-item form-item__checkbox ${attrs.customSelector}`)
       input(type= "checkbox", name= attrs.name, id= attrs.id, class= "checkbox")
       span(class= "checkbox__mark")
-      label(for= attrs.id, class= "checkbox__label "+ attrs.labelClass)= attrs.labelTitle
+      label(for= attrs.id, class= `checkbox__label ${attrs.labelClass}`)= attrs.labelTitle
