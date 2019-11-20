@@ -1,0 +1,6 @@
+form.card.find-room
+  h3.card__title.h1
+    | Найдём номера под <br /> ваши пожелания
+  +dropdownDate(findRoomDateRange, true, false)
+  +dropdown(findRoomGuests, findRoomGuestsItems)
+  +button("btn btn--arrow find-room__submit", "submit", "Подобрать номер")

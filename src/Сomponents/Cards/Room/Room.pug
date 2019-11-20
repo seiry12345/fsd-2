@@ -1,0 +1,34 @@
+form.card.room
+  h3.card__wrap.card__title.h1
+    .room__title-text.h1
+      | № 888 <span>люкс</span>
+    .room__title-price
+      | 9 990₽ <span>в сутки</span>
+
+  +dropdownDate(roomDateRange, true, false)
+  +dropdown(roomGuests, roomGuestsItems)
+  .card__wrap.room__price
+    .room__price-days
+      | 9 990₽ х <span>1 сутки</span>
+    .room__price-days-total
+      | 9 990₽
+
+  .card__wrap.room__service-charge
+    .room__service-charge-text
+      | Сбор за услуги: скидка <span>2 179₽</span><i class="material-icons">error_outline</i>
+    .room__service-charge-total
+      | 0₽
+
+  .card__wrap.room__advanced
+    .room__room__advanced-text
+      | Сбор за услуги: скидка <span>2 179₽</span><i class="material-icons">error_outline</i>
+    .room__room__advanced-total
+      | 300₽
+
+  .room__total
+    .room__total-text
+      | Итого
+    .room__total-price
+      | 38 081₽
+
+  +button("btn--arrow", "submit", "Забронировать")

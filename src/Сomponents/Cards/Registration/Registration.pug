@@ -1,0 +1,15 @@
+form.card.registration
+  h3.card__title.h1 Регистрация аккаунта
+  +input(inputName)
+  +input(inputLastname)
+  .card__wrap
+    +radio(radioMale)
+    +radio(radioFemale)
+  +dropdownDate(birthDate)
+  +input(inputEmail)
+  +input(inputPassword)
+  +toggle(toggle)
+  +button('btn--arrow registration__submit', 'submit', 'Перейти к оплате')
+  .card__wrap.card__wrap-account
+    p Уже есть аккаунт на Toxin
+    a(href="#", class="btn btn--transparent") Войти

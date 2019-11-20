@@ -6,15 +6,23 @@ main {
   padding-bottom: 130px;
 }
 
-.cards__wrapper {
-  display: flex;
-  justify-content: space-between;
+.cards {
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__item {
+    flex: 0 1 380px;
+    margin-bottom: 37px;
+
+    &--right {
+      flex: 0 1 280px;
+    }
+  }
 }
 
-.cards__item {
-  flex: 0 1 380px;
-  margin-bottom: 37px;
-  &--right {
-    flex: 0 1 280px;
-  }
+.card {
+  margin: 0 0 37px;
 }
