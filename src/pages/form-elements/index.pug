@@ -2,21 +2,21 @@ extends ../../layouts/ui-kit.pug
 block vars
   - const title = 'Form Elements';
 
-include ../../Сomponents/Input/Input.pug
-include ../../Сomponents/Dropdown/Dropdown.pug
+include ../../Сomponents/Input/Input
+include ../../Сomponents/Dropdown/Dropdown
 include ../../Сomponents/Dropdown-date/Dropdown-date
-include ../../Сomponents/Checkbox/Checkbox.pug
-include ../../Сomponents/Radio/Radio.pug
-include ../../Сomponents/Toggle/Toggle.pug
-include ../../Сomponents/Like-btn/Like-btn.pug
-include ../../Сomponents/Rate-btn/Rate-btn.pug
-include ../../Сomponents/Range/Range.pug
-include ../../Сomponents/Button/Button.pug
-include ../../Сomponents/Pagination/Pagination.pug
-include ../../Сomponents/Checkbox-expandable/Checkbox-expandable.pug
-include ../../Сomponents/Bullet-list/Bullet-list.pug
-include ../../Сomponents/Advantages/Advantages.pug
-include ../../Сomponents/Review/Review.pug
+include ../../Сomponents/Checkbox/Checkbox
+include ../../Сomponents/Radio/Radio
+include ../../Сomponents/Toggle/Toggle
+include ../../Сomponents/Like-btn/Like-btn
+include ../../Сomponents/Rate-btn/Rate-btn
+include ../../Сomponents/Range/Range
+include ../../Сomponents/Button/Button
+include ../../Сomponents/Pagination/Pagination
+include ../../Сomponents/Checkbox-expandable/Checkbox-expandable
+include ../../Сomponents/Bullet-list/Bullet-list
+include ../../Сomponents/Advantages/Advantages
+include ../../Сomponents/Review/Review
 
 block content
   - const inputEmailAttrs = {"inputType": "email", "inputName": "email", "inputID": "email", "customSelector": "", "inputPlaceholder": "Email", "inputValue": false, "labelTitle": "Text Field"};
@@ -110,13 +110,13 @@ block content
             +range(rangeSlider)
           .block-item--mb30
             h4 Buttons
-            +button('', 'Click me')
+            +button('', 'button', 'Click me')
           .block-item--mb30
-            +button('btn btn--transparent', 'Click me')
+            +button('btn btn--transparent', 'button', 'Click me')
           .block-item--mb30
             a(class= "block-item__link", href= "#") Click me
           .block-item--mb40
-            +button('btn btn--arrow btn--w320', 'перейти к оплате')
+            +button('btn btn--arrow btn--w320', 'button', 'перейти к оплате')
           .block-item--mb40
             h4 Pagination
             +pagination(4, 1, 4, 14, arrows)

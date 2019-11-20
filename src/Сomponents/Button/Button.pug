@@ -1,2 +1,2 @@
-mixin button(selector, text)
-  div(class= "btn " + selector)= text
+mixin button(selector, type, text)
+  button(type= type, class= `btn ${selector}`)= text

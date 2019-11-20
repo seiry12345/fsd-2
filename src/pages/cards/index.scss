@@ -1,0 +1,20 @@
+.ui-kit-logo {
+  padding-bottom: 53px;
+}
+
+main {
+  padding-bottom: 130px;
+}
+
+.cards__wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cards__item {
+  flex: 0 1 380px;
+  margin-bottom: 37px;
+  &--right {
+    flex: 0 1 280px;
+  }
+}

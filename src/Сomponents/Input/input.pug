@@ -1,6 +1,6 @@
 mixin input(attrs)
   div(class= "form-item " + attrs.customSelector)
-    if attrs
+    if (attrs.labelTitle.length > 0)
       label(for= attrs.inputID, class= "input-label")
         span.label-left= attrs.labelTitle
       span(class= "input-wrap " + attrs.inputWrap)

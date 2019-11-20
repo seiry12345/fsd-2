@@ -1,0 +1,59 @@
+extends ../../layouts/ui-kit.pug
+block vars
+  - const title = 'Cards';
+
+  - const dateRange = {"id1": "date1", "id2": "date2", "customSelector": "form-item__date--before form-item--mb40", "labelTitle1": "date Dropdown", "labelTitle2": "date Dropdown"};
+
+  - const dropdownGuests = {"customSelector": "", "type": "guests", "placeholder": "Сколько гостей?", "labelTitle": "Dropdown", "dropdownBtns": true};
+  - const dropdownGuestsItems = [{"text": "Взрослые", "customSelector": ""}, {"text": "Дети", "customSelector": ""}, {"text": "Младенцы", "customSelector": "separate"}];
+
+  - const inputName = {"inputType": "text", "inputName": "name", "inputID": "name", "customSelector": "", "inputPlaceholder": "Имя", "inputValue": false, "labelTitle": ""};
+  - const inputLastname = {"inputType": "text", "inputName": "lastname", "inputID": "lastname", "customSelector": "", "inputPlaceholder": "Фамилия", "inputValue": false, "labelTitle": ""};
+  - const inputEmail = {"inputType": "email", "inputName": "email", "inputID": "email", "customSelector": "", "inputPlaceholder": "Email", "inputValue": false, "labelTitle": "данные для входа в сервис"};
+  - const inputPassword = {"inputType": "password", "inputName": "password", "inputID": "password", "customSelector": "", "inputPlaceholder": "Пароль", "inputValue": false, "labelTitle": ""};
+
+  - const radioMale = {"name": "gender", "id": "radio1", "customSelector": '', "labelClass": "", "value": 'male', "labelTitle": "Мужчина"};
+  - const radioFemale = {"name": "gender", "id": "radio2", "customSelector": '', "labelClass": "", "value": 'female', "labelTitle": "Женщина"};
+
+  - const birthDate = {"id": "birth-date", "customSelector": "", "inputPlaceholder": "ДД.ММ.ГГГГ", "labelTitle": ""};
+
+  include ../../Сomponents/Input/Input
+  include ../../Сomponents/Dropdown/Dropdown
+  include ../../Сomponents/Dropdown-date/Dropdown-date
+  include ../../Сomponents/Button/Button
+  include ../../Сomponents/Radio/Radio
+  include ../../Сomponents/Toggle/Toggle
+
+
+block content
+  main
+    .cards
+      .wrapper.cards__wrapper
+        .cards__item.cards__item--left
+          form.card.find-room
+            h3.card__title.h1 Найдём номера под ваши пожелания
+            +dropdownDate(dateRange, true, false)
+            +dropdown(dropdownGuests, dropdownGuestsItems)
+            +button('btn btn--arrow btn--w320', 'submit', 'Подобрать номер')
+
+          form.card.registration
+            h3.card__title.h1 Регистрация аккаунта
+            +input(inputName)
+            +input(inputLastname)
+            .card__wrap
+              +radio(radioMale)
+              +radio(radioFemale)
+            +dropdownDate(birthDate)
+            +input(inputEmail)
+            +input(inputPassword)
+            +button('btn btn--arrow btn--w320', 'submit', 'Перейти к оплате')
+
+
+        .cards__item.cards__item--center
+
+
+
+        .cards__item.cards__item--right
+
+
+
