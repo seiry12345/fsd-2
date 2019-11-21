@@ -1,0 +1,26 @@
+.registration {
+  .form-item {
+    margin: 0 0 7px;
+
+    &__radio {
+      margin: 0 0 27px;
+
+      &:first-child {
+        margin-right: 20px;
+      }
+    }
+
+    &__birth-date {
+      margin: 0 0 17px;
+    }
+
+    &__toggle {
+      margin: 0 0 17px;
+    }
+  }
+
+  &__submit {
+    width: 100%;
+    margin: 0 auto 27px;
+  }
+}

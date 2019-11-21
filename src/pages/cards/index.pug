@@ -2,12 +2,12 @@ extends ../../layouts/ui-kit.pug
 block vars
   - const title = 'Cards';
 
-  // Find room data
+
   - const findRoomDateRange = {"id1": "findRoomFromDate", "id2": "findRoomToDate", "customSelector": "form-item__date--before", "labelTitle1": "Прибытие", "labelTitle2": "Выезд"};
   - const findRoomGuests = {"customSelector": "", "type": "guests", "placeholder": "Сколько гостей?", "labelTitle": "Гости", "dropdownBtns": true};
   - const findRoomGuestsItems = [{"text": "Взрослые", "customSelector": ""}, {"text": "Дети", "customSelector": ""}, {"text": "Младенцы", "customSelector": "separate"}];
 
-  // Registration data
+
   - const inputName = {"inputType": "text", "inputName": "name", "inputID": "name", "customSelector": "", "inputPlaceholder": "Имя", "inputValue": false, "labelTitle": ""};
   - const inputLastname = {"inputType": "text", "inputName": "lastname", "inputID": "lastname", "customSelector": "", "inputPlaceholder": "Фамилия", "inputValue": false, "labelTitle": ""};
   - const inputEmail = {"inputType": "email", "inputName": "email", "inputID": "email", "customSelector": "", "inputPlaceholder": "Email", "inputValue": false, "labelTitle": "данные для входа в сервис"};
@@ -17,12 +17,12 @@ block vars
   - const birthDate = {"id": "birth-date", "customSelector": "form-item__birth-date", "inputPlaceholder": "ДД.ММ.ГГГГ", "labelTitle": ""};
   - const toggle = {"name": "toggle", "id": "toggle1", "class": 'toggle', "labelClass": "", "value": false, "labelTitle": "Получать спецпредложения"};
 
-  // Room data
+
   - const roomDateRange = {"id1": "roomFromDate", "id2": "date2", "roomToDate": "form-item__date--before", "labelTitle1": "Прибытие", "labelTitle2": "Выезд"};
-  - const roomGuests = {"customSelector": "", "type": "guests", "placeholder": "Сколько гостей?", "labelTitle": "Dropdown", "dropdownBtns": true};
+  - const roomGuests = {"customSelector": "", "type": "guests", "placeholder": "Сколько гостей?", "labelTitle": "Гости", "dropdownBtns": true};
   - const roomGuestsItems = [{"text": "Взрослые", "customSelector": ""}, {"text": "Дети", "customSelector": ""}, {"text": "Младенцы", "customSelector": "separate"}];
 
-  // Auth data
+
   - const inputAuthEmail = {"inputType": "text", "inputName": "auth-email", "inputID": "auth-email", "customSelector": "", "inputPlaceholder": "Email", "inputValue": false, "labelTitle": ""};
   - const inputAuthPass = {"inputType": "password", "inputName": "auth-pass", "inputID": "auth-pass", "customSelector": "", "inputPlaceholder": "Пароль", "inputValue": false, "labelTitle": ""};
 

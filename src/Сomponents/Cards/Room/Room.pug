@@ -1,34 +1,38 @@
 form.card.room
-  h3.card__wrap.card__title.h1
-    .room__title-text.h1
-      | № 888 <span>люкс</span>
+  .card__wrap.card__wrap--between.card__title.room__title
+    h3.room__title-text
+      | № <span class="room__title-text--size">888</span> <span class="room__title-text--color">люкс</span>
     .room__title-price
-      | 9 990₽ <span>в сутки</span>
+      | <span>9 990₽</span> в сутки
 
   +dropdownDate(roomDateRange, true, false)
   +dropdown(roomGuests, roomGuestsItems)
-  .card__wrap.room__price
-    .room__price-days
-      | 9 990₽ х <span>1 сутки</span>
-    .room__price-days-total
-      | 9 990₽
 
-  .card__wrap.room__service-charge
-    .room__service-charge-text
-      | Сбор за услуги: скидка <span>2 179₽</span><i class="material-icons">error_outline</i>
-    .room__service-charge-total
-      | 0₽
+  .room__price
+    .card__wrap.card__wrap--between.room__price-item.room__days
+      .room__days-text
+        | 9 990₽ х <span>1 сутки</span>
+      .room__days-total
+        | 9 990₽
 
-  .card__wrap.room__advanced
-    .room__room__advanced-text
-      | Сбор за услуги: скидка <span>2 179₽</span><i class="material-icons">error_outline</i>
-    .room__room__advanced-total
-      | 300₽
+    .card__wrap.card__wrap--between.room__price-item.room__service
+      .room__service-text
+        | Сбор за услуги: скидка <span>2 179₽</span>
+        | <i class="material-icons">error_outline</i>
+      .room__service-total
+        | 0₽
 
-  .room__total
-    .room__total-text
-      | Итого
-    .room__total-price
-      | 38 081₽
+    .card__wrap.card__wrap--between.room__price-item.room__advanced
+      .room__advanced-text
+        | Сбор за услуги: скидка <span>2 179₽</span>
+        | <i class="material-icons">error_outline</i>
+      .room__advanced-total
+        | 300₽
 
-  +button("btn--arrow", "submit", "Забронировать")
+    .card__wrap.card__wrap--between.room__total
+      .room__total-text
+        | Итого
+      .room__total-price
+        | 38 081₽
+
+  +button("room__btn btn--arrow", "submit", "Забронировать")

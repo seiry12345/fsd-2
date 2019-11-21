@@ -13,6 +13,13 @@ import '../../Сomponents/Button/button.scss';
 import '../../Сomponents/Radio/radio.scss';
 import '../../Сomponents/Toggle/toggle.scss';
 
+// cards
+import '../../Сomponents/Cards/cards.scss'
+import '../../Сomponents/Cards/Find-room/find-room.scss'
+import '../../Сomponents/Cards/Registration/registration.scss'
+import '../../Сomponents/Cards/Room/room.scss'
+import '../../Сomponents/Cards/Auth/auth.scss'
+
 // jquery
 import 'jquery/dist/jquery.min';
 import '../../Сomponents/Dropdown/dropdown';
