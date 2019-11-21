@@ -4,7 +4,7 @@ const baseWebpackConfig = require('./webpack.base.conf');
 const buildWebpackConfig = merge(baseWebpackConfig, {
   mode: 'production',
   output: {
-    publicPath: '/dist'
+    publicPath: './'
   }
 });
 

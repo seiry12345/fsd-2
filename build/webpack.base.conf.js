@@ -16,19 +16,12 @@ module.exports = {
   },
 
   entry: {
-    // formElements: `${PATHS.src}/pages/form-elements/index`
     cards: `${PATHS.src}/pages/cards/index`
   },
 
   output: {
     filename: `${PATHS.assets}js/[name].[hash].js`,
     path: PATHS.dist
-  },
-
-  resolve: {
-    alias: {
-      Components: PATHS.src + '/Components'
-    }
   },
 
   optimization: {
@@ -72,9 +65,31 @@ module.exports = {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'file-loader',
         options: {
-          name: '/assets/images/[name].[ext]'
+          name: '[name].[ext]',
+          outputPath: 'assets/images',
         }
       },
+
+      // {
+      //   loader: 'image-webpack-loader',
+      //   options: {
+      //     bypassOnDebug: true,
+      //     mozjpeg: {
+      //       progressive: true,
+      //       quality: 65
+      //     },
+      //     optipng: {
+      //       enabled: false
+      //     },
+      //     pngquant: {
+      //       quality: '65-90',
+      //       speed: 4
+      //     },
+      //     gifsicle: {
+      //       interlaced: false
+      //     }
+      //   }
+      // },
 
       {
         test: /\.scss$/,
@@ -83,18 +98,18 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
-            options: { sourceMap: true }
+            options: {sourceMap: true}
           },
           {
             loader: 'postcss-loader',
             options: {
               sourceMap: true,
-              config: { path: `./postcss.config.js` }
+              config: {path: `./postcss.config.js`}
             }
           },
           {
             loader: 'sass-loader',
-            options: { sourceMap: true }
+            options: {sourceMap: true}
           },
           {
             loader: 'sass-resources-loader',
@@ -115,13 +130,13 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
-            options: { sourceMap: true }
+            options: {sourceMap: true}
           },
           {
             loader: 'postcss-loader',
             options: {
               sourceMap: true,
-              config: { path: `./postcss.config.js` }
+              config: {path: `./postcss.config.js`}
             }
           }
         ]
@@ -142,19 +157,18 @@ module.exports = {
     }),
 
     new MiniCssExtractPlugin({
-      filename: `${PATHS.assets}css/[name].[hash].css`
+      filename: '[name].[hash].css',
+      outputPath: './assets/css'
     }),
 
+
     new CopyWebpackPlugin([
-      {
-        from: `${PATHS.src}/${PATHS.assets}images`,
-        to: `${PATHS.assets}/images`
-      },
       {
         from: `${PATHS.src}/${PATHS.assets}fonts`,
         to: `${PATHS.assets}fonts`
       },
-      { from: `${PATHS.src}/static`, to: '' }
+
+      {from: `${PATHS.src}/static`, to: ''}
     ])
   ]
 };
