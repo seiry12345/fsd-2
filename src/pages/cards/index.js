@@ -12,6 +12,8 @@ import '../../Сomponents/Dropdown-date/dropdown-date.scss'
 import '../../Сomponents/Button/button.scss'
 import '../../Сomponents/Radio/radio.scss'
 import '../../Сomponents/Toggle/toggle.scss'
+import '../../Сomponents/Rate-btn/rate-btn.scss'
+import '../../Сomponents/Room/room.scss'
 
 // cards
 import '../../Сomponents/Cards/cards.scss'
@@ -27,8 +29,10 @@ import '../../Сomponents/Dropdown-date/dropdown-date'
 
 
 // datepicker expanded
-const datepickerExpanded = $('.datepicker--expanded');
+const datepickerExpanded = $('.datepicker--expanded')
 
 if (datepickerExpanded.length > 0) {
-  datepickerExpanded.datepicker()
+  datepickerExpanded.datepicker({
+    range: true,
+  });
 }
