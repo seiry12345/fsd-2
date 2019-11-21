@@ -1,38 +1,38 @@
-form.card.room
-  .card__wrap.card__wrap--between.card__title.room__title
-    h3.room__title-text
-      | № <span class="room__title-text--size">888</span> <span class="room__title-text--color">люкс</span>
-    .room__title-price
+form.card.card-room
+  .card__wrap.card__wrap--between.card__title.card-room__title
+    h3.card-room__title-text
+      | № <span class="card-room__title-text--size">888</span> <span class="card-room__title-text--color">люкс</span>
+    .card-room__title-price
       | <span>9 990₽</span> в сутки
 
   +dropdownDate(roomDateRange, true, false)
   +dropdown(roomGuests, roomGuestsItems)
 
-  .room__price
-    .card__wrap.card__wrap--between.room__price-item.room__days
-      .room__days-text
+  .card-room__price
+    .card__wrap.card__wrap--between.card-room__price-item.card-room__days
+      .card-room__days-text
         | 9 990₽ х <span>1 сутки</span>
-      .room__days-total
+      .card-room__days-total
         | 9 990₽
 
-    .card__wrap.card__wrap--between.room__price-item.room__service
-      .room__service-text
+    .card__wrap.card__wrap--between.card-room__price-item.card-room__service
+      .card-room__service-text
         | Сбор за услуги: скидка <span>2 179₽</span>
         | <i class="material-icons">error_outline</i>
-      .room__service-total
+      .card-room__service-total
         | 0₽
 
-    .card__wrap.card__wrap--between.room__price-item.room__advanced
-      .room__advanced-text
+    .card__wrap.card__wrap--between.card-room__price-item.card-room__advanced
+      .card-room__advanced-text
         | Сбор за услуги: скидка <span>2 179₽</span>
         | <i class="material-icons">error_outline</i>
-      .room__advanced-total
+      .card-room__advanced-total
         | 300₽
 
-    .card__wrap.card__wrap--between.room__total
-      .room__total-text
+    .card__wrap.card__wrap--between.card-room__total
+      .card-room__total-text
         | Итого
-      .room__total-price
+      .card-room__total-price
         | 38 081₽
 
-  +button("room__btn btn--arrow", "submit", "Забронировать")
+  +button("card-room__btn btn--arrow", "submit", "Забронировать")
