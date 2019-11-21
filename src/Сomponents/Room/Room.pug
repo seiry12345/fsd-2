@@ -1,0 +1,21 @@
+mixin room(attrs, items)
+  .room
+    each item in items
+      .room__slider
+        each slide in item.slides
+          .room__slider-item
+            img(src= slide.src, alt= item.title)
+
+
+      .card__wrap.card__wrap--between.card__title.card-room__title
+        h3.card-room__title-text
+          | № <span class="card-room__title-text--size"> #{item.title}</span>
+          if (item.type.length > 0)
+          | <span class="card-room__title-text--color"> #{item.type}</span>
+        .card-room__title-price
+          | <span>#{item.price}</span> в сутки
+
+      .card__wrap.card__wrap--between.room__reviews
+        +rateBtn(item.reviewAll, item.reviewCurrent)
+        .room__reviews-text
+          | #{item.reviewText}
