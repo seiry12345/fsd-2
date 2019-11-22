@@ -70,27 +70,6 @@ module.exports = {
         }
       },
 
-      // {
-      //   loader: 'image-webpack-loader',
-      //   options: {
-      //     bypassOnDebug: true,
-      //     mozjpeg: {
-      //       progressive: true,
-      //       quality: 65
-      //     },
-      //     optipng: {
-      //       enabled: false
-      //     },
-      //     pngquant: {
-      //       quality: '65-90',
-      //       speed: 4
-      //     },
-      //     gifsicle: {
-      //       interlaced: false
-      //     }
-      //   }
-      // },
-
       {
         test: /\.scss$/,
         use: [
@@ -166,6 +145,11 @@ module.exports = {
       {
         from: `${PATHS.src}/${PATHS.assets}fonts`,
         to: `${PATHS.assets}fonts`
+      },
+
+      {
+        from: `${PATHS.src}/${PATHS.assets}images`,
+        to: `${PATHS.assets}images`
       },
 
       {from: `${PATHS.src}/static`, to: ''}

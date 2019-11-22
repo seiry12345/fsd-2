@@ -26,8 +26,11 @@ block vars
   - const inputAuthEmail = {"inputType": "text", "inputName": "auth-email", "inputID": "auth-email", "customSelector": "", "inputPlaceholder": "Email", "inputValue": false, "labelTitle": ""};
   - const inputAuthPass = {"inputType": "password", "inputName": "auth-pass", "inputID": "auth-pass", "customSelector": "", "inputPlaceholder": "Пароль", "inputValue": false, "labelTitle": ""};
 
-  - const room888 = {}
-  - const room888Items = {}
+  - const room848 = {"title": "848", "type": "Люкс", "price": "9 990₽", "stars": 5, "filled": 5, "reviewCount": "145 Отзывов"};
+  - const room848Images = ['../../assets/images/room1.jpg', '../../assets/images/room2.jpg'];
+
+  - const room840 = {"title": "840", "type": "", "price": "9 990₽", "stars": 5, "filled": 4, "reviewCount": "65 Отзывов"};
+  - const room840Images = ['../../assets/images/room2.jpg', '../../assets/images/room1.jpg'];
 
 
   include ../../Сomponents/Input/Input
@@ -55,3 +58,6 @@ block content
 
         .cards__item.cards__item--right
           .datepicker--expanded
+
+          +room("", room848, room848Images)
+          +room("", room840, room840Images)
