@@ -24,8 +24,15 @@ import '../../Сomponents/Cards/Auth/auth.scss'
 
 // jquery
 import 'jquery/dist/jquery.min'
+
+//slick
+import 'slick-slider/slick/slick'
+import 'slick-slider/slick/slick.css'
+
+// custom scripts
 import '../../Сomponents/Dropdown/dropdown'
 import '../../Сomponents/Dropdown-date/dropdown-date'
+import '../../Сomponents/Room/room'
 
 
 // datepicker expanded
