@@ -9,24 +9,27 @@ form.card.card-room
   +dropdown(roomGuests, roomGuestsItems)
 
   .card-room__price
-    .card__wrap.card__wrap--between.card-room__price-item.card-room__days
-      .card-room__days-text
+    .card__wrap.card-room__item
+      .card-room__text
         | 9 990₽ х <span>1 сутки</span>
-      .card-room__days-total
+      .card-room__sum
         | 9 990₽
 
-    .card__wrap.card__wrap--between.card-room__price-item.card-room__service
-      .card-room__service-text
+    .card__wrap.card-room__item
+      .card-room__text
         | Сбор за услуги: скидка <span>2 179₽</span>
-        | <i class="material-icons">error_outline</i>
-      .card-room__service-total
+      .card-room__icon
+        i(class="material-icons") error_outline
+      .card-room__sum
         | 0₽
 
-    .card__wrap.card__wrap--between.card-room__price-item.card-room__advanced
-      .card-room__advanced-text
-        | Сбор за услуги: скидка <span>2 179₽</span>
-        | <i class="material-icons">error_outline</i>
-      .card-room__advanced-total
+    .card__wrap.card-room__item
+      .card-room__text
+        | Сбор за дополнительные <br />
+        | услуги
+      .card-room__icon
+        i(class="material-icons") error_outline
+      .card-room__sum
         | 300₽
 
     .card__wrap.card__wrap--between.card-room__total

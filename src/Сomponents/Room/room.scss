@@ -1,4 +1,5 @@
 .room {
+  overflow: hidden;
   width: 100%;
   max-width: 270px;
   background-color: #fff;
@@ -7,13 +8,12 @@
 
   &__slide {
     position: relative;
-    margin: 0 0 17px;
   }
 
   .slick-dots {
     position: absolute;
-    right: 15px;
-    bottom: 15px;
+    right: 14px;
+    bottom: 21px;
     width: auto;
     display: flex;
     align-items: center;
@@ -58,7 +58,7 @@
     z-index: 2;
     position: absolute;
     top: 50%;
-    margin-top: -18px;
+    margin-top: -35px;
     width: 44px;
     height: 44px;
     background: transparent;
@@ -103,11 +103,13 @@
   }
 
   &__info {
-    padding: 0 17px 17px;
+    padding: 7px 20px 17px;
   }
 
   &__title {
+    padding-bottom: 3px;
     margin: 0 0 7px;
+    border-bottom: 1px solid rgba($mainColor, 0.1);
 
     .card__room__title-text {
       padding-bottom: 7px;

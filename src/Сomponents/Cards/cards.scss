@@ -1,5 +1,5 @@
 .card {
-  padding: 37px 30px;
+  padding: 37px 30px 27px;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 4px;
@@ -20,7 +20,10 @@
   }
 
   &__title {
-    margin: 0 0 17px;
+    margin: 0 0 14px;
+    font-family: $titleFont;
+    font-size: 27px;
+    line-height: 33px;
     text-transform: none;
   }
 

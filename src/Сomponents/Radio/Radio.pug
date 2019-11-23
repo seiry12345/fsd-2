@@ -1,9 +1,9 @@
 mixin radio(attrs, checked)
   .form-item.form-item__radio
     if (checked)
-      input(type= "radio", name= attrs.name, id= attrs.id, class= "radio " + attrs.customSelector, value= attrs.value, checked= "")
+      input(type= "radio", name= attrs.name, id= attrs.id, class= `radio ${attrs.customSelector}`, value= attrs.value, checked= true)
     else
-      input(type= "radio", name= attrs.name, id= attrs.id, class= "radio " + attrs.customSelector, value= attrs.value)
+      input(type= "radio", name= attrs.name, id= attrs.id, class= `radio ${attrs.customSelector}`, value= attrs.value, checked= false)
 
     span(class= "radio__mark")
     label(for= attrs.id, class= "radio__label "+ attrs.labelClass)= attrs.labelTitle

@@ -1,5 +1,5 @@
 .ui-kit-logo {
-  padding-bottom: 53px;
+  padding-bottom: 65px;
 }
 
 main {
@@ -10,15 +10,15 @@ main {
   &__wrapper {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
   }
 
   &__item {
     flex: 0 1 380px;
-    margin-bottom: 37px;
+    margin: 0 40px 0 0;
 
     &--right {
       flex: 0 1 280px;
+      margin-right: 0;
     }
   }
 }

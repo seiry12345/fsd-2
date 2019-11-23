@@ -2,7 +2,8 @@
   color: $mainColor75;
 
   &__title {
-    font-size: 12px;
+    margin: 0 0 11px;
+    font-size: 15px;
     font-weight: 400;
   }
 
@@ -19,8 +20,10 @@
   }
 
   &__title-price {
-    font-size: 14px;
+    padding-top: 4px;
     color: $mainColor50;
+    font-family: $mainFont;
+    font-size: $mainFontSize;
 
     span {
       font-weight: 700;
@@ -28,19 +31,31 @@
   }
 
   &__price {
-    margin: 0 0 17px;
+    margin: 0 0 20px;
+  }
 
-    &-item {
-      margin: 0 0 7px;
-    }
+  &__item {
+    margin: 0 0 10px;
+    align-items: flex-start;
+    line-height: 22px;
+  }
 
+  &__text {
+    width: 216px;
+    margin-right: 5px;
+  }
+
+  &__icon {
     .material-icons {
-      font-size: 20px;
+      font-size: 22px;
       color: $mainColor25;
       vertical-align: text-bottom;
     }
   }
 
+  &__sum {
+    margin-left: auto;
+  }
 
   &__total {
     z-index: 1;
