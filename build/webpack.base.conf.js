@@ -16,7 +16,8 @@ module.exports = {
   },
 
   entry: {
-    cards: `${PATHS.src}/pages/cards/index`
+    // cards: `${PATHS.src}/pages/cards/index`
+    headersFooters: `${PATHS.src}/pages/headers-footers/index`
   },
 
   output: {
@@ -131,7 +132,8 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      template: `${PATHS.src}/pages/cards/index.pug`,
+      // template: `${PATHS.src}/pages/cards/index.pug`,
+      template: `${PATHS.src}/pages/headers-footers/index.pug`,
       filename: 'index.html'
     }),
 
