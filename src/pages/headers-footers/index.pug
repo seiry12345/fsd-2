@@ -1,12 +1,13 @@
-extends ../../layouts/ui-kit.pug
+extends ../../layouts/ui-kit
 block vars
-  - const title = 'Cards';
+  - const title = 'Headers & Footers';
 
-
-  include ../../Сomponents/Input/Input
+  include ../../Сomponents/Header/Header
 
 
 block content
+  +header("header", "")
+  +header("header", "signed")
+
   main
-    .cards
-      .wrapper
+    .wrapper

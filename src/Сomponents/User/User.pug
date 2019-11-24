@@ -1,0 +1,8 @@
+mixin userBlock(selector, signed)
+  div(class=`user ${selector}`)
+    if (signed.length > 0)
+      span.user__name
+        | Cosmin Negoita
+    else
+      +button("btn--transparent btn__call-auth", "button", "Login")
+      +button("btn__call-registration", "button", "Register")

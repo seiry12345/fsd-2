@@ -1,0 +1,14 @@
+mixin navbar(selector, items)
+  nav(class=`navbar ${selector}`)
+    ul.navbar__menu
+      each list in items
+        li(class=`navbar__item ${list.parent}`)
+          if list.submenu
+            if list
+              a(href=list.link, class=`navbar__link ${list.selector}`)= list.text
+            ul.navbar__submenu
+              each sublist in list.submenu
+                li.navbar__sublist
+                  a(href=sublist.link, class="navbar__link navbar__sublink")= sublist.text
+          else
+            a(href=list.link, class=`navbar__link ${list.selector}`)= list.text
