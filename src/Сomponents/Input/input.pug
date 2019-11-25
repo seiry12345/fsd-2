@@ -1,10 +1,10 @@
-mixin input(attrs)
-  div(class= `form-item ${attrs.customSelector}`)
-    if (attrs.labelTitle.length > 0)
-      label(for= attrs.inputID, class= "input-label")
-        span.label-left= attrs.labelTitle
-      span(class= `input-wrap ${attrs.inputWrap}`)
-        input(type= attrs.inputType, name= attrs.inputName, id= attrs.inputID, class= `input ${attrs.inputClass}`, placeholder= attrs.inputPlaceholder, value= attrs.inputValue)
+mixin input(data)
+  div(class= `form-item ${data.customSelector}`)
+    if (data.labelTitle.length > 0)
+      label(for= data.inputID)
+        span.label-left= data.labelTitle
+      span(class= "input__wrap")
+        input(type= data.inputType, name= data.inputName, id= data.inputID, class="input", placeholder= data.inputPlaceholder, value= data.inputValue)
     else
-      span(class= "input-wrap " + attrs.inputWrap)
-        input(type= attrs.inputType, name= attrs.inputName, id= attrs.inputID, class= `input ${attrs.inputClass}`, placeholder= attrs.inputPlaceholder, value= attrs.inputValue)
+      span(class= "input-wrap " + data.inputWrap)
+        input(type= data.inputType, name= data.inputName, id= data.inputID, class="input", placeholder= data.inputPlaceholder, value= data.inputValue)
