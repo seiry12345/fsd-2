@@ -1,12 +1,42 @@
-.input-label {
-  z-index: 1;
+.form-item__subscribe {
   position: relative;
-  overflow: hidden;
-  display: block;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 12px;
-  text-transform: uppercase;
+  .input__subscribe {
+    padding-right: 44px;
+    &:before {
+      @extend .material-icons;
+      content: "arrow_forward";
+      z-index: 1;
+      position: absolute;
+      right: 0;
+      top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      color: $purple;
+      font-size: 26px;
+    }
+  }
+}
+
+.input {
+  label {
+    z-index: 1;
+    position: relative;
+    overflow: hidden;
+    display: block;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  &__wrap {
+    z-index: 1;
+    position: relative;
+    display: block;
+  }
 }
 
 .input,
@@ -43,33 +73,4 @@
   padding: 11px 15px;
   color: $mainColor75;
   cursor: pointer;
-}
-
-.input-wrap {
-  z-index: 1;
-  position: relative;
-  display: block;
-}
-
-.subscribe {
-  &:before {
-    content: 'arrow_forward';
-    z-index: 1;
-    position: absolute;
-    right: 0;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 44px;
-    height: 44px;
-    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 26px;
-  }
-
-  .input {
-    padding-right: 44px;
-  }
 }

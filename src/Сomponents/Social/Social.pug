@@ -1,0 +1,5 @@
+mixin social(selector, items)
+  ul(class=`social ${selector}`)
+    each item in items
+      li(class=`social__item ${item.selector}`)
+        a(href= item.link, class="social__link", target="_blank")

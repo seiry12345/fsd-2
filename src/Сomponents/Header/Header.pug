@@ -3,13 +3,11 @@ include ../Logo/Logo
 include ../Navbar/Navbar
 include ../User/User
 
-- const menus = [{text: "Home", link: "/", selector: "navbar__link--active", parent: "" }, {text: "About us", link: "/about", parent: "" }, {text: "Services", link: "/services", selector: "", parent: "navbar__item--parent", submenu: [{text: "Reservation", link: "/reservation"}, {text: "Room search", link: "/room-search"}] }, {text: "Careers", link: "/Careers", selector: "", parent: ""}, {text: "News", link: "/news", selector: "", parent: ""}, {text: "Documentation", link: "/documentation", selector: "", parent: "" }];
-
 mixin header(selector, signed)
   header(class=`${selector}`)
     .wrapper
-      +logo("header__logo", front)
+      +logo("header__logo", "front")
 
-      +navbar("header__navbar", menus)
+      +navbar("header__navbar", headerNavbar)
 
       +userBlock("header__login", signed)

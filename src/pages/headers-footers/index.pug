@@ -1,13 +1,22 @@
 extends ../../layouts/ui-kit
 block vars
   - const title = 'Headers & Footers';
+  - const headerNavbar = [{text: "Home", link: "/", selector: "navbar__link--active", parent: "" }, {text: "About us", link: "/about", parent: "" }, {text: "Services", link: "/services", selector: "", parent: "navbar__item--parent", submenu: [{text: "Reservation", link: "/reservation"}, {text: "Room search", link: "/room-search"}] }, {text: "Careers", link: "/Careers", selector: "", parent: ""}, {text: "News", link: "/news", selector: "", parent: ""}, {text: "Documentation", link: "/documentation", selector: "", parent: "" }];
+
+  - const navigation = [{text: "About Us", link: "/about" }, { text: "News", link: "/news" }, { text: "Support", link: "/support" }, { text: "Products", link: "/p  roducts" }];
+  - const aboutUs = [{text: "Who we are", link: "/who" }, { text: "Our team", link: "/team" }, { text: "Careers", link: "/careers" }, { text: "Investors", link: "/investors" }];
+  - const support = [{text: "Documentation", link: "/documentation" }, { text: "Community", link: "/community" }, { text: "Get in Touch", link: "/get-in-touch" }];
+
+  - const inputSubscribe = {"inputType": "email", "inputName": "subscribe", "inputID": "subscribe", "customSelector": 'form-item__subscribe', "inputPlaceholder": "Your email address", "inputValue": false, "labelTitle": "", "inputWrap": "input__subscribe"};
+
+  - const social = [{selector: "social__tw", link: "https://twitter.com/"}, {selector: "social__fb", link: "https://ru-ru.facebook.com/"}, {selector: "social__insta", link: "https://www.instagram.com/?hl=ru"},]
 
   include ../../Сomponents/Header/Header
-
+  include ../../Сomponents/Footer/Footer
 
 block content
   +header("header", "")
   +header("header", "signed")
 
-  main
-    .wrapper
+  +footer("")
+  +footer("", "small")

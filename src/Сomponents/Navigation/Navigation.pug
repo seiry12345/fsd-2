@@ -1,0 +1,8 @@
+mixin navigation(selector, title, items)
+  nav(class=`navigation ${selector}`)
+    h3.navigation__title #{title}
+    ul.navigation__list
+      each item in items
+        li.navigation__item
+          a(href= item.link, class="navigation__link")
+            | #{item.text}

@@ -62,8 +62,9 @@
       }
     }
     &:before {
+      @extend .material-icons;
       overflow: hidden;
-      content: 'arrow_forward';
+      content: "arrow_forward";
       z-index: -1;
       position: absolute;
       right: 0;
@@ -72,7 +73,6 @@
       align-items: center;
       width: 34px;
       height: 44px;
-      @extend .material-icons;
       color: inherit;
       transition: all 0.3s ease;
     }
