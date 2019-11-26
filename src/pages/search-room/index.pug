@@ -10,27 +10,69 @@ block vars
   - const inputSubscribe = {"inputType": "email", "inputName": "subscribe", "inputID": "subscribe", "customSelector": 'form-item__subscribe', "inputPlaceholder": "Your email address", "inputValue": false, "labelTitle": "", "inputWrap": "input__subscribe"};
   - const social = [{selector: "social__tw", link: "https://twitter.com/"}, {selector: "social__fb", link: "https://ru-ru.facebook.com/"}, {selector: "social__insta", link: "https://www.instagram.com/?hl=ru"},]
 
+  - const rangeSlider = {"name": "range", "customSelector": "form-item--w266", "labelTitle": "Range Slider", "minPrice": "0", "maxPrice": "15500", "from": "5000", "to": "10000"};
+
   - const dateFiltered = {"id": "date-filtered", "customSelector": "form-item__date--before form-item--w266 form-item--mb40", "inputPlaceholder": "ДД.ММ.ГГГГ", "labelTitle": "filter date dropdown"};
   - const dropdownGuests = {"customSelector": "", "type": "guests", "placeholder": "Сколько гостей?", "labelTitle": "Dropdown", "dropdownBtns": true};
   - const dropdownGuestsItems = [{"text": "Взрослые", "customSelector": ""}, {"text": "Дети", "customSelector": ""}, {"text": "Младенцы", "customSelector": "separate"}];
+
+  - const dropdownFurniture = {"customSelector": "form-item--w266", "type": "", "placeholder": "Выберите удобства", "labelTitle": "Dropdown", "dropdownBtns": false};
+  - const dropdownFurnitureItems = [{"text": "Спальни", "customSelector": ""}, {"text": "Кровати", "customSelector": ""}, {"text": "Ванные комнаты", "customSelector": ""}];
 
   - const findRoomDateRange = {"id1": "findRoomFromDate", "id2": "findRoomToDate", "customSelector": "form-item__date--before", "labelTitle1": "Прибытие", "labelTitle2": "Выезд"};
   - const findRoomGuests = {"customSelector": "", "type": "guests", "placeholder": "Сколько гостей?", "labelTitle": "Гости", "dropdownBtns": true};
   - const findRoomGuestsItems = [{"text": "Взрослые", "customSelector": ""}, {"text": "Дети", "customSelector": ""}, {"text": "Младенцы", "customSelector": "separate"}];
 
+  - const checkbox = {"name": "checkbox1", "id": "checkbox1", "customSelector": 'form-item__checkbox--w226', "labelClass": "", "value": false, "labelTitle": "Можно курить"};
+  - const checkbox2 = {"name": "checkbox2", "id": "checkbox2", "customSelector": 'form-item__checkbox--w226', "labelClass": "", "value": false, "labelTitle": "Можно с питомцами"};
+  - const checkbox3 = {"name": "checkbox3", "id": "checkbox3", "customSelector": 'form-item__checkbox--w226', "labelClass": "", "value": false, "labelTitle": "Можно пригласить гостей (до 10 человек)"};
+  - const checkboxRich = {"name": "checkboxRich", "id": "checkboxRich", "customSelector": "form-item__checkbox--w266", "labelClass": "", "title": "Широкий коридор", "text": "Ширина коридоров в номере не менее 91 см."};
+
+  - const checkboxExpItems = [{"name": "breakfast", "text": 'Завтрак'}, {"name": "writing-table", "text": 'Письменный стол'}, {"name": "table-for-eating", "text": 'Стул для кормления'}, {"name": "bad", "text": 'Кроватка'}, {"name": "tv", "text": 'Телевизор'}, {"name": "schampoo", "text": 'Шампунь'}, {"name": "tv2", "text": 'Телевизор'}, {"name": "schampoo2", "text": 'Шампунь'}];
+  - const checkboxExpItems2 = [{"name": "breakfast", "text": 'Завтрак'}, {"name": "writing-table", "text": 'Письменный стол'}, {"name": "table-for-eating", "text": 'Стул для кормления'}, {"name": "bad", "text": 'Кроватка'}, {"name": "tv", "text": 'Телевизор'}, {"name": "schampoo", "text": 'Шампунь'}, {"name": "tv2", "text": 'Телевизор'}, {"name": "schampoo2", "text": 'Шампунь'}];
+
+  - const room888 = {"title": "888", "type": "Люкс", "price": "9 990₽", "stars": 5, "filled": 5, "reviewCount": "145 Отзывов"};
+  - const room888Images = ['../../assets/images/room1.jpg', '../../assets/images/room2.jpg'];
+
+  - const room840 = {"title": "840", "type": "", "price": "9 990₽", "stars": 5, "filled": 4, "reviewCount": "65 Отзывов"};
+  - const room840Images = ['../../assets/images/room2.jpg', '../../assets/images/room1.jpg'];
+
+
   include ../../Сomponents/Header/Header
   include ../../Сomponents/Footer/Footer
+  include ../../Сomponents/Dropdown/Dropdown
+  include ../../Сomponents/Dropdown-date/Dropdown-date
+  include ../../Сomponents/Range/Range
+  include ../../Сomponents/Checkbox/Checkbox
+  include ../../Сomponents/Checkbox-expandable/Checkbox-expandable
+  include ../../Сomponents/Room/Room
+  include ../../Сomponents/Pagination/Pagination
 
 block content
   +header("header", "")
 
   main.seacrh-room
-    aside.search-room__aside
-      +dropdownDate(dateFiltered, false, true)
-      +dropdown(dropdownGuests, dropdownGuestsItems)
+    .wrapper.search-room__wrapper
+      aside.search-room__aside
+        +dropdownDate(dateFiltered, false, true)
+        +dropdown(dropdownGuests, dropdownGuestsItems)
+        +range(rangeSlider)
+        .search-room__checkbox
+          h4 checkbox buttons
+          +checkbox(checkbox)
+          +checkbox(checkbox2)
+          +checkbox(checkbox3)
+        +checkbox(checkboxRich, true)
+        +dropdown(dropdownFurniture, dropdownFurnitureItems)
+        +checkboxExpandable('expandable checkbox list', 'form-item--w266', checkboxExpItems)
 
-    section.search-room__content
+      section.search-room__content
+        h2.h3 Номера, которые мы для вас подобрали
+        .search-room__rooms
+          +room("", room888, room888Images)
+          +room("", room840, room840Images)
 
+        +pagination(4, 1, 4, 14, arrows)
 
   +footer("")
   .overlay

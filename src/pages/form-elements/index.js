@@ -20,7 +20,7 @@ import '../../Сomponents/Dropdown-date/dropdown-date.scss';
 import '../../Сomponents/Dropdown-date/dropdown-date';
 import '../../Сomponents/Like-btn/like-btn';
 import '../../Сomponents/Checkbox-expandable/Checkbox-expandable.scss';
-import '../../Сomponents/Checkbox-expandable/Checkbox-expandable';
+import '../../Сomponents/Checkbox-expandable/checkbox-expandable';
 import '../../Сomponents/Bullet-list/bullet-list.scss';
 import '../../Сomponents/Advantages/advantages.scss';
 import '../../Сomponents/Review/review.scss';
