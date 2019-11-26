@@ -7,7 +7,7 @@ mixin dropdownDate(attrs, range, filter)
             span.label-left= attrs.labelTitle1
           input(type="text", class="dropdown-date__input dropdown-date__start", id= attrs.id1, placeholder="ДД.ММ.ГГГГ")
 
-        .dropdown-date__item
+        .dropdown-date__item.dropdown-date__item-range
           label(for= attrs.id, class= 'label-date')
             span.label-left= attrs.labelTitle2
           input(type="text", class="dropdown-date__input dropdown-date__end", id= attrs.id2, placeholder="ДД.ММ.ГГГГ")

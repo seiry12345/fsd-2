@@ -13,6 +13,10 @@
     margin-right: 15px;
   }
 
+  &__mobile {
+    display: none;
+  }
+
   &__name {
     display: inline;
     color: $mainColor50;

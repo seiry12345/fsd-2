@@ -4,3 +4,27 @@
     margin: 14px auto 0;
   }
 }
+
+@media screen and (max-width: $phoneWidth) {
+  .find-room {
+    .form-item {
+      margin: 0 0 12px;
+    }
+
+    .dropdown-date {
+      &__wrap {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      }
+
+      &__item {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 0 12px;
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+  }
+}

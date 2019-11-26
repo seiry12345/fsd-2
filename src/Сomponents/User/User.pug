@@ -1,8 +1,11 @@
 mixin userBlock(selector, signed)
   div(class=`user ${selector}`)
     if (signed.length > 0)
-      span.user__name
+      a(href="/personal", class="user__name")
         | Cosmin Negoita
     else
-      +button("btn--transparent btn__call-auth", "button", "Login")
-      +button("btn__call-registration", "button", "Register")
+      a(href="/login", class="user__mobile")
+        | <i class="material-icons">account_circle</i>
+
+      +button("btn--transparent btn__call-auth", "button", "Войти")
+      +button("btn__call-registration", "button", "Зарегистрироваться")

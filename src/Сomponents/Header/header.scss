@@ -1,4 +1,6 @@
 .header {
+  z-index: 11;
+  position: relative;
   padding: 15px 0;
   background-color: #fff;
 
@@ -11,15 +13,86 @@
   &__logo {
     width: 106px;
     height: 40px;
-
-    svg {
-      width: 100%;
-      height: 100%;
-    }
   }
 
   &__navbar {
     margin-left: auto;
     margin-right: 25px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .header {
+    &__logo {
+      width: 40px;
+      height: 40px;
+      margin-left: 25px;
+      margin-right: auto;
+    }
+
+    &__navbar {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: $phoneWidth) {
+  .header {
+    &__logo {
+      width: 34px;
+      height: 34px;
+      margin-left: 15px;
+    }
+
+    &__hamburger {
+      width: 44px;
+      height: 44px;
+    }
+
+    .mobile__hambu {
+      span {
+        left: 13px;
+        top: 10px;
+      }
+    }
+
+    .mobile__close {
+      span {
+        &:first-child {
+          top: 11px;
+        }
+      }
+    }
+
+    .mobile__btn--active .mobile__close span:first-child {
+      height: 46%;
+    }
+
+    &__login {
+      width: 34px;
+      height: 34px;
+      .btn {
+        display: none;
+      }
+
+      .user__mobile {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .material-icons {
+        color: $mainColor;
+        font-size: 34px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .header {
+    &__logo {
+      margin-left: 10px;
+    }
   }
 }

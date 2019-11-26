@@ -1,6 +1,7 @@
 .navigation {
   &__item {
     margin: 0 0 14px;
+
     &:last-child {
       margin-bottom: 0;
     }
@@ -9,7 +10,9 @@
   &__link {
     display: inline;
     color: $mainColor50;
+    text-transform: none;
     border-bottom: 1px solid transparent;
+
     &:hover,
     &:focus,
     &:active {

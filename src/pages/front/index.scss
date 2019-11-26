@@ -1,0 +1,58 @@
+.screen {
+  min-height: calc(100vh - 70px);
+  background: url("../../assets/images/screen-bg.jpg") no-repeat center top / cover;
+
+  & > .wrapper {
+    position: relative;
+    padding: 70px 10px 385px;
+  }
+
+  .find-room {
+    max-width: 380px;
+  }
+
+  &__text {
+    position: absolute;
+    bottom: 18px;
+    right: 0;
+    color: $mainColor75;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.8);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .screen {
+    min-height: auto;
+
+    & > .wrapper {
+      padding: 70px 10px 85px;
+    }
+
+    .find-room {
+      margin: 0 auto;
+    }
+  }
+}
+
+@media screen and (max-width: $tabletWidth) {
+  .screen {
+    &__text {
+      right: 50%;
+      transform: translateX(50%);
+      text-align: center;
+      text-shadow: none;
+    }
+  }
+}
+
+@media screen and (max-width: $phoneWidth) {
+  .screen {
+    & > .wrapper {
+      padding: 65px 10px;
+    }
+
+    &__text {
+      display: none;
+    }
+  }
+}

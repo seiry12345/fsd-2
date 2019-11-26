@@ -2,12 +2,12 @@ include ../Button/Button
 include ../Logo/Logo
 include ../Navbar/Navbar
 include ../User/User
+include ../Hamburger/Hamburger
 
 mixin header(selector, signed)
   header(class=`${selector}`)
     .wrapper
+      +hamburger("header__hamburger")
       +logo("header__logo", "front")
-
       +navbar("header__navbar", headerNavbar)
-
       +userBlock("header__login", signed)

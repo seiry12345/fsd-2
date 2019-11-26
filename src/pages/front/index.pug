@@ -1,7 +1,7 @@
 extends ../../layouts/page
 block vars
   - const title = 'Landing Page';
-  - const headerNavbar = [{text: "Home", link: "/", selector: "navbar__link--active", parent: "" }, {text: "About us", link: "/about", parent: "" }, {text: "Services", link: "/services", selector: "", parent: "navbar__item--parent", submenu: [{text: "Reservation", link: "/reservation"}, {text: "Room search", link: "/room-search"}] }, {text: "Careers", link: "/Careers", selector: "", parent: ""}, {text: "News", link: "/news", selector: "", parent: ""}, {text: "Documentation", link: "/documentation", selector: "", parent: "" }];
+  - const headerNavbar = [{text: "О нас", link: "/about", parent: "" }, {text: "Услуги", link: "/services", selector: "", parent: "navbar__item--parent", submenu: [{text: "Бронирование", link: "/reservation"}, {text: "Поиск", link: "/room-search"}] }, {text: "Вакансии", link: "/Careers", selector: "", parent: ""}, {text: "Новости", link: "/news", selector: "", parent: ""}, {text: "Соглашения", link: "/documentation", selector: "", parent: "" }];
 
   - const navigation = [{text: "About Us", link: "/about" }, { text: "News", link: "/news" }, { text: "Support", link: "/support" }, { text: "Products", link: "/p  roducts" }];
   - const aboutUs = [{text: "Who we are", link: "/who" }, { text: "Our team", link: "/team" }, { text: "Careers", link: "/careers" }, { text: "Investors", link: "/investors" }];
@@ -11,6 +11,10 @@ block vars
 
   - const social = [{selector: "social__tw", link: "https://twitter.com/"}, {selector: "social__fb", link: "https://ru-ru.facebook.com/"}, {selector: "social__insta", link: "https://www.instagram.com/?hl=ru"},]
 
+  - const findRoomDateRange = {"id1": "findRoomFromDate", "id2": "findRoomToDate", "customSelector": "form-item__date--before", "labelTitle1": "Прибытие", "labelTitle2": "Выезд"};
+  - const findRoomGuests = {"customSelector": "", "type": "guests", "placeholder": "Сколько гостей?", "labelTitle": "Гости", "dropdownBtns": true};
+  - const findRoomGuestsItems = [{"text": "Взрослые", "customSelector": ""}, {"text": "Дети", "customSelector": ""}, {"text": "Младенцы", "customSelector": "separate"}];
+
   include ../../Сomponents/Header/Header
   include ../../Сomponents/Footer/Footer
 
@@ -18,6 +22,13 @@ block content
   +header("header", "")
 
   main
+    div.screen
+      .wrapper
+        include ../../Сomponents/Cards/Find-room/Find-room
 
+        p.screen__text
+          | Лучшие номера для вашей работы, <br />
+          | отдыха и просто вдохновения
 
   +footer("")
+  .overlay
