@@ -58,14 +58,14 @@
     z-index: 2;
     position: absolute;
     top: 50%;
-    margin-top: -35px;
-    width: 44px;
-    height: 44px;
+    width: 24px;
+    height: 24px;
+    margin-top: -15px;
     background: transparent;
-    outline: none;
     border: 1px solid transparent;
     border-radius: 50%;
     transition: all 0.3s ease;
+    outline: none;
     cursor: pointer;
 
     &:before {
@@ -77,17 +77,22 @@
       @extend .material-icons;
       color: #fff;
       transform: translate(-50%, -50%);
+      transition: .3s ease all;
     }
 
     &:hover,
     &:active,
     &:focus {
-      border-color: #fff;
+      background-color: #fff;
+      border-color: $purple;
+      &:before {
+        color: $purple;
+      }
     }
   }
 
   .slick-prev {
-    left: 0px;
+    left: 10px;
 
     &:before {
       content: 'keyboard_arrow_left';
@@ -95,7 +100,7 @@
   }
 
   .slick-next {
-    right: 0px;
+    right: 10px;
 
     &:before {
       content: 'keyboard_arrow_right';
@@ -118,6 +123,13 @@
 
     .card-room__title-text--size {
       font-size: 20px;
+    }
+  }
+
+  &__reviews-text {
+    color: $mainColor50;
+    span {
+      font-weight: 700;
     }
   }
 }

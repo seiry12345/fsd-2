@@ -24,6 +24,7 @@ import '../../Сomponents/Cards/Auth/auth.scss'
 
 // jquery
 import 'jquery/dist/jquery.min'
+import "../../assets/js/common"
 
 //slick
 import 'slick-slider/slick/slick'

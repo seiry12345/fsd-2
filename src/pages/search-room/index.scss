@@ -1,4 +1,6 @@
 .search-room {
+  padding: 27px 0 67px;
+
   &__wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -12,5 +14,78 @@
 
   &__content {
     flex: 1;
+  }
+
+  &__aside-item {
+    margin: 0 0 24px;
+  }
+
+  .form-item {
+    margin: 0 0 17px;
+
+    &__range {
+      margin: 0 0 7px;
+    }
+
+    &__checkbox {
+      margin: 0 0 12px;
+    }
+  }
+
+  .range__sub {
+    font-size: 12px;
+    color: $mainColor50;
+    text-align: center;
+  }
+
+  &__checkbox {
+    max-width: 246px;
+  }
+
+  .form-item__checkbox-expandable {
+    .checkbox__title {
+      &:before {
+        transform: translate(-12px, -50%);
+      }
+    }
+
+    &--active {
+      .checkbox__title {
+        &:before {
+          transform: translate(-12px, -60%) rotateX(180deg);
+        }
+      }
+    }
+  }
+
+  &__title {
+    margin: 0 0 20px;
+    max-width: 100%;
+  }
+
+  &__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 20px;
+  }
+
+  .room {
+    flex: 0 1 32.4%;
+    margin-bottom: 25px;
+    margin-right: 1.39%;
+
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
+
+  &__pagination {
+    .pagination__wrap {
+      justify-content: center;
+    }
+
+    .pagination__sub {
+      text-align: center;
+    }
   }
 }

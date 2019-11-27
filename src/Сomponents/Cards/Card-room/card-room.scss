@@ -16,6 +16,7 @@
 
     &--color {
       color: $purple;
+      font-size: 12px;
     }
   }
 
@@ -23,10 +24,11 @@
     padding-top: 4px;
     color: $mainColor50;
     font-family: $mainFont;
-    font-size: $mainFontSize;
+    font-size: 10px;
 
     span {
       font-weight: 700;
+      font-size: $mainFontSize;
     }
   }
 

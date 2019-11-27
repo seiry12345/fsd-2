@@ -26,6 +26,7 @@ import "../../Сomponents/Cards/Find-room/find-room.scss"
 
 // jquery
 import "jquery/dist/jquery.min"
+import "../../assets/js/common"
 import "../../Сomponents/Hamburger/hamburger"
 import "../../Сomponents/Dropdown/dropdown"
 import "../../Сomponents/Dropdown-date/dropdown-date"

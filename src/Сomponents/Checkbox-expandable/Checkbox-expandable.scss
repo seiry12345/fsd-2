@@ -30,8 +30,8 @@
     cursor: pointer;
 
     &:before {
-      content: 'keyboard_arrow_down';
       @extend .material-icons;
+      content: 'keyboard_arrow_down';
       position: absolute;
       right: 0;
       top: 50%;
@@ -106,8 +106,9 @@
     transition: all 0.3s ease;
 
     &:before {
+      @extend .material-icons;
       opacity: 0;
-      content: 'check';
+      content: "check";
       position: absolute;
       left: 0;
       top: 0;

@@ -1,7 +1,10 @@
 .pagination {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
+  &__wrap {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
   a {
     overflow: hidden;
     width: 40px;
@@ -13,6 +16,7 @@
     border-radius: 50%;
     transition: all 0.3s ease;
   }
+
   &__list {
     display: flex;
     justify-content: space-between;
@@ -25,6 +29,7 @@
   &__item {
     &.is-active {
       pointer-events: none;
+
       .pagination__number {
         background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
         color: #fff;
@@ -36,12 +41,14 @@
     position: relative;
     background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
     color: #fff;
+
     &:hover,
     &:active,
     &:focus {
       opacity: 0.6;
       color: #fff;
     }
+
     &.pagination__prev {
       &:hover,
       &:active,
@@ -51,6 +58,7 @@
         }
       }
     }
+
     &.pagination__next {
       &:hover,
       &:active,
@@ -60,13 +68,16 @@
         }
       }
     }
+
     &--hidden {
       display: none !important;
     }
+
     .material-icons {
       transition: 0.3s all ease;
     }
   }
+
   &__sub {
     color: $mainColor75;
     padding-left: 5px;

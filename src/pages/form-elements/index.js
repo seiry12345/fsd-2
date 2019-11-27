@@ -1,8 +1,8 @@
 // scafolding
-import '../../assets/scss/main.scss';
+import '../../assets/scss/main.scss'
 
 // ui kit logo
-import '../../Сomponents/Ui-logo/ui-logo.scss';
+import '../../Сomponents/Ui-logo/ui-logo.scss'
 
 // elements
 import './index.scss';
@@ -26,7 +26,8 @@ import '../../Сomponents/Advantages/advantages.scss';
 import '../../Сomponents/Review/review.scss';
 
 // jquery
-import 'jquery/dist/jquery.min';
+import 'jquery/dist/jquery.min'
+import "../../assets/js/common"
 
 // ion range slider
 import 'ion-rangeslider/css/ion.rangeSlider.min.css';

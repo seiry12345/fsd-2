@@ -47,6 +47,7 @@ import "../../Сomponents/Range/range-js"
 
 // cards
 import "../../Сomponents/Cards/cards.scss"
+import "../../Сomponents/Cards/Card-room/card-room.scss"
 import "../../Сomponents/Cards/Find-room/find-room.scss"
 
 // room

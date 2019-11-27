@@ -60,6 +60,7 @@
     border-radius: 4px;
     transition: all 0.3s ease;
     &:before {
+      @extend .material-icons;
       opacity: 0;
       content: 'check';
       position: absolute;

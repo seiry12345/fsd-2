@@ -1,3 +1,7 @@
+.form-item__dropdown {
+  position: relative;
+}
+
 .label-dropdown {
   overflow: hidden;
   display: block;
@@ -77,6 +81,7 @@
 
   .dropdown-items {
     display: block;
+    width: 100%;
     animation: showItems 0.3s ease forwards;
   }
 }

@@ -1,13 +1,16 @@
-mixin checkbox(attrs, rich = false)
+mixin checkbox(data, rich = false)
   if (rich)
-    div(class=`form-item form-item__checkbox form-item__checkbox-rich ${attrs.customSelector}`)
-      input(type= "checkbox", name= attrs.name, id= attrs.id, class= "checkbox")
+    div(class=`form-item form-item__checkbox form-item__checkbox-rich ${data.customSelector}`)
+      input(type= "checkbox", name= data.name, id= data.id, class="checkbox")
       span(class= "checkbox__mark")
-      label(for= attrs.id, class= `checkbox__label ${attrs.labelClass}`)
-        h3(class="checkbox-rich__title")= attrs.title
-        p(class= "checkbox-rich__text")= attrs.text
+      label(for= data.id, class=`checkbox__label ${data.labelClass}`)
+        h3(class="checkbox-rich__title")
+          | #{data.title}
+        p(class= "checkbox-rich__text")
+          | #{data.text}
   else
-    div(class=`form-item form-item__checkbox ${attrs.customSelector}`)
-      input(type= "checkbox", name= attrs.name, id= attrs.id, class= "checkbox")
+    div(class=`form-item form-item__checkbox ${data.customSelector}`)
+      input(type= "checkbox", name= data.name, id= data.id, class="checkbox")
       span(class= "checkbox__mark")
-      label(for= attrs.id, class= `checkbox__label ${attrs.labelClass}`)= attrs.labelTitle
+      label(for= data.id, class= `checkbox__label ${data.labelClass}`)
+        | #{data.labelTitle}
