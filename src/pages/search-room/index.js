@@ -9,7 +9,6 @@ import "slick-slider/slick/slick.css"
 import "slick-slider/slick/slick"
 
 // elements
-import "./index.scss"
 import "../../Сomponents/Button/button.scss"
 import "../../Сomponents/Input/input.scss"
 import "../../Сomponents/Checkbox/checkbox.scss"
@@ -50,6 +49,13 @@ import "../../Сomponents/Cards/cards.scss"
 import "../../Сomponents/Cards/Card-room/card-room.scss"
 import "../../Сomponents/Cards/Find-room/find-room.scss"
 
+// filter
+import "../../Сomponents/Filter/filter.scss"
+import "../../Сomponents/Filter/filter"
+
 // room
 import "../../Сomponents/Room/room.scss"
 import "../../Сomponents/Room/room"
+
+// page scss
+import "./index.scss"

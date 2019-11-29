@@ -1,32 +1,26 @@
-include ../Logo/Logo
+include Footer-brands/Footer-brands
 include ../Navigation/Navigation
 include ../Subscribe/Subscribe
 include ../Copyrights/Copyrights
 include ../Social/Social
 
-mixin footer(selector, small)
+mixin footer(selector, data, small)
   if (!small)
     footer(class=`footer ${selector}`)
       .footer__top
         .wrapper.footer__wrapper
-          .footer__item.footer__brands
-            +logo("footer__logo", "front")
-            p.footer__text
-              | Lorem ipsum dolor sit amet
-              | consectetur adipiscing elit aliquam
-              | eget nullam pellentesque aliquam
-              | curabitur cociis.
+          +footerBrands("footer__item footer__brands", footerBrandsData)
 
           .footer__item.footer__nav
-            +navigation("footer__nav-navigation", "Navigation", navigation)
-            +navigation("footer__nav-about", "About us", aboutUs)
-            +navigation("footer__nav-support", "Support", support)
+            +navigation("footer__nav-navigation", data.navTitle1, navigation)
+            +navigation("footer__nav-about", data.navTitle2, aboutUs)
+            +navigation("footer__nav-support", data.navTitle3, support)
 
-          +subscribe("footer__item footer__subscribe")
+          +subscribe("footer__item footer__subscribe", data.subscribeTitle, data.subscribeText)
 
       .footer__bottom
         .wrapper.footer__wrapper
-          +copyrights("footer__copyrights", "Copyright © 2018 Toxin UI Kit. All rights reserved.")
+          +copyrights("footer__copyrights", data.copyrights)
           +social("footer__social", social)
   else
     footer(class=`footer footer--small ${selector}`)

@@ -1,5 +1,6 @@
 .footer {
   background-color: #fff;
+  border-top: 1px solid $mainColor25;
 
   h3 {
     margin: 0 0 17px;
@@ -102,8 +103,37 @@
 
 @media screen and (max-width: 1100px) {
   .footer {
+
+    &__top {
+      padding: 45px 0 65px;
+    }
+
+    &__brands {
+      flex: 0 1 100%;
+      margin: 0 auto 35px;
+      text-align: center;
+    }
+
+    &__text {
+      max-width: 360px;
+      margin: 0 auto;
+    }
+
+    &__logo {
+      img {
+        margin: 0 auto;
+      }
+    }
+
+    &__nav,
+    &__subscribe {
+      padding: 0;
+    }
+
     &__nav {
+      flex: 0 1 60%;
       margin: 0;
+      margin-right: auto;
 
       .navigation {
         margin: 0 25px;
@@ -116,36 +146,12 @@
   }
 }
 
-@media screen and (max-width: $smDesktopWidth) {
-  .footer {
-    &__top {
-      padding: 45px 0 65px;
-    }
-
-    &__brands {
-      flex: 0 1 100%;
-      max-width: 360px;
-      margin: 0 auto 35px;
-      text-align: center;
-    }
-
-    &__logo {
-      img {
-        margin: 0 auto;
-      }
-    }
-
-    &__nav {
-      flex: 0 1 63%;
-      margin-right: auto;
-    }
-  }
-}
-
 @media screen and (max-width: 900px) {
   .footer {
-    &__nav {
-      flex: 0 1 60%;
+    .navigation__title,
+    .subscribe__title {
+      min-height: 36px;
+      line-height: 18px;
     }
   }
 }
@@ -167,6 +173,10 @@
       text-align: center;
     }
 
+    .subscribe__title {
+      min-height: auto;
+    }
+
     .subscribe__text {
       display: none;
     }
@@ -183,6 +193,7 @@
     }
 
     &__copyrights {
+      text-align: center;
       margin-bottom: 25px;
     }
   }

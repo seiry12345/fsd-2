@@ -1,11 +1,14 @@
 extends ../../layouts/page
 block vars
-  - const title = 'Search room';
+  - const title = "Search room"
+  - pageSelector.push("search-room")
   - const headerNavbar = [{text: "О нас", link: "/about", parent: "" }, {text: "Услуги", link: "/services", selector: "", parent: "navbar__item--parent", submenu: [{text: "Бронирование", link: "/reservation"}, {text: "Поиск", link: "/room-search"}] }, {text: "Вакансии", link: "/Careers", selector: "", parent: ""}, {text: "Новости", link: "/news", selector: "", parent: ""}, {text: "Соглашения", link: "/documentation", selector: "", parent: "" }];
 
-  - const navigation = [{text: "About Us", link: "/about" }, { text: "News", link: "/news" }, { text: "Support", link: "/support" }, { text: "Products", link: "/p  roducts" }];
-  - const aboutUs = [{text: "Who we are", link: "/who" }, { text: "Our team", link: "/team" }, { text: "Careers", link: "/careers" }, { text: "Investors", link: "/investors" }];
-  - const support = [{text: "Documentation", link: "/documentation" }, { text: "Community", link: "/community" }, { text: "Get in Touch", link: "/get-in-touch" }];
+  - const footerData = {navTitle1: "навигация", navTitle2: "о нас", navTitle3: "Служба поддержки", subscribeTitle: "Подписка", subscribeText: "Получайте специальные предложения и новости сервиса", copyrights: "Copyright © 2018 Toxin отель. Все права зачищены."}
+  - const footerBrandsData = {logoSelector: "footer__logo", logoFront: "front", textSelector:"footer__text", text:"Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"}
+  - const navigation = [{text: "О нас", link: "/about" }, { text: "Новости", link: "/news" }, { text: "Служба поддержки", link: "/support" }, { text: "Услуги", link: "/services" }];
+  - const aboutUs = [{text: "О сервисе", link: "/who" }, { text: "Наша команда", link: "/team" }, { text: "Вакансии", link: "/careers" }, { text: "Инвесторы", link: "/investors" }];
+  - const support = [{text: "Соглашения", link: "/documentation" }, { text: "Сообщества", link: "/community" }, { text: "Связь с нами", link: "/get-in-touch" }];
 
   - const inputSubscribe = {"inputType": "email", "inputName": "subscribe", "inputID": "subscribe", "customSelector": 'form-item__subscribe', "inputPlaceholder": "Your email address", "inputValue": false, "labelTitle": "", "inputWrap": "input__subscribe"};
   - const social = [{selector: "social__tw", link: "https://twitter.com/"}, {selector: "social__fb", link: "https://ru-ru.facebook.com/"}, {selector: "social__insta", link: "https://www.instagram.com/?hl=ru"},]
@@ -71,44 +74,17 @@ block vars
 
   include ../../Сomponents/Header/Header
   include ../../Сomponents/Footer/Footer
-  include ../../Сomponents/Dropdown/Dropdown
-  include ../../Сomponents/Dropdown-date/Dropdown-date
-  include ../../Сomponents/Range/Range
-  include ../../Сomponents/Checkbox/Checkbox
-  include ../../Сomponents/Checkbox-expandable/Checkbox-expandable
+  include ../../Сomponents/Filter/Filter
   include ../../Сomponents/Room/Room
   include ../../Сomponents/Pagination/Pagination
 
 block content
   +header("header", "")
 
-  main.search-room
+  main
     .wrapper.search-room__wrapper
-      aside.search-room__aside
-        .search-room__aside-item.search-room__drop
-          +dropdownDate(dateFiltered, false, true)
-          +dropdown(dropdownGuests, dropdownGuestsItems)
-
-        .search-room__aside-item.search-room__range
-          +range(rangeSlider)
-          p.range__sub
-            | Стоимость за сутки пребывания в номере
-
-        .search-room__aside-item.search-room__checkbox
-          h4 checkbox buttons
-          +checkbox(checkbox)
-          +checkbox(checkbox2)
-          +checkbox(checkbox3)
-
-        .search-room__aside-item.search-room__accessability
-          h4 Доступность
-          +checkbox(checkboxRich, true)
-          +checkbox(checkboxRich2, true)
-
-        .search-room__aside-item
-          +dropdown(dropdownComfort, dropdownComfortItems)
-        +checkboxExpandable("дополнительные удобства", "", checkboxExpItems)
-
+      aside.search-room__filter
+        +filter("")
 
       section.search-room__content
         h2.h1.search-room__title Номера, которые мы для вас подобрали
@@ -131,5 +107,5 @@ block content
 
         +pagination(4, 1, 4, 14, arrows, "search-room__pagination")
 
-  +footer("")
+  +footer("search-room__footer", footerData)
   .overlay

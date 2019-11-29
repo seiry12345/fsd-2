@@ -1,11 +1,10 @@
 include ../Input/Input
 
-mixin subscribe(selector, title)
+mixin subscribe(selector, title, text)
   div(class=`subscribe ${selector}`)
     h3.subscribe__title
-      | Subscribe to our newsletter
+      | #{title}
     p.subscribe__text
-      | Receive our latest news and
-      | promotions in your inbox!
+      | #{text}
 
     +input(inputSubscribe)
