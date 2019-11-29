@@ -1,0 +1,116 @@
+extends ../../layouts/page
+block vars
+  - const title = "Room detail"
+  - pageSelector.push("room-detail")
+  - const headerNavbar = [{text: "О нас", link: "/about", parent: "" }, {text: "Услуги", link: "/services", selector: "", parent: "navbar__item--parent", submenu: [{text: "Бронирование", link: "/reservation"}, {text: "Поиск", link: "/room-search"}] }, {text: "Вакансии", link: "/Careers", selector: "", parent: ""}, {text: "Новости", link: "/news", selector: "", parent: ""}, {text: "Соглашения", link: "/documentation", selector: "", parent: "" }];
+
+  - const footerData = {navTitle1: "навигация", navTitle2: "о нас", navTitle3: "Служба поддержки", subscribeTitle: "Подписка", subscribeText: "Получайте специальные предложения и новости сервиса", copyrights: "Copyright © 2018 Toxin отель. Все права зачищены."}
+  - const footerBrandsData = {logoSelector: "footer__logo", logoFront: "front", textSelector:"footer__text", text:"Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"}
+  - const navigation = [{text: "О нас", link: "/about" }, { text: "Новости", link: "/news" }, { text: "Служба поддержки", link: "/support" }, { text: "Услуги", link: "/services" }];
+  - const aboutUs = [{text: "О сервисе", link: "/who" }, { text: "Наша команда", link: "/team" }, { text: "Вакансии", link: "/careers" }, { text: "Инвесторы", link: "/investors" }];
+  - const support = [{text: "Соглашения", link: "/documentation" }, { text: "Сообщества", link: "/community" }, { text: "Связь с нами", link: "/get-in-touch" }];
+
+  - const inputSubscribe = {"inputType": "email", "inputName": "subscribe", "inputID": "subscribe", "customSelector": 'form-item__subscribe', "inputPlaceholder": "Your email address", "inputValue": false, "labelTitle": "", "inputWrap": "input__subscribe"};
+  - const social = [{selector: "social__tw", link: "https://twitter.com/"}, {selector: "social__fb", link: "https://ru-ru.facebook.com/"}, {selector: "social__insta", link: "https://www.instagram.com/?hl=ru"},]
+
+  - const dateFiltered = {"id": "date-filtered", "customSelector": "form-item__date--before", "inputPlaceholder": "ДД.ММ.ГГГГ", "labelTitle": "даты пребывания в отеле"};
+  - const dropdownGuests = {"customSelector": "search-room__guests", "type": "guests", "placeholder": "Сколько гостей?", "labelTitle": "Гости", "dropdownBtns": true};
+  - const dropdownGuestsItems = [{"text": "Взрослые", "customSelector": ""}, {"text": "Дети", "customSelector": ""}, {"text": "Младенцы", "customSelector": "separate"}];
+
+  - const rangeSlider = {"name": "range", "customSelector": "", "labelTitle": "диапазон цены", "minPrice": "0", "maxPrice": "15500", "from": "5000", "to": "10000"};
+
+  - const dropdownComfort = {"customSelector": "", "type": "", "placeholder": "Выберите удобства", "labelTitle": "удобства номера", "dropdownBtns": false};
+  - const dropdownComfortItems = [{"text": "Спальни", "customSelector": ""}, {"text": "Кровати", "customSelector": ""}, {"text": "Ванные комнаты", "customSelector": ""}];
+
+  - const findRoomDateRange = {"id1": "findRoomFromDate", "id2": "findRoomToDate", "customSelector": "form-item__date--before", "labelTitle1": "Прибытие", "labelTitle2": "Выезд"};
+  - const findRoomGuests = {"customSelector": "", "type": "guests", "placeholder": "Сколько гостей?", "labelTitle": "Гости", "dropdownBtns": true};
+  - const findRoomGuestsItems = [{"text": "Взрослые", "customSelector": ""}, {"text": "Дети", "customSelector": ""}, {"text": "Младенцы", "customSelector": "separate"}];
+
+  - const checkbox = {"name": "checkbox1", "id": "checkbox1", "customSelector": '', "labelClass": "", "value": false, "labelTitle": "Можно курить"};
+  - const checkbox2 = {"name": "checkbox2", "id": "checkbox2", "customSelector": '', "labelClass": "", "value": false, "labelTitle": "Можно с питомцами"};
+  - const checkbox3 = {"name": "checkbox3", "id": "checkbox3", "customSelector": '', "labelClass": "", "value": false, "labelTitle": "Можно пригласить гостей (до 10 человек)"};
+  - const checkboxRich = {"name": "checkboxRich", "id": "checkboxRich", "customSelector": "", "labelClass": "", "title": "Широкий коридор", "text": "Ширина коридоров в номере не менее 91 см."};
+  - const checkboxRich2 = {"name": "checkboxRich2", "id": "checkboxRich2", "customSelector": "", "labelClass": "", "title": "Помощник для инвалидов", "text": "На 1 этаже вас встретит специалист  и проводит до номера."};
+
+  - const checkboxExpItems = [{"name": "breakfast", "text": 'Завтрак'}, {"name": "writing-table", "text": 'Письменный стол'}, {"name": "table-for-eating", "text": 'Стул для кормления'}, {"name": "bad", "text": 'Кроватка'}, {"name": "tv", "text": 'Телевизор'}, {"name": "schampoo", "text": 'Шампунь'}, {"name": "tv2", "text": 'Телевизор'}, {"name": "schampoo2", "text": 'Шампунь'}];
+  - const checkboxExpItems2 = [{"name": "breakfast", "text": 'Завтрак'}, {"name": "writing-table", "text": 'Письменный стол'}, {"name": "table-for-eating", "text": 'Стул для кормления'}, {"name": "bad", "text": 'Кроватка'}, {"name": "tv", "text": 'Телевизор'}, {"name": "schampoo", "text": 'Шампунь'}, {"name": "tv2", "text": 'Телевизор'}, {"name": "schampoo2", "text": 'Шампунь'}];
+
+  - const room888 = {"title": "888", "type": "Люкс", "price": "9 990₽", "stars": 5, "filled": 5, "reviewCount": "145"};
+  - const room888Images = ['../../assets/images/rooms/room1.jpg', '../../assets/images/rooms/room2.jpg'];
+
+  - const room840 = {"title": "840", "type": "", "price": "9 990₽", "stars": 5, "filled": 4, "reviewCount": "65"};
+  - const room840Images = ['../../assets/images/rooms/room2.jpg', '../../assets/images/rooms/room1.jpg'];
+
+  - const room980 = {"title": "980", "type": "Люкс", "price": "8 500₽", "stars": 5, "filled": 3, "reviewCount": "35"};
+  - const room980Images = ['../../assets/images/rooms/room3.jpg', '../../assets/images/rooms/room1.jpg'];
+
+  - const room856 = {"title": "856", "type": "", "price": "7 300₽", "stars": 5, "filled": 5, "reviewCount": "19"};
+  - const room856Images = ['../../assets/images/rooms/room4.jpg', '../../assets/images/rooms/room1.jpg'];
+
+  - const room740 = {"title": "740", "type": "", "price": "6 000₽", "stars": 5, "filled": 4, "reviewCount": "44"};
+  - const room740Images = ['../../assets/images/rooms/room5.jpg', '../../assets/images/rooms/room1.jpg'];
+
+  - const room982 = {"title": "982", "type": "", "price": "5 800₽", "stars": 5, "filled": 3, "reviewCount": "56"};
+  - const room982Images = ['../../assets/images/rooms/room6.jpg', '../../assets/images/rooms/room1.jpg'];
+
+  - const room678 = {"title": "678", "type": "", "price": "5 500₽", "stars": 5, "filled": 3, "reviewCount": "45"};
+  - const room678Images = ['../../assets/images/rooms/room7.jpg', '../../assets/images/rooms/room1.jpg'];
+
+  - const room450 = {"title": "450", "type": "", "price": "5 300₽", "stars": 5, "filled": 4, "reviewCount": "39"};
+  - const room450Images = ['../../assets/images/rooms/room8.jpg', '../../assets/images/rooms/room1.jpg'];
+
+  - const room350 = {"title": "350", "type": "", "price": "5 000₽", "stars": 5, "filled": 3, "reviewCount": "77"};
+  - const room350Images = ['../../assets/images/rooms/room9.jpg', '../../assets/images/rooms/room1.jpg'];
+
+  - const room666 = {"title": "666", "type": "", "price": "5 000₽", "stars": 5, "filled": 5, "reviewCount": "25"};
+  - const room666Images = ['../../assets/images/rooms/room10.jpg', '../../assets/images/rooms/room1.jpg'];
+
+  - const room444 = {"title": "444", "type": "", "price": "5 000₽", "stars": 5, "filled": 3, "reviewCount": "15"};
+  - const room444Images = ['../../assets/images/rooms/room11.jpg', '../../assets/images/rooms/room1.jpg'];
+
+  - const room352 = {"title": "352", "type": "", "price": "5 000₽", "stars": 5, "filled": 3, "reviewCount": "55"};
+  - const room352Images = ['../../assets/images/rooms/room12.jpg', '../../assets/images/rooms/room1.jpg'];
+
+
+  include ../../Сomponents/Header/Header
+  include ../../Сomponents/Footer/Footer
+  include ../../Сomponents/Filter/Filter
+  include ../../Сomponents/Room/Room
+  include ../../Сomponents/Pagination/Pagination
+
+block content
+  +header("header", "")
+
+  main
+    .room-detail__gallery
+      img(src=require("../../assets/images/room-detail/room1.jpg"))
+      .wrap
+        img(src=require("../../assets/images/room-detail/room2.jpg"))
+        img(src=require("../../assets/images/room-detail/room3.jpg"))
+
+    .wrapper.search-room__wrapper
+      +filter("search-room__filter")
+
+      section.search-room__content
+        h2.h1.search-room__title Номера, которые мы для вас подобрали
+        .search-room__wrap
+          +room("", room888, room888Images)
+          +room("", room840, room840Images)
+          +room("", room980, room980Images)
+
+          +room("", room856, room856Images)
+          +room("", room740, room740Images)
+          +room("", room982, room982Images)
+
+          +room("", room678, room678Images)
+          +room("", room450, room450Images)
+          +room("", room350, room350Images)
+
+          +room("", room666, room666Images)
+          +room("", room444, room444Images)
+          +room("", room352, room352Images)
+
+        +pagination(4, 1, 4, 14, arrows, "search-room__pagination")
+
+  +footer("search-room__footer", footerData)
+  .overlay
