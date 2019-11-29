@@ -1,0 +1,7 @@
+include ../../Logo/Logo
+
+mixin footerBrands(selector, data)
+  div(class= selector)
+    +logo(data.logoSelector, data.logoFront)
+    p(class= data.textSelector)
+      | #{data.text}
