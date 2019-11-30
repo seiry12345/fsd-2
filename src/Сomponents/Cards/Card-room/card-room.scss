@@ -87,3 +87,15 @@
     width: 100%;
   }
 }
+
+@media screen and (max-width: 420px) {
+  .card-room {
+    &__text {
+      width: 200px;
+    }
+
+    &__icon {
+      display: none;
+    }
+  }
+}

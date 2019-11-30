@@ -32,3 +32,33 @@ main {
 .room {
   margin: 0 0 37px;
 }
+
+@media screen and (max-width: $desktopWidth) {
+  .cards {
+    &__wrapper {
+      justify-content: center;
+    }
+
+    &__item {
+      &--right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 0 1 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .cards {
+    &__wrapper {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__item {
+      margin: 0 auto;
+    }
+  }
+}
