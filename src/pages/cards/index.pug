@@ -7,7 +7,6 @@ block vars
   - const findRoomGuests = {"customSelector": "", "type": "guests", "placeholder": "Сколько гостей?", "labelTitle": "Гости", "dropdownBtns": true};
   - const findRoomGuestsItems = [{"text": "Взрослые", "customSelector": ""}, {"text": "Дети", "customSelector": ""}, {"text": "Младенцы", "customSelector": "separate"}];
 
-
   - const inputName = {"inputType": "text", "inputName": "name", "inputID": "name", "customSelector": "", "inputClass": "", "inputWrap": "", "inputPlaceholder": "Имя", "inputValue": false, "labelTitle": ""};
   - const inputLastname = {"inputType": "text", "inputName": "lastname", "inputID": "lastname", "customSelector": "", "inputClass": "", "inputWrap": "", "inputPlaceholder": "Фамилия", "inputValue": false, "labelTitle": ""};
   - const inputEmail = {"inputType": "email", "inputName": "email", "inputID": "email", "customSelector": "", "inputClass": "", "inputWrap": "", "inputPlaceholder": "Email", "inputValue": false, "labelTitle": "данные для входа в сервис"};
@@ -17,31 +16,27 @@ block vars
   - const birthDate = {"id": "birth-date", "customSelector": "form-item__birth-date", "inputPlaceholder": "ДД.ММ.ГГГГ", "labelTitle": "Дата рождения"};
   - const toggle = {"name": "toggle", "id": "toggle1", "class": 'toggle', "labelClass": "", "value": false, "labelTitle": "Получать спецпредложения"};
 
-
   - const roomDateRange = {"id1": "roomFromDate", "id2": "date2", "roomToDate": "form-item__date--before", "labelTitle1": "Прибытие", "labelTitle2": "Выезд"};
   - const roomGuests = {"customSelector": "", "type": "guests", "placeholder": "Сколько гостей?", "labelTitle": "Гости", "dropdownBtns": true};
   - const roomGuestsItems = [{"text": "Взрослые", "customSelector": ""}, {"text": "Дети", "customSelector": ""}, {"text": "Младенцы", "customSelector": "separate"}];
-
+  - const cardRoomData = {room: "888", type: "Люкс", dateRange: roomDateRange, roomGuests: roomGuests, roomGuestsItems: roomGuestsItems, pricePerDay: "9 990", pricePerFee: "2 179", priceForAdditionalServices: "300"}
 
   - const inputAuthEmail = {"inputType": "text", "inputName": "auth-email", "inputID": "auth-email", "customSelector": "", "inputPlaceholder": "Email", "inputValue": false, "labelTitle": ""};
   - const inputAuthPass = {"inputType": "password", "inputName": "auth-pass", "inputID": "auth-pass", "customSelector": "", "inputPlaceholder": "Пароль", "inputValue": false, "labelTitle": ""};
 
-  - const room888 = {"title": "888", "type": "Люкс", "price": "9 990₽", "stars": 5, "filled": 5, "reviewCount": "145 Отзывов"};
+  - const room888 = {"title": "888", "type": "Люкс", "price": "9 990₽", "stars": 5, "filled": 5, "reviewCount": "145"};
   - const room888Images = ['../../assets/images/room1.jpg', '../../assets/images/room2.jpg'];
 
-  - const room840 = {"title": "840", "type": "", "price": "9 990₽", "stars": 5, "filled": 4, "reviewCount": "65 Отзывов"};
+  - const room840 = {"title": "840", "type": "", "price": "9 990₽", "stars": 5, "filled": 4, "reviewCount": "65"};
   - const room840Images = ['../../assets/images/room2.jpg', '../../assets/images/room1.jpg'];
 
 
   include ../../Сomponents/Input/Input
-  include ../../Сomponents/Dropdown/Dropdown
-  include ../../Сomponents/Dropdown-date/Dropdown-date
-  include ../../Сomponents/Button/Button
   include ../../Сomponents/Radio/Radio
   include ../../Сomponents/Toggle/Toggle
   include ../../Сomponents/Rate-btn/Rate-btn
   include ../../Сomponents/Room/Room
-
+  include  ../../Сomponents/Cards/Card-room/Card-room
 
 block content
   main
@@ -52,7 +47,7 @@ block content
           include ../../Сomponents/Cards/Registration/Registration
 
         .cards__item.cards__item--center
-          include  ../../Сomponents/Cards/Card-room/Card-room
+          +cardRoom("", cardRoomData)
           include ../../Сomponents/Cards/Auth/Auth
 
 
