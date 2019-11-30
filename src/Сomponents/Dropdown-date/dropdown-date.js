@@ -64,8 +64,8 @@ if (dropdownRange.length > 0) {
           to = to.map(elem => Number(elem))
 
           // change to date
-          const fromFormatted = moment([from[2], from[1], from[0]])
-          const toFormatted = moment([to[2], to[1], to[0]])
+          const fromFormatted = moment(`${from[2]}-${from[1]}-${from[0]}`)
+          const toFormatted = moment(`${to[2]}-${to[1]}-${to[0]}`)
 
           // get difference
           return toFormatted.diff(fromFormatted, 'days') + 1
