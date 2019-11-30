@@ -63,6 +63,26 @@
     }
   }
 
+  &__main {
+    .footer__top {
+      padding-bottom: 80px;
+    }
+
+    .footer__logo {
+      margin-bottom: 17px;
+    }
+
+    .footer__nav {
+      &-navigation {
+        margin-right: 81px;
+      }
+
+      &-about {
+        margin-right: 105px;
+      }
+    }
+  }
+
   &--small {
     padding: 100px 0 110px;
     background-color: #fff;
@@ -96,6 +116,18 @@
 
       .navigation {
         margin-right: 80px;
+      }
+    }
+
+    &__main {
+      .footer__nav {
+        .navigation {
+          margin-right: 45px;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
       }
     }
   }
@@ -179,6 +211,12 @@
 
     .subscribe__text {
       display: none;
+    }
+
+    &__main {
+      .footer__top {
+        padding-bottom: 30px;
+      }
     }
   }
 }

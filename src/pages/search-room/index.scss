@@ -39,26 +39,6 @@
     }
   }
 
-  &__footer {
-    .footer__top {
-      padding-bottom: 80px;
-    }
-
-    .footer__logo {
-      margin-bottom: 17px;
-    }
-
-    .footer__nav {
-      &-navigation {
-        margin-right: 81px;
-      }
-
-      &-about {
-        margin-right: 105px;
-      }
-    }
-  }
-
   &__pagination {
     .pagination__wrap {
       justify-content: center;
@@ -72,16 +52,6 @@
 
 @media screen and (max-width: $desktopWidth) {
   .search-room {
-    .footer__nav {
-      .navigation {
-        margin-right: 45px;
-
-        &:last-child {
-          margin-right: 0;
-        }
-      }
-    }
-
     .rate__item {
       width: 16px;
       height: 16px;
