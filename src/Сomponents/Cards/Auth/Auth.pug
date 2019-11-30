@@ -1,8 +1,10 @@
-form.card.auth
-  h2.card__title.h1 Войти
-  +input(inputAuthEmail)
-  +input(inputAuthPass)
-  +button("auth__btn btn--arrow", "submit", "Войти")
-  .card__wrap.card__wrap--between
-    p Нет аккаунта на Toxin?
-    a(href="#", class="btn btn--transparent") Создать
+
+mixin auth(selector, title, data, btn)
+  form(class=`card auth ${selector}`)
+    h2.card__title.h1= title
+    +input(data.inputAuthEmail)
+    +input(data.inputAuthPass)
+    +button(btn.selector, btn.type, btn.text)
+    .card__wrap.card__wrap--between
+      p Нет аккаунта на Toxin?
+      a(href="#", class="btn btn--transparent") Создать

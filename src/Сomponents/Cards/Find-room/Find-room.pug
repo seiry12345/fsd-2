@@ -2,9 +2,9 @@ include ../../Dropdown-date/Dropdown-date
 include ../../Dropdown/Dropdown
 include ../../Button/Button
 
-form.card.find-room
-  h2.card__title.h1
-    | Найдём номера под <br /> ваши пожелания
-  +dropdownDate(findRoomDateRange, true, false)
-  +dropdown(findRoomGuests, findRoomGuestsItems)
-  +button("btn btn--arrow find-room__submit", "submit", "Подобрать номер")
+mixin findRoom(selector, title, data, findRoomBtn)
+  form.card.find-room
+    h2.card__title.h1!= title
+    +dropdownDate(data.findRoomDateRange, true, false)
+    +dropdown(data.findRoomGuests, data.findRoomGuestsItems)
+    +button(findRoomBtn.selector, findRoomBtn.type, findRoomBtn.text)
