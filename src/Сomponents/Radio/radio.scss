@@ -1,17 +1,21 @@
 .form-item__radio {
+  z-index: 1;
   position: relative;
   display: flex;
   align-items: center;
+
   &:hover,
   &:active,
   &:focus {
     label {
       color: $mainColor75;
     }
+
     .radio__mark {
       opacity: 1;
     }
   }
+
   label {
     padding-left: 30px;
     font-weight: 400;
@@ -21,16 +25,20 @@
     cursor: pointer;
     transition: all 0.3s ease;
   }
+
   .radio {
     display: none;
   }
+
   .radio:checked {
     & + .radio__mark {
       border-color: $purple;
+
       &:before {
         opacity: 1;
       }
     }
+
     & ~ label {
       color: $mainColor75;
     }
@@ -49,6 +57,7 @@
   border-radius: 50%;
   transform: translateY(-50%);
   transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+
   &:before {
     opacity: 0;
     content: '';
