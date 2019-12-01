@@ -64,10 +64,6 @@
   }
 
   &__main {
-    .footer__top {
-      padding-bottom: 80px;
-    }
-
     .footer__logo {
       margin-bottom: 17px;
     }
@@ -117,6 +113,12 @@
       .navigation {
         margin-right: 80px;
       }
+    }
+
+    &__text,
+    &__copyrights,
+    .subscribe__text {
+      font-size: 12px;
     }
 
     &__main {
@@ -196,6 +198,10 @@
       margin: 0 auto;
     }
 
+    &__brands {
+      margin-bottom: 17px;
+    }
+
     &__nav {
       display: none;
     }
@@ -205,10 +211,7 @@
       text-align: center;
     }
 
-    .subscribe__title {
-      min-height: auto;
-    }
-
+    .subscribe__title,
     .subscribe__text {
       display: none;
     }

@@ -58,3 +58,12 @@
     }
   }
 }
+
+@media screen and (max-width: $smDesktopWidth) {
+  .bullet-list {
+    li {
+      font-size: 12px;
+      line-height: 22px;
+    }
+  }
+}

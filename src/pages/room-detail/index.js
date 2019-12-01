@@ -9,8 +9,11 @@ import '../../Сomponents/Button/button.scss'
 import '../../Сomponents/Input/input.scss'
 import '../../Сomponents/Advantages/advantages.scss'
 import '../../Сomponents/Review/review.scss'
-import '../../Сomponents/Like-btn/like-btn.scss'
 import '../../Сomponents/Bullet-list/bullet-list.scss'
+
+// like btn
+import '../../Сomponents/Like-btn/like-btn.scss'
+import '../../Сomponents/Like-btn/like-btn'
 
 // header
 import '../../Сomponents/Header/header.scss'
@@ -39,3 +42,6 @@ import '../../Сomponents/Cards/Card-room/card-room.scss'
 
 // page scss
 import './index.scss'
+
+// commons scripts
+import '../../assets/js/common'

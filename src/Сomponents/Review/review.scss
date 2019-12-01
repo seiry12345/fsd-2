@@ -2,13 +2,13 @@
   max-width: 724px;
   padding-left: 12px;
   color: $mainColor75;
-  font-size: $mainFontSize;
-}
 
-.review__header {
-  overflow: hidden;
-  margin-bottom: 10px;
-  .review__avatar {
+  &__header {
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+
+  &__avatar {
     float: left;
     margin-right: 10px;
     width: 48px;
@@ -17,24 +17,23 @@
     border: 2px solid #ffffff;
   }
 
-  .review__name,
-  .review__date {
+  &__name,
+  &__date {
     font-size: inherit;
     line-height: inherit;
   }
 
-  .review__name {
+  &__name {
+    font-size: $mainFontSize;
     text-transform: none;
   }
-}
 
-.review__footer {
-  .review__likes {
+  &__likes {
     padding: 0 4px;
     float: left;
   }
 
-  .review__text {
+  &__text {
     margin-left: 58px;
   }
 }

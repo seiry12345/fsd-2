@@ -3,7 +3,6 @@
   max-width: 280px;
   padding-bottom: 20px;
   margin: 0 0 20px;
-  font-size: 14px;
   line-height: 24px;
   border-bottom: 1px solid rgba(31, 32, 65, 0.1);
   &:last-child {
@@ -16,8 +15,8 @@
     color: $purple;
   }
   .advantages__title {
-    font-size: inherit;
-    line-height: inherit;
+    font-size: $mainFontSize;
+    line-height: 24px;
     text-transform: none;
   }
   .advantages__text {

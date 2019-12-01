@@ -10,13 +10,12 @@ mixin cardRoom(selector, data)
     let sum = 0
 
     sumArr.forEach(elem => {
-    elem = elem.replace(regex, "")
-    sum += Number(elem)
+      elem = elem.replace(regex, "")
+      sum += Number(elem)
     })
 
     sum = sum - fee
 
-  // sum = sum.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, "$1 ")
 
   form(class=`card card-room`, action="#")
     .card__wrap.card__wrap--between.card__title.card-room__title

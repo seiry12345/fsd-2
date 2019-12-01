@@ -1,6 +1,6 @@
 let common = {
   declOfNum(number, titles) {
-    cases = [2, 0, 1, 1, 1, 2]
+    let cases = [2, 0, 1, 1, 1, 2]
     return titles[
       number % 100 > 4 && number % 100 < 20
         ? 2

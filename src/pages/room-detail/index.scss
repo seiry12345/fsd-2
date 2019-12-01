@@ -2,7 +2,7 @@
   &__wrapper {
     display: flex;
     flex-wrap: wrap;
-    padding: 70px 0;
+    padding: 70px 10px;
   }
 
   &__left {
@@ -18,6 +18,10 @@
     overflow: hidden;
     max-height: 482px;
 
+    img {
+      display: block;
+    }
+
     .wrapper {
       max-width: 1460px;
       display: flex;
@@ -26,19 +30,24 @@
 
     &-left {
       flex: 1;
+      background: url("../../assets/images/room-detail/room1.jpg") no-repeat center top / cover;
+
+      img {
+        display: none;
+      }
     }
 
     &-right {
       flex: 0 1 460px;
     }
-
-    img {
-      display: block;
-    }
   }
 
   &__item {
     margin: 0 0 27px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   h2,
@@ -96,8 +105,122 @@
     .review {
       padding: 0;
       margin: 0 0 20px;
+
       &:last-child {
         margin: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $desktopWidth) {
+  .room-detail {
+    &__impression {
+      .impression__list {
+        padding-top: 20px;
+      }
+    }
+
+    &__rules,
+    &__cancel {
+      flex: 0 1 100%;
+      max-width: 406px;
+    }
+
+    &__rules {
+      margin: 0 0 27px;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .room-detail {
+    &__left {
+      flex: 0 1 100%;
+      max-width: 720px;
+      margin: 0 auto 47px;
+    }
+
+    &__right {
+      width: 100%;
+      margin: 0;
+
+      .card-room {
+        max-width: 380px;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $smDesktopWidth) {
+  .room-detail {
+    &__gallery {
+      max-height: unset;
+
+      .wrapper {
+        padding: 0;
+      }
+
+      img {
+        width: 100%;
+      }
+
+      &-left {
+        background: transparent;
+        flex: 0 1 100%;
+
+        img {
+          display: block;
+        }
+      }
+
+      &-right {
+        flex: 0 1 100%;
+        display: flex;
+
+        img {
+          width: 50%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .room-detail {
+    h2,
+    .h2 {
+      text-align: center;
+    }
+
+    &__wrap {
+      flex-direction: column;
+      align-items: center;
+
+      &-left {
+        margin: 0 0 27px;
+      }
+    }
+
+    &__reviews {
+      .room-detail__wrap {
+        flex-direction: row;
+        align-items: flex-start;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $phoneWidth) {
+  .room-detail {
+    &__gallery {
+      &-right {
+        flex-wrap: wrap;
+
+        img {
+          width: 100%;
+        }
       }
     }
   }
