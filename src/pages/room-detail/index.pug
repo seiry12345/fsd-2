@@ -1,38 +1,128 @@
 extends ../../layouts/page
 block vars
-  - const title = "Room detail"
-  - pageSelector.push("room-detail")
-  - const headerNavbar = [{text: "О нас", link: "/about", parent: "" }, {text: "Услуги", link: "/services", selector: "", parent: "navbar__item--parent", submenu: [{text: "Бронирование", link: "/reservation"}, {text: "Поиск", link: "/room-search"}] }, {text: "Вакансии", link: "/Careers", selector: "", parent: ""}, {text: "Новости", link: "/news", selector: "", parent: ""}, {text: "Соглашения", link: "/documentation", selector: "", parent: "" }];
+  -
+    const title = "Room detail"
+    pageSelector.push("room-detail")
 
-  - const footerData = {navTitle1: "навигация", navTitle2: "о нас", navTitle3: "Служба поддержки", subscribeTitle: "Подписка", subscribeText: "Получайте специальные предложения и новости сервиса", copyrights: "Copyright © 2018 Toxin отель. Все права зачищены."}
-  - const footerBrandsData = {logoSelector: "footer__logo", logoFront: "front", textSelector:"footer__text", text:"Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"}
-  - const navigation = [{text: "О нас", link: "/about" }, { text: "Новости", link: "/news" }, { text: "Служба поддержки", link: "/support" }, { text: "Услуги", link: "/services" }];
-  - const aboutUs = [{text: "О сервисе", link: "/who" }, { text: "Наша команда", link: "/team" }, { text: "Вакансии", link: "/careers" }, { text: "Инвесторы", link: "/investors" }];
-  - const support = [{text: "Соглашения", link: "/documentation" }, { text: "Сообщества", link: "/community" }, { text: "Связь с нами", link: "/get-in-touch" }];
+    const headerNavbar = [{text: "О нас", link: "/about", parent: ""}, {
+      text: "Услуги",
+      link: "/services",
+      selector: "",
+      parent: "navbar__item--parent",
+      submenu: [{text: "Бронирование", link: "/reservation"}, {text: "Поиск", link: "/room-search"}]
+    }, {text: "Вакансии", link: "/Careers", selector: "", parent: ""}, {
+      text: "Новости",
+      link: "/news",
+      selector: "",
+      parent: ""
+    }, {text: "Соглашения", link: "/documentation", selector: "", parent: ""}];
 
-  - const inputSubscribe = {"inputType": "email", "inputName": "subscribe", "inputID": "subscribe", "customSelector": 'form-item__subscribe', "inputPlaceholder": "Your email address", "inputValue": false, "labelTitle": "", "inputWrap": "input__subscribe"};
-  - const social = [{selector: "social__tw", link: "https://twitter.com/"}, {selector: "social__fb", link: "https://ru-ru.facebook.com/"}, {selector: "social__insta", link: "https://www.instagram.com/?hl=ru"},]
+    const footerData = {
+      navTitle1: "навигация",
+      navTitle2: "о нас",
+      navTitle3: "Служба поддержки",
+      subscribeTitle: "Подписка",
+      subscribeText: "Получайте специальные предложения и новости сервиса",
+      copyrights: "Copyright © 2018 Toxin отель. Все права зачищены."
+    }
+    const footerBrandsData = {
+      logoSelector: "footer__logo",
+      logoFront: "front",
+      textSelector: "footer__text",
+      text: "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"
+    }
+    const navigation = [{text: "О нас", link: "/about"}, {
+      text: "Новости",
+      link: "/news"
+    }, {text: "Служба поддержки", link: "/support"}, {text: "Услуги", link: "/services"}];
+    const aboutUs = [{text: "О сервисе", link: "/who"}, {
+      text: "Наша команда",
+      link: "/team"
+    }, {text: "Вакансии", link: "/careers"}, {text: "Инвесторы", link: "/investors"}];
+    const support = [{text: "Соглашения", link: "/documentation"}, {
+      text: "Сообщества",
+      link: "/community"
+    }, {text: "Связь с нами", link: "/get-in-touch"}];
 
-  - const dateFiltered = {"id": "date-filtered", "customSelector": "form-item__date--before", "inputPlaceholder": "ДД.ММ.ГГГГ", "labelTitle": "даты пребывания в отеле"};
-  - const dropdownGuests = {"customSelector": "search-room__guests", "type": "guests", "placeholder": "Сколько гостей?", "labelTitle": "Гости", "dropdownBtns": true};
-  - const dropdownGuestsItems = [{"text": "Взрослые", "customSelector": ""}, {"text": "Дети", "customSelector": ""}, {"text": "Младенцы", "customSelector": "separate"}];
+    const inputSubscribe = {
+      "inputType": "email",
+      "inputName": "subscribe",
+      "inputID": "subscribe",
+      "customSelector": 'form-item__subscribe',
+      "inputPlaceholder": "Your email address",
+      "inputValue": false,
+      "labelTitle": "",
+      "inputWrap": "input__subscribe"
+    };
+    const social = [{selector: "social__tw", link: "https://twitter.com/"}, {
+      selector: "social__fb",
+      link: "https://ru-ru.facebook.com/"
+    }, {selector: "social__insta", link: "https://www.instagram.com/?hl=ru"},]
 
-  - const dropdownComfort = {"customSelector": "", "type": "", "placeholder": "Выберите удобства", "labelTitle": "удобства номера", "dropdownBtns": false};
-  - const dropdownComfortItems = [{"text": "Спальни", "customSelector": ""}, {"text": "Кровати", "customSelector": ""}, {"text": "Ванные комнаты", "customSelector": ""}];
+    const roomDateRange = {
+      "id1": "roomFromDate",
+      "id2": "date2",
+      "roomToDate": "form-item__date--before",
+      "labelTitle1": "Прибытие",
+      "labelTitle2": "Выезд"
+    };
+    const roomGuests = {
+      "customSelector": "",
+      "type": "guests",
+      "placeholder": "Сколько гостей?",
+      "labelTitle": "Гости",
+      "dropdownBtns": true
+    };
+    const roomGuestsItems = [{"text": "Взрослые", "customSelector": ""}, {
+      "text": "Дети",
+      "customSelector": ""
+    }, {"text": "Младенцы", "customSelector": "separate"}];
+    const cardRoomData = {
+      room: "888",
+      type: "Люкс",
+      dateRange: roomDateRange,
+      roomGuests: roomGuests,
+      roomGuestsItems: roomGuestsItems,
+      pricePerDay: "9 990",
+      pricePerFee: "2 179",
+      priceForAdditionalServices: "300"
+    };
 
-  - const findRoomDateRange = {"id1": "findRoomFromDate", "id2": "findRoomToDate", "customSelector": "form-item__date--before", "labelTitle1": "Прибытие", "labelTitle2": "Выезд"};
-  - const findRoomGuests = {"customSelector": "", "type": "guests", "placeholder": "Сколько гостей?", "labelTitle": "Гости", "dropdownBtns": true};
-  - const findRoomGuestsItems = [{"text": "Взрослые", "customSelector": ""}, {"text": "Дети", "customSelector": ""}, {"text": "Младенцы", "customSelector": "separate"}];
+    const advantagesItems = [{
+      "icon": "tag_faces",
+      "title": "Комфорт",
+      "text": "Шумопоглощающие стены"
+    }, {
+      "icon": "location_city",
+      "title": "Удобство",
+      "text": "Окно в каждой из спален"
+    }, {"icon": "whatshot", "title": "Уют", "text": "Номер оснащён камином"}]
 
-  - const checkbox = {"name": "checkbox1", "id": "checkbox1", "customSelector": '', "labelClass": "", "value": false, "labelTitle": "Можно курить"};
-  - const checkbox2 = {"name": "checkbox2", "id": "checkbox2", "customSelector": '', "labelClass": "", "value": false, "labelTitle": "Можно с питомцами"};
-  - const checkbox3 = {"name": "checkbox3", "id": "checkbox3", "customSelector": '', "labelClass": "", "value": false, "labelTitle": "Можно пригласить гостей (до 10 человек)"};
-  - const checkboxRich = {"name": "checkboxRich", "id": "checkboxRich", "customSelector": "", "labelClass": "", "title": "Широкий коридор", "text": "Ширина коридоров в номере не менее 91 см."};
-  - const checkboxRich2 = {"name": "checkboxRich2", "id": "checkboxRich2", "customSelector": "", "labelClass": "", "title": "Помощник для инвалидов", "text": "На 1 этаже вас встретит специалист  и проводит до номера."};
+    const review1 = {
+      "img": "/assets/images/reviews/review1.jpg",
+      "name": "Мурад Сарафанов",
+      "date": "5 дней назад",
+      "likes": "12",
+      "text": "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."
+    }
+    const review2 = {
+      "img": "/assets/images/reviews/review2.jpg",
+      "name": "Патрисия Стёклышкова",
+      "date": "Неделю назад",
+      "likes": "2",
+      "text": "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент"
+    }
+
+    const impressionItems = [{"text": "Великолепно"}, {"text": "Хорошо"}, {"text": "Удовлетворительно"}, {"text": "Разочарован"}];
+    const rulesItems = [{"text": "Нельзя с питомцами"}, {"text": "Без вечеринок и мероприятий"}, {"text": "Время прибытия — после 13:00, а выезд до 12:00"}];
 
 
   include ../../Сomponents/Header/Header
   include ../../Сomponents/Footer/Footer
+  include ../../Сomponents/Advantages/Advantages
+  include ../../Сomponents/Review/Review
+  include ../../Сomponents/Bullet-list/Bullet-list
+  include ../../Сomponents/Cards/Card-room/Card-room
 
 
 block content
@@ -40,18 +130,55 @@ block content
 
   main
     .room-detail__gallery
-      img(src=require("../../assets/images/room-detail/room1.jpg"))
-      .wrap
-        img(src=require("../../assets/images/room-detail/room2.jpg"))
-        img(src=require("../../assets/images/room-detail/room3.jpg"))
+      .wrapper
+        div(class="room-detail__gallery-left")
+          img(src="/assets/images/room-detail/room1.jpg", alt="#")
+        div(class="room-detail__gallery-right")
+          img(src="/assets/images/room-detail/room2.jpg", alt="#")
+          img(src="/assets/images/room-detail/room3.jpg", alt="#")
 
 
     .wrapper.room-detail__wrapper
       .room-detail__left
+        .room-detail__item
+          .room-detail__wrap
+            .room-detail__advantages.room-detail__wrap-left
+              h2 Сведения о номере
+              +advantages(advantagesItems)
+
+            .room-detail__impression.room-detail__wrap-right
+              h2 Впечатления от номера
+              .room-detail__wrap
+                div(class="impression__pie")
+                  | <span class="h1">260</span>
+                  | голосов
+                +bulletList("bullet-list--colored impression__list", impressionItems)
 
 
-      .room-detail__right
-        include ../../Сomponents/Cards/Card-room/Card-room
 
-  +footer("search-room__footer", footerData)
+        .room-detail__item.room-detail__reviews
+          .room-detail__wrap.room-detail__wrap--between
+            h2 Отзывы посетителей номера
+            p.room-detail__count
+              | 2 отзыва
+
+          .room-detail__reviews
+            +review(review1, "12")
+            +review(review2, "2")
+
+        .room-detail__item
+          .room-detail__wrap
+            .room-detail__rules.room-detail__wrap-left
+              h2 Правила
+              +bulletList("", rulesItems)
+
+            .room-detail__cancel.room-detail__wrap-right
+              h2 Отмена
+              p
+                | Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+
+      aside.room-detail__right
+        +cardRoom("", cardRoomData)
+
+  +footer("footer__main search-room__footer", footerData)
   .overlay

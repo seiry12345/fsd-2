@@ -10,7 +10,7 @@
   }
 
   &__filter {
-    flex: 0 1 266px;
+    width: 266px;
     margin-right: 60px;
   }
 
@@ -62,7 +62,7 @@
 @media screen and (max-width: 1100px) {
   .search-room {
     &__filter {
-      flex: 0 1 100%;
+      width: 100%;
       max-width: 480px;
       margin: 0 auto 25px;
     }

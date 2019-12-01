@@ -14,9 +14,11 @@
     font-size: 14px;
     line-height: 24px;
     color: $mainColor75;
+
     &:last-child {
       margin-bottom: 0;
     }
+
     &:before {
       content: '';
       z-index: -1;
@@ -27,6 +29,32 @@
       height: 10px;
       background-color: $mainColor25;
       border-radius: 50%;
+    }
+  }
+
+  &--colored {
+    li {
+      &:before {
+        background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
+      }
+
+      &:nth-child(2n) {
+        &:before {
+          background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+        }
+      }
+
+      &:nth-child(3n) {
+        &:before {
+          background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+        }
+      }
+
+      &:nth-child(4n) {
+        &:before {
+          background: linear-gradient(180deg, #919191 0%, #3D4975 100%);
+        }
+      }
     }
   }
 }

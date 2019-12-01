@@ -16,11 +16,11 @@ module.exports = {
   },
 
   entry: {
-    cards: `${PATHS.src}/pages/cards/index`
+    // cards: `${PATHS.src}/pages/cards/index`
     // headersFooters: `${PATHS.src}/pages/headers-footers/index`
     // front: `${PATHS.src}/pages/front/index`
     // searchRoom: `${PATHS.src}/pages/search-room/index`
-    // roomDetail: `${PATHS.src}/pages/room-detail/index`
+    roomDetail: `${PATHS.src}/pages/room-detail/index`
   },
 
   output: {
@@ -71,6 +71,7 @@ module.exports = {
         options: {
           name: '[name].[ext]',
           outputPath: 'assets/images',
+          url: false
         }
       },
 
@@ -135,11 +136,11 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      template: `${PATHS.src}/pages/cards/index.pug`,
+      // template: `${PATHS.src}/pages/cards/index.pug`,
       // template: `${PATHS.src}/pages/headers-footers/index.pug`,
       // template: `${PATHS.src}/pages/front/index.pug`,
       // template: `${PATHS.src}/pages/search-room/index.pug`,
-      // template: `${PATHS.src}/pages/room-detail/index.pug`,
+      template: `${PATHS.src}/pages/room-detail/index.pug`,
       filename: 'index.html'
     }),
 
