@@ -1,16 +1,14 @@
-html {
-  background-color: #f4f4f6;
-}
-
-.ui-kit-logo {
-  padding-bottom: 65px;
-}
-
-main {
-  padding-bottom: 130px;
-}
-
 .cards {
+  background-color: #f4f4f6;
+
+  .ui-kit-logo {
+    padding-bottom: 65px;
+  }
+
+  main {
+    padding-bottom: 130px;
+  }
+
   &__wrapper {
     display: flex;
     flex-wrap: wrap;

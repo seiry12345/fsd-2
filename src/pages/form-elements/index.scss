@@ -1,93 +1,95 @@
-.ui-kit-logo {
-  padding-bottom: 53px;
-}
-
-main {
-  padding-bottom: 130px;
-}
-
-.block-wrap {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  margin-bottom: 77px;
-}
-
-.block-item {
-  flex: 0 1 320px;
-
-  &__center {
-    margin-left: 10.9%;
-    margin-right: auto;
+.form-elements {
+  .ui-kit-logo {
+    padding-bottom: 53px;
   }
 
-  &--w280 {
-    flex: 0 1 280px;
+  main {
+    padding-bottom: 130px;
   }
 
-  &--2col {
-    flex: 1;
-    margin-left: 55px;
+  .block-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-bottom: 77px;
   }
 
-  &--mb20 {
+  .block-item {
+    flex: 0 1 320px;
+
+    &__center {
+      margin-left: 10.9%;
+      margin-right: auto;
+    }
+
+    &--w280 {
+      flex: 0 1 280px;
+    }
+
+    &--2col {
+      flex: 1;
+      margin-left: 55px;
+    }
+
+    &--mb20 {
+      margin-bottom: 17px;
+    }
+
+    &--mb30 {
+      margin-bottom: 27px;
+    }
+
+    &--mb40 {
+      margin-bottom: 37px;
+    }
+
+    &__radio {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 220px;
+    }
+  }
+
+  .form-item {
     margin-bottom: 17px;
-  }
 
-  &--mb30 {
-    margin-bottom: 27px;
-  }
+    &--mb40 {
+      margin-bottom: 37px;
+    }
 
-  &--mb40 {
-    margin-bottom: 37px;
-  }
+    &--w266 {
+      max-width: 266px;
+    }
 
-  &__radio {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 220px;
-  }
-}
+    &__checkbox {
+      margin-bottom: 12px;
 
-.form-item {
-  margin-bottom: 17px;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
 
-  &--mb40 {
-    margin-bottom: 37px;
-  }
+    &__checkbox-rich {
+      margin-bottom: 7px;
 
-  &--w266 {
-    max-width: 266px;
-  }
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
 
-  &__checkbox {
-    margin-bottom: 12px;
+    &__wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
 
-    &:last-of-type {
-      margin-bottom: 0;
+      & > div {
+        max-width: 47%;
+      }
     }
   }
 
-  &__checkbox-rich {
-    margin-bottom: 7px;
-
-    &:last-of-type {
-      margin-bottom: 0;
-    }
+  .review {
+    padding-top: 14px;
   }
-
-  &__wrap {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    & > div {
-      max-width: 47%;
-    }
-  }
-}
-
-.review {
-  padding-top: 14px;
 }

@@ -1,13 +1,15 @@
 extends ../../layouts/ui-kit.pug
 block vars
-  - const title = 'Colors and types';
+  -
+    const title = 'Colors and types';
+    pageSelector.push('colors-types')
 
-include ../../Сomponents/Colors-item/Colors-item.pug
-include ../../Сomponents/Type-item/Type-item.pug
+  include ../../Сomponents/Colors-item/Colors-item.pug
+  include ../../Сomponents/Type-item/Type-item.pug
 
 block content
-  .wrapper.colors-wrap
-    .colors-col
+  .wrapper.colors-types__wrap
+    .colors-types__item.colors-types__colors
       +colors-item("Dark Shade 100%","#1F2041","#1F2041")
       +colors-item("Dark Shade 75%","#1F2041","rgba(31, 32, 65, 0.75)")
       +colors-item("Dark Shade 50%","#1F2041","rgba(31, 32, 65, 0.50)")
@@ -16,7 +18,7 @@ block content
       +colors-item("Purple","#BC9CFF","#BC9CFF")
       +colors-item("Green","#6FCF97","#6FCF97")
 
-    .type-col
+    .colors-types__item.colors-types__types
       +type-item('H1', 'This one is the sub-section or widget title', 'h1')
       +type-item('H2', 'Next one is the item title inside widgets', 'h2')
       +type-item('H3', 'This is a label or CTA text', 'h3')

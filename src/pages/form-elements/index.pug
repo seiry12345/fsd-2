@@ -1,6 +1,189 @@
 extends ../../layouts/ui-kit.pug
+
 block vars
-  - const title = 'Form Elements';
+  -
+    const title = 'Form Elements';
+    pageSelector.push('form-elements')
+
+    const inputEmailAttrs = {
+      "inputType": "email",
+      "inputName": "email",
+      "inputID": "email",
+      "customSelector": "",
+      "inputPlaceholder": "Email",
+      "inputValue": false,
+      "labelTitle": "Text Field"
+    };
+
+    const inputSubscribe = {
+      "inputType": "email",
+      "inputName": "email",
+      "inputID": "subscribe",
+      "customSelector": 'form-item--w266',
+      "inputPlaceholder": "Email",
+      "inputValue": false,
+      "labelTitle": "subscription text field",
+      "inputWrap": "subscribe"
+    };
+
+    const masked = {
+      "id": "date-masked",
+      "customSelector": "form-item--mb40",
+      "inputPlaceholder": "ДД.ММ.ГГГГ",
+      "labelTitle": "masked text field"
+    };
+
+    const dropdownGuests = {
+      "customSelector": "",
+      "type": "guests",
+      "placeholder": "Сколько гостей?",
+      "labelTitle": "Dropdown",
+      "dropdownBtns": true
+    };
+    const dropdownGuests2 = {
+      "customSelector": "",
+      "type": "guests",
+      "placeholder": "Сколько гостей?",
+      "labelTitle": "Dropdown",
+      "dropdownBtns": true
+    };
+    const dropdownGuestsItems = [{"text": "Взрослые", "customSelector": ""}, {
+      "text": "Дети",
+      "customSelector": ""
+    }, {"text": "Младенцы", "customSelector": "separate"}];
+
+    const dropdownFurniture = {
+      "customSelector": "form-item--w266",
+      "type": "",
+      "placeholder": "Выберите удобства",
+      "labelTitle": "Dropdown",
+      "dropdownBtns": false
+    };
+    const dropdownFurnitureItems = [{"text": "Спальни", "customSelector": ""}, {
+      "text": "Кровати",
+      "customSelector": ""
+    }, {"text": "Ванные комнаты", "customSelector": ""}];
+
+    const dateRange = {
+      "id1": "date1",
+      "id2": "date2",
+      "customSelector": "form-item__date--before form-item--mb40",
+      "labelTitle1": "date Dropdown",
+      "labelTitle2": "date Dropdown"
+    };
+
+    const dateFiltered = {
+      "id": "date-filtered",
+      "customSelector": "form-item__date--before form-item--w266 form-item--mb40",
+      "inputPlaceholder": "ДД.ММ.ГГГГ",
+      "labelTitle": "filter date dropdown"
+    };
+
+    const checkbox = {
+      "name": "checkbox1",
+      "id": "checkbox1",
+      "customSelector": 'form-item__checkbox--w226',
+      "labelClass": "",
+      "value": false,
+      "labelTitle": "Можно курить"
+    };
+    const checkbox2 = {
+      "name": "checkbox2",
+      "id": "checkbox2",
+      "customSelector": 'form-item__checkbox--w226',
+      "labelClass": "",
+      "value": false,
+      "labelTitle": "Можно с питомцами"
+    };
+    const checkbox3 = {
+      "name": "checkbox3",
+      "id": "checkbox3",
+      "customSelector": 'form-item__checkbox--w226',
+      "labelClass": "",
+      "value": false,
+      "labelTitle": "Можно пригласить гостей (до 10 человек)"
+    };
+
+    const checkboxRich = {
+      "name": "checkboxRich",
+      "id": "checkboxRich",
+      "customSelector": "form-item__checkbox--w266",
+      "labelClass": "",
+      "title": "Широкий коридор",
+      "text": "Ширина коридоров в номере не менее 91 см."
+    };
+    const checkboxRich2 = {
+      "name": "checkboxRich2",
+      "id": "checkboxRich2",
+      "customSelector": "form-item__checkbox--w266",
+      "labelClass": "",
+      "title": "Помощник для инвалидов",
+      "text": "На 1 этаже вас встретит специалист  и проводит до номера."
+    };
+
+    const radioMale = {
+      "name": "gender",
+      "id": "radio1",
+      "customSelector": '',
+      "labelClass": "",
+      "value": 'male',
+      "labelTitle": "Мужчина"
+    };
+    const radioFemale = {
+      "name": "gender",
+      "id": "radio2",
+      "customSelector": '',
+      "labelClass": "",
+      "value": 'female',
+      "labelTitle": "Женщина"
+    };
+
+    const toggle = {
+      "name": "toggle",
+      "id": "toggle1",
+      "class": 'toggle',
+      "labelClass": "",
+      "value": false,
+      "labelTitle": "Получать спецпредложения"
+    };
+
+    const rangeSlider = {
+      "name": "range",
+      "customSelector": "form-item--w266",
+      "labelTitle": "Range Slider",
+      "minPrice": "0",
+      "maxPrice": "15500",
+      "from": "5000",
+      "to": "10000"
+    };
+
+    const checkboxExpItems = [{"name": "breakfast", "text": 'Завтрак'}, {
+      "name": "writing-table",
+      "text": 'Письменный стол'
+    }, {"name": "table-for-eating", "text": 'Стул для кормления'}, {
+      "name": "bad",
+      "text": 'Кроватка'
+    }, {"name": "tv", "text": 'Телевизор'}, {"name": "schampoo", "text": 'Шампунь'}, {
+      "name": "tv2",
+      "text": 'Телевизор'
+    }, {"name": "schampoo2", "text": 'Шампунь'}];
+
+    const bulletItems = [{"text": "Нельзя с питомцами"}, {"text": "Без вечеринок и мероприятий"}, {"text": "Время прибытия — после 13:00, а выезд до 12:00"}];
+
+    const advantagesItems = [{
+      "icon": "tag_faces",
+      "title": "Комфорт",
+      "text": "Шумопоглощающие стены"
+    }, {"icon": "location_city", "title": "Удобство", "text": "Окно в каждой из спален"}]
+
+    const review1 = {
+      "img": "/assets/images/review1.jpg",
+      "name": "Мурад Сарафанов",
+      "date": "5 дней назад",
+      "likes": "12",
+      "text": "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."
+    }
+
 
 include ../../Сomponents/Input/Input
 include ../../Сomponents/Dropdown/Dropdown
@@ -19,50 +202,6 @@ include ../../Сomponents/Advantages/Advantages
 include ../../Сomponents/Review/Review
 
 block content
-  - const inputEmailAttrs = {"inputType": "email", "inputName": "email", "inputID": "email", "customSelector": "", "inputPlaceholder": "Email", "inputValue": false, "labelTitle": "Text Field"};
-
-  - const inputSubscribe = {"inputType": "email", "inputName": "email", "inputID": "subscribe", "customSelector": 'form-item--w266', "inputPlaceholder": "Email", "inputValue": false, "labelTitle": "subscription text field", "inputWrap": "subscribe"};
-
-  - const masked = {"id": "date-masked", "customSelector": "form-item--mb40", "inputPlaceholder": "ДД.ММ.ГГГГ", "labelTitle": "masked text field"};
-
-  - const dropdownGuests = {"customSelector": "", "type": "guests", "placeholder": "Сколько гостей?", "labelTitle": "Dropdown", "dropdownBtns": true};
-  - const dropdownGuests2 = {"customSelector": "", "type": "guests", "placeholder": "Сколько гостей?", "labelTitle": "Dropdown", "dropdownBtns": true};
-  - const dropdownGuestsItems = [{"text": "Взрослые", "customSelector": ""}, {"text": "Дети", "customSelector": ""}, {"text": "Младенцы", "customSelector": "separate"}];
-
-  - const dropdownFurniture = {"customSelector": "form-item--w266", "type": "", "placeholder": "Выберите удобства", "labelTitle": "Dropdown", "dropdownBtns": false};
-  - const dropdownFurnitureItems = [{"text": "Спальни", "customSelector": ""}, {"text": "Кровати", "customSelector": ""}, {"text": "Ванные комнаты", "customSelector": ""}];
-
-
-
-  - const dateRange = {"id1": "date1", "id2": "date2", "customSelector": "form-item__date--before form-item--mb40", "labelTitle1": "date Dropdown", "labelTitle2": "date Dropdown"};
-
-  - const dateFiltered = {"id": "date-filtered", "customSelector": "form-item__date--before form-item--w266 form-item--mb40", "inputPlaceholder": "ДД.ММ.ГГГГ", "labelTitle": "filter date dropdown"};
-
-  - const checkbox = {"name": "checkbox1", "id": "checkbox1", "customSelector": 'form-item__checkbox--w226', "labelClass": "", "value": false, "labelTitle": "Можно курить"};
-  - const checkbox2 = {"name": "checkbox2", "id": "checkbox2", "customSelector": 'form-item__checkbox--w226', "labelClass": "", "value": false, "labelTitle": "Можно с питомцами"};
-  - const checkbox3 = {"name": "checkbox3", "id": "checkbox3", "customSelector": 'form-item__checkbox--w226', "labelClass": "", "value": false, "labelTitle": "Можно пригласить гостей (до 10 человек)"};
-
-  - const checkboxRich = {"name": "checkboxRich", "id": "checkboxRich", "customSelector": "form-item__checkbox--w266", "labelClass": "", "title": "Широкий коридор", "text": "Ширина коридоров в номере не менее 91 см."};
-  - const checkboxRich2 = {"name": "checkboxRich2", "id": "checkboxRich2", "customSelector": "form-item__checkbox--w266",  "labelClass": "", "title": "Помощник для инвалидов", "text": "На 1 этаже вас встретит специалист  и проводит до номера."};
-
-  - const radioMale = {"name": "gender", "id": "radio1", "customSelector": '', "labelClass": "", "value": 'male', "labelTitle": "Мужчина"};
-  - const radioFemale = {"name": "gender", "id": "radio2", "customSelector": '', "labelClass": "", "value": 'female', "labelTitle": "Женщина"};
-
-  - const toggle = {"name": "toggle", "id": "toggle1", "class": 'toggle', "labelClass": "", "value": false, "labelTitle": "Получать спецпредложения"};
-
-  - const rangeSlider = {"name": "range", "customSelector": "form-item--w266", "labelTitle": "Range Slider", "minPrice": "0", "maxPrice": "15500", "from": "5000", "to": "10000"};
-
-  - const checkboxExpItems = [{"name": "breakfast", "text": 'Завтрак'}, {"name": "writing-table", "text": 'Письменный стол'}, {"name": "table-for-eating", "text": 'Стул для кормления'}, {"name": "bad", "text": 'Кроватка'}, {"name": "tv", "text": 'Телевизор'}, {"name": "schampoo", "text": 'Шампунь'}, {"name": "tv2", "text": 'Телевизор'}, {"name": "schampoo2", "text": 'Шампунь'}];
-
-
-
-  - const bulletItems = [{"text": "Нельзя с питомцами"}, {"text": "Без вечеринок и мероприятий"}, {"text": "Время прибытия — после 13:00, а выезд до 12:00"}];
-
-  - const advantagesItems = [{"icon": "tag_faces", "title": "Комфорт", "text": "Шумопоглощающие стены"}, {"icon": "location_city", "title": "Удобство", "text": "Окно в каждой из спален"}]
-
-  - const review1 = {"img": "/assets/images/review1.jpg", "name": "Мурад Сарафанов", "date": "5 дней назад", "likes": "12", "text": "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."}
-
-
   main
     .wrapper
       .block-wrap
@@ -153,5 +292,5 @@ block content
           +advantages(advantagesItems)
 
         .block-item.block-item--2col
-         +review(review1)
+          +review(review1)
 
