@@ -10,7 +10,7 @@ mixin registration(selector, title, data, btn)
     +input(data.inputName)
     +input(data.inputLastname)
     .card__wrap
-      +radio(data.radioMale)
+      +radio(data.radioMale, true)
       +radio(data.radioFemale)
     +dropdownDate(data.birthDate)
     +input(data.inputEmail)
