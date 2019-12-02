@@ -4,11 +4,7 @@ import '../../assets/scss/main.scss'
 // common scripts
 import '../../assets/js/common'
 
-
 // --- --- --- libs --- --- --- //
-// jquery
-import 'jquery/dist/jquery.min'
-
 //slick
 import 'slick-slider/slick/slick.css'
 import 'slick-slider/slick/slick'
@@ -16,6 +12,10 @@ import 'slick-slider/slick/slick'
 // ion range slider
 import 'ion-rangeslider/css/ion.rangeSlider.css'
 import 'ion-rangeslider/js/ion.rangeSlider'
+
+// air datepicker
+import 'air-datepicker/dist/js/datepicker'
+import 'air-datepicker/dist/css/datepicker.css'
 // --- --- --- libs end --- --- --- //
 
 
@@ -50,8 +50,8 @@ import '../../Сomponents/Checkbox-expandable/Checkbox-expandable.scss'
 import '../../Сomponents/Checkbox-expandable/checkbox-expandable'
 
 // filter
-import "../../Сomponents/Filter/filter.scss"
-import "../../Сomponents/Filter/filter"
+import '../../Сomponents/Filter/filter.scss'
+import '../../Сomponents/Filter/filter'
 
 // ui kit logo
 import '../../Сomponents/Ui-logo/ui-logo.scss'
@@ -70,6 +70,17 @@ import '../../Сomponents/Navigation/navigation.scss'
 import '../../Сomponents/Subscribe/subscribe.scss'
 import '../../Сomponents/Copyrights/copyrights.scss'
 import '../../Сomponents/Social/social.scss'
+
+// cards
+import '../../Сomponents/Cards/cards.scss'
+import '../../Сomponents/Cards/Find-room/find-room.scss'
+import '../../Сomponents/Cards/Registration/registration.scss'
+import '../../Сomponents/Cards/Card-room/card-room.scss'
+import '../../Сomponents/Cards/Auth/auth.scss'
+
+// rooms
+import '../../Сomponents/Room/room.scss'
+import '../../Сomponents/Room/room'
 // --- --- --- elements end --- --- --- //
 
 
@@ -95,3 +106,14 @@ import '../room-detail/index'
 // front page styles
 import './index.scss'
 // --- --- --- pages end --- --- --- //
+
+// datepicker expanded
+$(function() {
+  const datepickerExpanded = $('.datepicker--expanded')
+
+  if (datepickerExpanded.length > 0) {
+    datepickerExpanded.datepicker({
+      range: true,
+    })
+  }
+})

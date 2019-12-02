@@ -1,4 +1,4 @@
-.cards {
+.page-cards {
   background-color: #f4f4f6;
 
   .ui-kit-logo {
@@ -8,7 +8,9 @@
   main {
     padding-bottom: 130px;
   }
+}
 
+.cards {
   &__wrapper {
     display: flex;
     flex-wrap: wrap;

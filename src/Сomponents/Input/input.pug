@@ -3,8 +3,8 @@ mixin input(data)
     if (data.labelTitle.length > 0)
       label(for= data.inputID)
         span.label-left= data.labelTitle
-      span(class= "input__wrap")
+      span(class="input__wrap")
         input(type= data.inputType, name= data.inputName, id= data.inputID, class="input", placeholder= data.inputPlaceholder, value= data.inputValue)
     else
-      span(class= "input-wrap " + data.inputWrap)
+      span(class= `input-wrap ${data.inputWrap}`)
         input(type= data.inputType, name= data.inputName, id= data.inputID, class="input", placeholder= data.inputPlaceholder, value= data.inputValue)

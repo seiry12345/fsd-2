@@ -50,6 +50,12 @@
   }
 }
 
+.datepicker--expanded {
+  .datepicker {
+    visibility: visible;
+  }
+}
+
 .datepicker {
   box-sizing: border-box;
   visibility: hidden;
