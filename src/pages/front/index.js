@@ -49,6 +49,9 @@ import '../../Сomponents/Checkbox-expandable/checkbox-expandable'
 import "../../Сomponents/Filter/filter.scss"
 import "../../Сomponents/Filter/filter"
 
+// ui kit logo
+import '../../Сomponents/Ui-logo/ui-logo.scss'
+
 // header
 import '../../Сomponents/Header/header.scss'
 import '../../Сomponents/Hamburger/hamburger.scss'

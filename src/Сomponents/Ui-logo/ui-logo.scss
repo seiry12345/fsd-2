@@ -8,20 +8,15 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: $smDesktopWidth) {
   .ui-kit-logo {
     padding-bottom: 35px;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: $tabletWidth) {
   .ui-kit-logo {
     padding: 25px 0;
-  }
-}
-
-@media (max-width: 420px) {
-  .ui-kit-logo {
     text-align: center;
     svg {
       display: inline-block;
