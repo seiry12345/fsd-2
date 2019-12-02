@@ -1,26 +1,6 @@
-.form-item__subscribe {
+.form-item {
   position: relative;
-  .input__subscribe {
-    padding-right: 44px;
-    &:before {
-      @extend .material-icons;
-      content: "arrow_forward";
-      z-index: 1;
-      position: absolute;
-      right: 0;
-      top: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 44px;
-      height: 44px;
-      color: $purple;
-      font-size: 26px;
-    }
-  }
-}
 
-.input {
   label {
     z-index: 1;
     position: relative;
@@ -32,6 +12,39 @@
     text-transform: uppercase;
   }
 
+  .label-right {
+    float: right;
+    color: $mainColor50;
+    text-align: right;
+    font-weight: 400;
+  }
+
+  &__subscribe {
+    input {
+      padding-right: 44px;
+      background-color: transparent;
+    }
+
+    .input__wrap {
+      &:before {
+        z-index: -1;
+        @extend .material-icons;
+        content: "arrow_forward";
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 100%;
+        color: $purple;
+      }
+    }
+  }
+}
+
+.input {
   &__wrap {
     z-index: 1;
     position: relative;

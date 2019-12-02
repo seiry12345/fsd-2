@@ -19,7 +19,7 @@ block vars
       "inputType": "email",
       "inputName": "email",
       "inputID": "subscribe",
-      "customSelector": 'form-item--w266',
+      "customSelector": "form-item__subscribe form-item--w266",
       "inputPlaceholder": "Email",
       "inputValue": false,
       "labelTitle": "subscription text field",
@@ -208,11 +208,9 @@ block content
         .block-item
           +input(inputEmailAttrs)
           +dropdown(dropdownGuests, dropdownGuestsItems)
-
           +dropdownDate(masked)
           +dropdownDate(dateRange, true, false)
           +dropdownDate(dateFiltered, false, true)
-
           +input(inputSubscribe)
 
         .block-item.block-item__center.block-item--w260
@@ -221,23 +219,19 @@ block content
             +checkbox(checkbox)
             +checkbox(checkbox2)
             +checkbox(checkbox3)
-
           .block-item--mb40
             h4 radio buttons
             .block-item__radio
               +radio(radioMale, 'checked')
               +radio(radioFemale)
-
           .block-item--mb40
             h4 toggle
             .block-item__toggle
               +toggle(toggle)
-
           .block-item--mb40
             h4 Like button
             .block-item__toggle
               +likeBtn(2)
-
           .block-item--mb40
             h4 rate button
             .block-item__rate
@@ -262,15 +256,10 @@ block content
       .block-wrap
         .block-item
           +dropdown(dropdownFurniture, dropdownFurnitureItems)
-
         .block-item.block-item__center
           +dropdown(dropdownGuests, dropdownGuestsItems)
-
         .block-item
           +dropdown(dropdownGuests2, dropdownGuestsItems)
-
-
-
 
       .block-wrap
         .block-item.block-item--mb40
@@ -280,17 +269,12 @@ block content
           h4 rich Checkbox Buttons
           +checkbox(checkboxRich, true)
           +checkbox(checkboxRich2, true)
-
         .block-item.block-item--mb40
           h4 bullet list
-          +bulletList(bulletItems)
-
-
+          +bulletList("", bulletItems)
 
       .block-wrap
         .block-item.block-item--w280
           +advantages(advantagesItems)
-
         .block-item.block-item--2col
           +review(review1)
-

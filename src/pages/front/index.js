@@ -14,8 +14,8 @@ import 'slick-slider/slick/slick.css'
 import 'slick-slider/slick/slick'
 
 // ion range slider
-import 'ion-rangeslider/css/ion.rangeSlider.min.css'
-import 'ion-rangeslider/js/ion.rangeSlider.min'
+import 'ion-rangeslider/css/ion.rangeSlider.css'
+import 'ion-rangeslider/js/ion.rangeSlider'
 // --- --- --- libs end --- --- --- //
 
 
@@ -40,6 +40,10 @@ import '../../Сomponents/Dropdown-date/dropdown-date'
 // like btn
 import '../../Сomponents/Like-btn/like-btn'
 import '../../Сomponents/Like-btn/like-btn.scss'
+
+// ion range
+import '../../Сomponents/Range/range.scss'
+import '../../Сomponents/Range/range-js'
 
 // checkbox expandable
 import '../../Сomponents/Checkbox-expandable/Checkbox-expandable.scss'

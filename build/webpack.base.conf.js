@@ -146,7 +146,7 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      template: `${PATHS.src}/pages/colors/index.pug`,
+      template: `${PATHS.src}/pages/form-elements/index.pug`,
       filename: 'form-elements.html',
     }),
 

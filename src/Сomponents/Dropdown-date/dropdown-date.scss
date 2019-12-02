@@ -1,30 +1,20 @@
 .form-item__date {
-  &--before {
-    .dropdown-date__item {
-      &:before {
-        content: 'keyboard_arrow_down';
-        @extend .material-icons;
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        color: inherit;
-        width: 44px;
-        height: 44px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+  .input__wrap {
+    &:before {
+      @extend .material-icons;
+      z-index: -1;
+      content: 'keyboard_arrow_down';
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      color: inherit;
+      width: 44px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
-}
-
-.label-date {
-  overflow: hidden;
-  display: block;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 12px;
-  text-transform: uppercase;
 }
 
 .dropdown-date__wrap {
@@ -42,9 +32,8 @@
   input {
     display: block;
     width: 100%;
-    padding: 13px 15px;
-    padding-right: 44px;
-    background: #ffffff;
+    padding: 13px 44px 13px 15px;
+    background: transparent;
     color: $mainColor75;
     text-align: left;
     border: 1px solid $mainColor25;
@@ -231,6 +220,7 @@
         width: 100%;
         max-width: 100%;
         margin: 0 0 10px;
+
         &:last-child {
           margin-bottom: 0;
         }

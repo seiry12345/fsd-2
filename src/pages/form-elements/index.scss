@@ -12,6 +12,9 @@
     flex-wrap: wrap;
     align-items: flex-start;
     margin-bottom: 77px;
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   .block-item {
@@ -91,5 +94,27 @@
 
   .review {
     padding-top: 14px;
+  }
+}
+
+@media screen and (max-width: $desktopWidth) {
+  .form-elements {
+    .block-item {
+      &__center {
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $tabletWidth) {
+  .form-elements {
+    .block-item {
+      margin: 0 auto;
+      &--2col {
+        flex: 0 1 100%;
+        margin: 0 0 27px;
+      }
+    }
   }
 }

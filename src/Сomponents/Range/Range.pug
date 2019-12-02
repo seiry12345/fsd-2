@@ -1,10 +1,10 @@
-mixin range(attrs)
-  div(class=`form-item form-item__range ${attrs.customSelector}`)
-    label(for= attrs.inputID, class= "label")
-      span.label-left= attrs.labelTitle
-      if attrs.labelTitleRight
+mixin range(data)
+  div(class=`form-item form-item__range ${data.customSelector}`)
+    label(for= data.inputID, class= "label")
+      span.label-left= data.labelTitle
+      if data.labelTitleRight
       span.label-right.label-wrap
-        span(class= "label-right__number label-right__number-min")= attrs.from
+        span(class= "label-right__number label-right__number-min")= data.from
         span= " - "
-        span(class= "label-right__number label-right__number-max")= attrs.to
-    input(type= "text", name= attrs.name, class= "js-range-slider", data-min= attrs.minPrice, data-max= attrs.maxPrice, data-from= attrs.from, data-to= attrs.to)
+        span(class= "label-right__number label-right__number-max")= data.to
+    input(type="text", name= data.name, class="js-range-slider", data-min= data.minPrice, data-max= data.maxPrice, data-from= data.from, data-to= data.to)
