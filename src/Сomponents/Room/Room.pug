@@ -1,6 +1,11 @@
 include ../Rate-btn/Rate-btn
 
 mixin room(selector, data, images)
+  -
+    if (data.link == undefined) {
+      data.link = "/room-detail.html"
+    }
+
   .room
     .room__slider
       each img in images
@@ -10,8 +15,9 @@ mixin room(selector, data, images)
     .room__info
       .card__wrap.card__wrap--between.card__title.card-room__title.room__title
         h3.card-room__title-text
-          | № <span class="card-room__title-text--size"> #{data.title}</span>
-          | <span class="card-room__title-text--color"> #{data.type}</span>
+          a(href= data.link)
+            | № <span class="card-room__title-text--size"> #{data.title}</span>
+            | <span class="card-room__title-text--color"> #{data.type}</span>
 
         .card-room__title-price
           | <span>#{data.price}</span> в сутки
