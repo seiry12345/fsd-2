@@ -4,10 +4,10 @@ include ../Navbar/Navbar
 include ../User/User
 include ../Hamburger/Hamburger
 
-mixin header(selector, signed)
+mixin header(selector, btnsText, signed)
   header(class=`${selector}`)
     .wrapper
       +hamburger("header__hamburger")
       +logo("header__logo", "front")
       +navbar("header__navbar", headerNavbar)
-      +userBlock("header__login", signed)
+      +userBlock("header__login", btnsText, signed)

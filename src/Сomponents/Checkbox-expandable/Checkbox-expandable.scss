@@ -9,6 +9,15 @@
       animation: 0.3s showList both;
     }
   }
+
+  label {
+    font-weight: 400;
+    font-size: $mainFontSize;
+    color: $mainColor50;
+    text-transform: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
 }
 
 @keyframes showList {
@@ -82,15 +91,6 @@
         color: $mainColor75;
       }
     }
-  }
-
-  &__list-label {
-    font-weight: 400;
-    font-size: 14px;
-    color: $mainColor50;
-    text-transform: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
   }
 
   &__list-mark {

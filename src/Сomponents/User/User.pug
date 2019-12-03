@@ -1,4 +1,4 @@
-mixin userBlock(selector, signed)
+mixin userBlock(selector, btnsText, signed)
   div(class=`user ${selector}`)
     if (signed.length > 0)
       a(href="/personal", class="user__name")
@@ -7,5 +7,5 @@ mixin userBlock(selector, signed)
       a(href="/login", class="user__mobile")
         | <i class="material-icons">account_circle</i>
 
-      +button("btn--transparent btn__call-auth", "button", "Войти")
-      +button("btn__call-registration", "button", "Зарегистрироваться")
+      +button("btn--transparent btn__call-auth", "button", btnsText.login)
+      +button("btn__call-registration", "button", btnsText.registration)
