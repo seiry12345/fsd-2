@@ -1,18 +1,11 @@
+import common from '../../assets/js/common'
+
 let isDown = false
 let mouseTimer
 let originText
 
 // functions
 // склонения
-function declOfNum(number, titles) {
-  cases = [2, 0, 1, 1, 1, 2]
-  return titles[
-    number % 100 > 4 && number % 100 < 20
-      ? 2
-      : cases[number % 10 < 5 ? number % 10 : 5]
-    ]
-}
-
 function toggleDropdown(event) {
   const item = $(event.target).parent()
 
@@ -64,6 +57,8 @@ function decrement(event) {
     target.next().text(value)
   }
 
+  dataUpdate(event, decrement)
+
   // hide clear btn
   if (target.parents('.dropdown-items').find('.dropdown__clear').length) {
     const clearBtn = target.parents('.dropdown-items').find('.dropdown__clear')
@@ -110,10 +105,8 @@ function clear(event) {
   dropdown.text(originText)
 }
 
-// --- --- ---
-
 // updating data and put it to field on every change
-function dataUpdate(event) {
+function dataUpdate(event, decrement = false) {
   const target = $(event.target)
   const textField = target.parents('.form-item__dropdown').find('.dropdown')
   const container = target.parents('.dropdown-items')
@@ -132,16 +125,18 @@ function dataUpdate(event) {
 
       if (value > 0 && !item.hasClass('separate')) {
         guestVal += value
+      } else if (value > 0 && !item.hasClass('separate')) {
+        guestVal -= value
       }
 
       // if dropdown item has class separate
       if (value > 0 && item.hasClass('separate')) {
-        name = declOfNum(value, ['младенец', 'младенца', 'младенцев'])
+        name = common.declOfNum(value, ['младенец', 'младенца', 'младенцев'])
         separateOutput.push(` ${value} ${name}`)
       }
     })
 
-    let guestName = declOfNum(guestVal, ['гость', 'гостя', 'гостей'])
+    let guestName = common.declOfNum(guestVal, ['гость', 'гостя', 'гостей'])
     output.push(`${guestVal} ${guestName}`)
   } else {
     // data for furniture
@@ -165,8 +160,6 @@ function dataUpdate(event) {
   textField.text(result)
 }
 
-// --- --- ---
-
 // submit
 function submit(event) {
   const target = $(event.target)
@@ -174,14 +167,11 @@ function submit(event) {
   target.parents('.form-item__dropdown').removeClass('dropdown--active')
 }
 
-// --- --- ---
-
 // events
 // toggle dropdown
 $('.dropdown').click(function(event) {
   toggleDropdown(event)
 })
-// --- --- ---
 
 // increment value
 $('.dropdown-controls__btn-plus').on(
@@ -198,7 +188,6 @@ $('.dropdown-controls__btn-plus').on(
     }, 200)
   },
 )
-// --- --- ---
 
 // decrement value
 $('.dropdown-controls__btn-minus').on(
@@ -215,17 +204,14 @@ $('.dropdown-controls__btn-minus').on(
     }, 200)
   },
 )
-// --- --- ---
 
 // submit
 $('.dropdown__submit').click(function(event) {
   event.preventDefault()
   submit(event)
 })
-// --- --- ---
 
 // clear dropdown items
 $('.dropdown__clear').click(function(event) {
   clear(event)
 })
-// --- --- ---
