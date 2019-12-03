@@ -215,6 +215,48 @@
       }
     }
   }
+
+  &--buttons {
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    margin: 17px 0 0;
+    border: 0;
+  }
+
+  &--button {
+    height: auto;
+    &__apply,
+    &__clear {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      cursor: pointer;
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: transparent;
+      }
+    }
+
+    &__clear {
+      flex: 0 1 auto;
+      color: $purple;
+      background-color: transparent;
+      border-radius: 0;
+    }
+
+    &__apply {
+      color: $mainColor50;
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: $purple;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 900px) {
@@ -233,7 +275,9 @@
       }
     }
   }
+}
 
+@media screen and (max-width: 360px) {
   .datepicker {
     left: 5px !important;
   }

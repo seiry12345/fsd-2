@@ -42,6 +42,15 @@ if (dropdownRange.length > 0) {
   dropdownRange.datepicker({
     range: true,
     clearButton: true,
+    onShow: function(inst) {
+      if (!inst.$datepicker.find('.datepicker--button__apply').length) {
+        const applyBtn = `<span class="datepicker--button__apply">Применить</span>`
+
+        inst.$datepicker.find('.datepicker--buttons').append(applyBtn)
+        inst.$datepicker.find('.datepicker--button').addClass('datepicker--button__clear')
+      }
+    },
+
     onSelect: function(fd, d, picker) {
       const $this = $(picker.el)
       const $parent = $this.parents('.card-room')
@@ -105,6 +114,15 @@ if (dropdownRange.length > 0) {
     },
   })
 }
+
+$('body').click(function(e) {
+  const target = $(e.target)
+
+  if (target.hasClass('datepicker--button__apply')) {
+    e.preventDefault()
+    target.parents('.datepicker').removeClass('active')
+  }
+})
 
 // filtered dates
 if (dropdownFiltered.length > 0) {
