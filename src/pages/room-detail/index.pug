@@ -15,7 +15,12 @@ block vars
       link: "/news",
       selector: "",
       parent: ""
-    }, {text: "Соглашения", link: "/documentation", selector: "", parent: ""}];
+    }, {
+      text: "Соглашения", link: "/documentation", selector: "", parent: "navbar__item--parent",
+      submenu: [{text: "Бронирование", link: "/reservation"}, {text: "Поиск", link: "/room-search"}]
+    }];
+
+    const headerBtns = {login: "Войти", registration: "Зарегистрироваться"}
 
     const footerData = {
       navTitle1: "навигация",
@@ -126,7 +131,7 @@ block vars
 
 
 block content
-  +header("header", "")
+  +header("header", headerBtns, "")
 
   main
     .room-detail__gallery

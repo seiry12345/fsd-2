@@ -25,6 +25,8 @@ block vars
       parent: ""
     }, {text: "Documentation", link: "/documentation", selector: "", parent: ""}];
 
+    const headerBtns = {login: "login", registration: "register"}
+
     const footerData = {
       navTitle1: "Navigation",
       navTitle2: "ABOUT US",
@@ -60,7 +62,7 @@ block vars
       "inputPlaceholder": "Your email address",
       "inputValue": false,
       "labelTitle": "",
-      "inputWrap": "input__subscribe"
+      "inputWrap": ""
     };
 
     const social = [{selector: "social__tw", link: "https://twitter.com/"}, {
@@ -72,8 +74,8 @@ block vars
   include ../../Сomponents/Footer/Footer
 
 block content
-  +header("header", "")
-  +header("header", "signed")
+  +header("header", headerBtns, "")
+  +header("header", headerBtns, "signed")
 
   +footer("", footerData)
   +footer("", footerData, "small")
