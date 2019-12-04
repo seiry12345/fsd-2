@@ -1,0 +1,13 @@
+include ../button/button
+include ../logo/logo
+include ../navbar/navbar
+include ../user/user
+include ../hamburger/hamburger
+
+mixin header(selector, btnsText, signed)
+  header(class=`${selector}`)
+    .wrapper
+      +hamburger("header__hamburger")
+      +logo("header__logo", "front")
+      +navbar("header__navbar", headerNavbar)
+      +userBlock("header__login", btnsText, signed)

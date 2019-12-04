@@ -1,0 +1,10 @@
+include ../dropdown-date/dropdown-date
+include ../dropdown/dropdown
+include ../button/button
+
+mixin findRoom(selector, title, data, findRoomBtn)
+  form.card.find-room
+    h2.card__title.h1!= title
+    +dropdownDate(data.findRoomDateRange, true, false)
+    +dropdown(data.findRoomGuests, data.findRoomGuestsItems)
+    +button(findRoomBtn.selector, findRoomBtn.type, findRoomBtn.text)

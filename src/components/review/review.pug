@@ -1,0 +1,16 @@
+include ../like-btn/like-btn
+
+mixin review(data, likes= 12, selector= "")
+  div(class=`review ${selector}`)
+    .review__header
+      img(
+        src= `./assets/images/reviews/${data.img}`,
+        alt= data.name, class="review__avatar"
+      )
+      h3.review__name= data.name
+      .review__date= data.date
+
+    .review__footer
+      .review__likes
+        +likeBtn(likes)
+      p.review__text= data.text

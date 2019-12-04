@@ -1,0 +1,11 @@
+mixin logo(selector, front)
+  if front === "front"
+    div(class=`logo ${selector}`)
+      img(class="logo--desktop", src="./assets/images/logo.png", alt="Toxin Hotel")
+      img(class="logo--mobile", src="./assets/images/mobile-logo.png", alt="Toxin Hotel")
+
+
+  else
+    a(href="/", title="на главную", class=`logo ${selector}`)
+      img(class="logo--desktop", src="./assets/images/logo.png", alt="Toxin Hotel")
+      img(class="logo--mobile", src="./assets/images/mobile-logo.png", alt="Toxin Hotel")

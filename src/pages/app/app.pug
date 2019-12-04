@@ -1,0 +1,114 @@
+extends ../../layouts/page
+block vars
+  -
+    const title = 'Landing Page';
+    pageSelector.push("front")
+
+    const headerNavbar = [{text: "О нас", link: "/about", parent: ""}, {
+      text: "Услуги",
+      link: "/services",
+      selector: "",
+      parent: "navbar__item--parent",
+      submenu: [{text: "Бронирование", link: "/reservation"}, {text: "Поиск", link: "/room-search"}]
+    }, {text: "Вакансии", link: "/Careers", selector: "", parent: ""}, {
+      text: "Новости",
+      link: "/news",
+      selector: "",
+      parent: ""
+    }, {
+      text: "Соглашения", link: "/documentation", selector: "", parent: "navbar__item--parent",
+      submenu: [{text: "Бронирование", link: "/reservation"}, {text: "Поиск", link: "/room-search"}]
+    }];
+
+    const headerBtns = {login: "Войти", registration: "Зарегистрироваться"}
+
+    const footerData = {
+      navTitle1: "навигация",
+      navTitle2: "о нас",
+      navTitle3: "Служба поддержки",
+      subscribeTitle: "Подписка",
+      subscribeText: "Получайте специальные предложения и новости сервиса",
+      copyrights: "Copyright © 2018 Toxin отель. Все права зачищены."
+    }
+    const footerBrandsData = {
+      logoSelector: "footer__logo",
+      logoFront: "front",
+      textSelector: "footer__text",
+      text: "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"
+    }
+    const navigation = [{text: "О нас", link: "/about"}, {
+      text: "Новости",
+      link: "/news"
+    }, {text: "Служба поддержки", link: "/support"}, {text: "Услуги", link: "/services"}];
+    const aboutUs = [{text: "О сервисе", link: "/who"}, {
+      text: "Наша команда",
+      link: "/team"
+    }, {text: "Вакансии", link: "/careers"}, {text: "Инвесторы", link: "/investors"}];
+    const support = [{text: "Соглашения", link: "/documentation"}, {
+      text: "Сообщества",
+      link: "/community"
+    }, {text: "Связь с нами", link: "/get-in-touch"}];
+
+    const inputSubscribe = {
+      "inputType": "email",
+      "inputName": "subscribe",
+      "inputID": "subscribe",
+      "customSelector": 'form-item__subscribe',
+      "inputPlaceholder": "Your email address",
+      "inputValue": false,
+      "labelTitle": "",
+      "inputWrap": "input__subscribe"
+    };
+
+    const social = [{selector: "social__tw", link: "https://twitter.com/"}, {
+      selector: "social__fb",
+      link: "https://ru-ru.facebook.com/"
+    }, {selector: "social__insta", link: "https://www.instagram.com/?hl=ru"},]
+
+    const findRoomDateRange = {
+      "id1": "findRoomFromDate",
+      "id2": "findRoomToDate",
+      "customSelector": "form-item__date--before",
+      "labelTitle1": "Прибытие",
+      "labelTitle2": "Выезд"
+    };
+    const findRoomGuests = {
+      "customSelector": "",
+      "type": "guests",
+      "placeholder": "Сколько гостей?",
+      "labelTitle": "Гости",
+      "dropdownBtns": true
+    };
+    const findRoomGuestsItems = [{"text": "Взрослые", "customSelector": ""}, {
+      "text": "Дети",
+      "customSelector": ""
+    }, {"text": "Младенцы", "customSelector": "separate"}];
+    const findRoomBtn = {
+      selector: "btn btn--arrow find-room__submit",
+      type: "submit",
+      text: "Подобрать номер"
+    }
+    const findRoomData = {
+      findRoomDateRange: findRoomDateRange,
+      findRoomGuests: findRoomGuests,
+      findRoomGuestsItems: findRoomGuestsItems
+    }
+
+  include ../../components/header/header
+  include ../../components/footer/footer
+  include ../../components/find-room/Find-room
+
+block content
+  +header("header", headerBtns, "")
+
+  main
+    div.screen
+      .wrapper
+        +findRoom("", "Найдём номера под <br /> ваши пожелания", findRoomData, findRoomBtn)
+
+        p.screen__text
+          | Лучшие номера для вашей работы, <br />
+          | отдыха и просто вдохновения
+
+  +footer("footer__main", footerData)
+  .overlay

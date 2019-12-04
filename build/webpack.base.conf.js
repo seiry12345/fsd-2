@@ -1,5 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
+const fs = require('fs')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -10,17 +11,32 @@ const PATHS = {
   assets: 'assets/',
 }
 
+const pages = []
+
+fs
+  .readdirSync(path.resolve(__dirname, '..', 'src', 'pages'))
+  .filter((file) => {
+    return file.indexOf('base') !== 0
+  })
+  .forEach((file) => {
+    pages.push(file.split('/', 2))
+  })
+
+let htmlPlugins = pages.map(fileName => new HtmlWebpackPlugin({
+  filename: `${fileName}.html`,
+  template: `./src/pages/${fileName}/${fileName}.pug`,
+  alwaysWriteToDisk: true,
+  // minify: true,
+  hash: true,
+}))
+
 module.exports = {
   externals: {
     paths: PATHS,
   },
 
   entry: {
-    cards: `${PATHS.src}/pages/cards/index`,
-    headersFooters: `${PATHS.src}/pages/headers-footers/index`,
-    front: `${PATHS.src}/pages/front/index`,
-    searchRoom: `${PATHS.src}/pages/search-room/index`,
-    roomDetail: `${PATHS.src}/pages/room-detail/index`,
+    app: `${PATHS.src}/pages/app/app.js`,
   },
 
   output: {
@@ -62,6 +78,7 @@ module.exports = {
         loader: 'file-loader',
         options: {
           name: `[name].[ext]`,
+          outputPath: 'assets/fonts',
         },
       },
 
@@ -71,9 +88,18 @@ module.exports = {
         options: {
           name: '[name].[ext]',
           outputPath: 'assets/images',
-          url: false,
         },
       },
+
+      // {
+      //   loader: 'image-webpack-loader',
+      //   options: {
+      //     mozjpeg: {
+      //       progressive: true,
+      //       quality: 65
+      //     }
+      //   }
+      // },
 
       {
         test: /\.scss$/,
@@ -135,59 +161,14 @@ module.exports = {
       'window.jQuery': 'jquery',
     }),
 
-    new HtmlWebpackPlugin({
-      template: `${PATHS.src}/pages/front/index.pug`,
-      filename: 'index.html',
-    }),
-
-    new HtmlWebpackPlugin({
-      template: `${PATHS.src}/pages/colors/index.pug`,
-      filename: 'colors.html',
-    }),
-
-    new HtmlWebpackPlugin({
-      template: `${PATHS.src}/pages/form-elements/index.pug`,
-      filename: 'form-elements.html',
-    }),
-
-    new HtmlWebpackPlugin({
-      template: `${PATHS.src}/pages/cards/index.pug`,
-      filename: 'cards.html',
-    }),
-
-    new HtmlWebpackPlugin({
-      template: `${PATHS.src}/pages/headers-footers/index.pug`,
-      filename: 'headers-footers.html',
-    }),
-
-    new HtmlWebpackPlugin({
-      template: `${PATHS.src}/pages/search-room/index.pug`,
-      filename: 'search-room.html',
-    }),
-
-    new HtmlWebpackPlugin({
-      template: `${PATHS.src}/pages/room-detail/index.pug`,
-      filename: 'room-detail.html',
-    }),
-
     new MiniCssExtractPlugin({
       filename: '[name].[hash].css',
       outputPath: './assets/css',
     }),
 
-
     new CopyWebpackPlugin([
-      {
-        from: `${PATHS.src}/${PATHS.assets}fonts`,
-        to: `${PATHS.assets}fonts`,
-      },
-
-      {
-        from: `${PATHS.src}/${PATHS.assets}images`,
-        to: `${PATHS.assets}images`,
-      },
-
+      {from: `${PATHS.src}/${PATHS.assets}images`, to: `${PATHS.assets}images`},
       {from: `${PATHS.src}/static`, to: ''},
     ]),
-  ],
+  ].concat(htmlPlugins),
 }

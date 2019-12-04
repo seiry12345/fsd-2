@@ -1,0 +1,10 @@
+include ../input/input
+
+mixin subscribe(selector, title, text)
+  div(class=`subscribe ${selector}`)
+    h3.subscribe__title
+      | #{title}
+    p.subscribe__text
+      | #{text}
+
+    +input(inputSubscribe)
